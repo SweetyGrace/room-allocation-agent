@@ -1,0 +1,406 @@
+// Ensure table header and search/filter UI are always visible, and show a 'No data' message in the table body area only
+@import '../../common/styles/variables.scss';
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search {
+  border: 1px solid $border-gray-light;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+  span {
+    cursor: pointer;
+  }
+}
+
+.searchInput {
+  width: 300px;
+  padding: 8px;
+  height: 10px;
+  border: none;
+  color: $darkBlue;
+}
+
+.searchInput:focus {
+  border: none;
+  outline: none;
+}
+
+.searchIcon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.clearIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: $font-size-md;
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  color: $color-medium-grey;
+  &:hover {
+    color: $color-dark-grey;
+  }
+}
+
+.noDataRow {
+  width: 100%;
+  text-align: center;
+  color: $text-grey-medium;
+  font-size: $font-size-lg;
+  padding: 40px 0;
+  background: $white;
+}
+
+
+.checkboxCellWrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkboxIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.dialogContainer {
+//   z-index: 1300 !important;
+  
+  :global(.MuiDialog-paper) {
+    max-width: 80%;
+    min-width: 60%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: $border-radius-xs;
+    box-sizing: border-box;
+    // overflow: hidden;
+    
+    @media (max-width: 999px) {
+      max-width: 95%;
+      width: 95%;
+    }
+  }
+}
+
+.customDialogContent {
+  padding: 0px 30px 40px 30px !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  flex: 1 1 auto;
+  max-height: calc(80vh - 200px);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 500px;
+  overflow: visible;
+}
+
+.usersTabContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.gridContainer {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  
+  :global(.MuiDataGrid-root) {
+    border: 1px solid $border-grey;
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  :global(.MuiDataGrid-main) {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  :global(.MuiDataGrid-virtualScroller) {
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+  }
+  
+  :global(.MuiDataGrid-footerContainer) {
+    border-top: 1px solid $border-grey;
+    background: $white !important;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+}
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 400px;
+  padding: 60px 20px;
+}
+
+.dialogHeader {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px !important;
+  margin-bottom: 0 !important;
+}
+
+.horizontalLine {
+  width: 100%;
+  height: 1px;
+  background-color: $border-light-gray;
+  margin: 16px 0;
+}
+
+.viewUsersHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  flex: 1;
+}
+
+.styledDialogTitle {
+  font-family: $natoSansRegular !important;
+  font-weight: $font-weight-semibold !important;
+  font-size: $font-size-md !important;
+  line-height: 30px !important;
+  color: $color-primary !important;
+  white-space: nowrap;
+}
+
+.widthLarge {
+  width: 250px;
+}
+
+.widthMedium {
+  width: 200px;
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.dialogActions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 20px 30px;
+  width: 100%;
+  border-top: 1px solid $lightGrey;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background: $white;
+  border-radius: 0 0 $border-radius-xs $border-radius-xs;
+  box-sizing: border-box;
+}
+
+.cascadeOption {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  max-width: 65%;
+  padding: 6px;
+  background: $bg-white-shade;
+  border-radius: $border-radius-md;
+  border: 1px solid $border-grey;
+  
+  label {
+    margin: 0;
+    align-items: flex-start;
+  }
+  
+  :global(.MuiCheckbox-root) {
+    padding-top: 0;
+    margin-top: -2px;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
+.primaryButton {
+  width: 170px;
+  min-width: 170px;
+  font-size: $font-size-md;
+  height: 40px;
+  margin-right: 0;
+  white-space: nowrap;
+}
+
+.primaryButtonText {
+  color: $white !important;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-md;
+  white-space: nowrap;
+}
+
+.secondaryButton {
+  width: 120px;
+  min-width: 120px;
+  font-size: $font-size-md;
+  height: 40px;
+  background-color: $white;
+  color: $darkBlue;
+  background-image: none !important;
+  border: none !important;
+  cursor: pointer;
+  font-family: $natoSansRegular;
+  font-weight: $font-weight-normal;
+  white-space: nowrap;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+  
+  &:disabled {
+    color: $thick-gray;
+    cursor: not-allowed;
+  }
+}
+
+.secondaryButtonText {
+  color: $blue !important;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-md;
+  white-space: nowrap;
+}
+
+.disabledButton {
+  color: $thick-gray;
+  background-color: $color-white;
+  cursor: not-allowed;
+  font-size: $font-size-md;
+  border: none;
+  padding: 0;
+}
+
+.emailCell {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Side Overlay Styles
+.publishOverlay {
+  :global(.MuiDrawer-paper) {
+    width: 70vw;
+    max-width: 1200px;
+    min-width: 800px;
+    
+    @media (max-width: 1024px) {
+      width: 85vw;
+      min-width: 600px;
+    }
+    
+    @media (max-width: 768px) {
+      width: 100vw;
+      min-width: 100%;
+    }
+  }
+}
+
+.overlayContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 0;
+  flex: 1;
+  min-height: 0;
+  
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $bg-light-gray;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $textGrey;
+    border-radius: 3px;
+  }  
+  &::-webkit-scrollbar-thumb:hover {
+    background: $input-text;
+  }
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filterPopover {
+  min-width: 320px;
+  max-width: 400px;
+  padding: 24px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.filterCheckboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 12px;
+  margin-bottom: 6px;
+  font-size: $font-size-sm;
+  cursor: pointer;
+}
+

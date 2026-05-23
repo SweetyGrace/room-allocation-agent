@@ -1,0 +1,232 @@
+@import "../../../common/styles/variables.scss";
+
+.headerSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 36px;
+
+  &__TextContent {
+    margin-left: 16px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 16px;
+  }
+}
+.headerSectionDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+}
+
+.formattedDate {
+  color: #1859b4;
+}
+
+.subText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 15px;
+  padding-left: 33px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 16px;
+  }
+}
+
+.subTextHide ,.count {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+color: $darkBlue;
+  @media (max-width: 768px) {
+    padding-left: 16px;
+    font-size: 14px;
+  }
+}
+.count{
+ color: #1859b4;
+ cursor: pointer;
+ font-weight: 600;
+ font-size: 32px;
+ line-height: 36px;
+ letter-spacing: 0%;
+ text-align: right;
+}
+.selectInputSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  gap: 4px;
+  padding-top: 10px;
+  padding-right: 33px;
+  font-size: 12px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding-right: 16px;
+  }
+}
+
+.selectInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
+
+    > div {
+      width: 48%;
+    }
+  }
+}
+.dateDropdown,
+.backButton {
+  border: none;
+  cursor: pointer;
+}
+
+.selectedFilters {
+  display: flex;
+  padding: 5px 22px 0px 0px;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  height: 492px;
+  padding: 30px;
+  background-color: white;
+  outline: none;
+}
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+}
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: scroll;
+}
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.optionsHeader {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  line-height: 24px;
+  align-items: center;
+  .optionText {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+}
+.barhorizontalline {
+  width: 88%;
+  height: 1px;
+  background-color: #bab9b9;
+}
+.barhorizontallineFilter {
+  width: 84%;
+  height: 1px;
+  background-color: #bab9b9;
+}
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.applyButton {
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  font-size: 16px !important;
+  height: 40px;
+  border-radius: 50px !important;
+}
+.applyButtonText {
+  text-align: center;
+}
+.cancelText {
+  color: #1859b4;
+  font-size: 16px;
+  cursor: pointer;
+}
+.closeIcon,
+.filterIcon {
+  cursor: pointer;
+}
+.datePicker{
+  border: 1px solid #d9d9d9 !important; /* neutral gray */
+  border-radius: 4px !important;
+  display: flex;
+  padding-right: 8px;
+  .borderLine{
+    height: 34px;
+    border: 0.5px solid #d9d9d9 !important; /* neutral gray */
+    border-radius: 4px !important;
+    margin-right: 8px;
+  }
+}
+:global(.rs-picker-popup) {
+  z-index: 1500 !important;
+}
+:global(.rs-input-group-addon) {
+  display: none !important;
+}
+:global(.rs-picker-error > .rs-picker-input-group) {
+  border: none !important; /* neutral gray */
+  // border-color: #d9d9d9
+}
+:global(.rs-input-group) {
+  border: none !important; /* neutral gray */
+}

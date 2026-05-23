@@ -1,0 +1,101 @@
+
+$toast-primary-color: #051b46;
+$toast-font-family: "Noto Sans", sans-serif;
+$toast-border-radius: 8px;
+$toast-width: 450px;
+$toast-height: 96px;
+$toast-top-offset: 80px;
+$toast-close-size: 24px;
+$toast-icon-margin: 8px;
+$toast-padding: 16px;
+$toast-spacing-small: 7px;
+$toast-spacing-medium: 9px;
+$toast-spacing-large: 30px;
+
+// Mixins
+@mixin toast-text-base {
+  font-family: $toast-font-family;
+  color: $toast-primary-color;
+  text-align: left;
+  margin: 0;
+}
+
+@mixin toast-container-base {
+  width: $toast-width;
+  height: $toast-height;
+  background-image: url("../../../assets/images/toastMessageBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: $toast-top-offset;
+}
+
+// Main styles
+.customToastContent {
+  display: flex;
+  align-items: flex-start;
+  border-radius: $toast-border-radius;
+  // padding: $toast-padding;
+  gap: $toast-icon-margin;
+}
+
+.customToastIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-bottom: $toast-spacing-large;
+}
+ 
+
+.customToastText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $toast-spacing-small;
+}
+
+.customToastSuccess,
+.customToastError {
+  @include toast-container-base;
+}
+
+.customToastDefault {
+  @include toast-container-base;
+  background-image: none;
+  background-color: #f5f5f5;
+}
+
+.customToastTitle {
+  @include toast-text-base;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: $toast-spacing-medium;
+}
+
+.customToastMessage {
+  @include toast-text-base;
+  font-weight: 400;
+  font-size: 14px;
+  // margin-top: $toast-spacing-small;
+  // margin-left: $toast-spacing-small;
+  line-height: 1.4;
+}
+
+.customToastClose {
+  width: $toast-close-size;
+  height: $toast-close-size;
+  cursor: pointer;
+  position: absolute;
+  top: $toast-padding;
+  right: $toast-padding;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: 2px solid $toast-primary-color;
+    outline-offset: 2px;
+  }
+}

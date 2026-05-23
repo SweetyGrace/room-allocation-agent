@@ -1,0 +1,71 @@
+@import "../../../common/styles/variables.scss";
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  font-family: $natoSansRegular;
+  color: $darkBlue;
+  gap:8px;
+  width:200px;
+}
+
+.checkboxText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  cursor: pointer;
+  color: $darkBlue;
+  font-family: $natoSansRegular;
+}
+.checkBoxWithoutWidth{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.checkboxTextWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxTextOrange {
+  color: orange;
+  font-weight: 500;
+}
+.disabledReason {
+  color: orange;
+  font-size: 0.9em;
+  margin-left: 8px;
+}
+
+.colorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.disable{
+  color: gray;
+}
+.checkboxText {
+  cursor: pointer;
+  color: $blackBlue;
+}
+
+.checkboxTextDisabled {
+  cursor: not-allowed !important;
+  color: $light-gray !important;
+}
+
+.checkboxTextOrange {
+  cursor: not-allowed !important;
+  color: orange !important;
+}
+.disabledIcon {
+  background-color: $light-gray !important;
+  border-radius: 4px !important;
+}
+.cursorNotAllowed {
+  cursor: not-allowed;
+}

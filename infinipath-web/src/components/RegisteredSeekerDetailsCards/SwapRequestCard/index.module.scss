@@ -1,0 +1,145 @@
+.container{
+    padding: 24px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 16px;
+    border: 1px solid #d5d7da;
+    box-shadow: 0 2px 4px rgba(10, 13, 18, 0.05);
+    margin: 15px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.detailsCard {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color:#051b46
+  }
+
+  .selectSection {
+    width: 60%;
+
+    .selectLabel {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 400;
+      size: 16px;
+      line-height: 30px;
+      color: #888888;
+    }
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  gap: 16px;
+  .section1{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    gap: 30%;
+  }
+}
+
+.detailItem {
+  flex: 1 1 calc(33.33% - 16px); /* 3 items per row */
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  max-width: 280px;
+  max-height: 60px;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+  size: 16px;
+  line-height: 30px;
+  color: #888888;
+}
+
+.value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.confirmButton {
+  
+  font-size: 16px;
+}
+
+.confirmText {
+  color: var(--gray-100);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.buttonSection {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+.radioGroup {
+  margin: 10px 0;
+  display: flex;
+  gap: 30%;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  
+  label {
+    margin-left: 8px;
+  }
+}
+
+.radioInput {
+  margin: 0;
+}
+
+.selectLabel {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+  size: 16px;
+  line-height: 30px;
+  color: #888888;
+}
+.values{
+    font-size: 1rem;
+    font-weight: 400;
+    font-size: 16px;
+    color: #051b46;
+}
+.question{
+  font-size: 16px;
+  font-weight: 400;
+}

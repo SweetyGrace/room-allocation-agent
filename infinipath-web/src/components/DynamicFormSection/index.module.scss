@@ -1,0 +1,70 @@
+@import "../../styles.scss";
+@import "../../common/styles/variables.scss";
+.formSection {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg $spacing-xl;
+  margin-bottom: $spacing-lg;
+  box-shadow: $box-shadow-sm;
+}
+
+.sectionHeader {
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-sm;
+  border-bottom: 2px solid $border-gray;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  margin: 0 0 $spacing-xs 0;
+}
+
+.sectionSubtitle {
+  font-size: $font-size-sm;
+  color: $footer-gray;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.fieldRow {
+  display: flex;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  
+  // When row has only one full-width field
+  &:has(> :only-child) {
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .formSection {
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  .sectionHeader {
+    margin-bottom: $spacing-md;
+  }
+
+  .sectionTitle {
+    font-size: $font-size-lg;
+  }
+
+  .fieldRow {
+    flex-direction: column;
+    gap: 0;
+  }
+}

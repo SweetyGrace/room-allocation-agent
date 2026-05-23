@@ -1,0 +1,184 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $natoSansRegular;
+}
+
+
+
+.select {
+  width: 100%;
+  margin-bottom: $spacing-md;
+
+  :global {
+    .filterSelect__control {
+      min-height: 35px;
+      
+      &--is-focused {
+        border-color: $color-primary;
+        box-shadow: none;
+      }
+      
+      &:hover {
+        border-color: $color-primary;
+      }
+    }
+
+    .filterSelect__multi-value {
+      background-color: transparent;
+      border: 1px solid $color-primary;
+      border-radius: $border-radius-lg;
+      padding: 0 $spacing-xs;
+      height: 20px;
+      display: flex;
+      align-items: center;
+
+      &__label {
+        color: $color-primary;
+        font-size: $font-size-xs;
+        line-height: 20px;
+      }
+
+      &__remove {
+        color: $color-primary;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+          background-color: transparent;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.pdfContainer {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  
+  &:hover {
+    cursor: pointer;
+    
+    .hoverEyePreview {
+      display: block;
+      opacity: 1;
+    }
+  }
+  
+  .hoverEyePreview {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: $hoverEye-bg; 
+    background-image: url("../../assets/images/eye-preview.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.pdfModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $pdfModel-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.pdfModalContent {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background: $color-white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pdfCloseButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: $close-button;
+  color: $color-white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $linkColor;
+    transform: scale(1.1);
+  }
+}
+  .pdfView {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+@media (max-width: 1024px) {
+  .pdfCloseButton {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .pdfCloseButton {
+    width: 28px;
+    height: 26px;
+    font-size: 14px;
+    top: 10px;
+    right: 8px;
+  }
+}
+@media (max-width: 786px) {
+  .pdfCloseButton {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    top: 8px;
+    right: 8px;
+  }
+}
+@media (max-width: 650px) {
+  .pdfCloseButton {
+   display: none;
+  }
+}

@@ -1,0 +1,210 @@
+.container {
+  padding: 24px;
+  height: 100%;
+  
+  h1 {
+    margin-bottom: 24px;
+    color: #051B46;
+  }
+}
+
+.topShadow {
+  max-width: 1200px; // Increased max-width
+  margin: 0 auto; // Center the container
+}
+
+.breadcrumbs {
+  
+  .active {
+    color: #1976d2;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.contentContainer {
+  .titleSection {
+    margin-bottom: 32px;
+    
+    .titleHeadingDiv {
+      .titleHeading {
+        font-size: 24px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+.titleHeading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+
+.questionCard {
+  width: 70%;
+  background: white;
+  border-radius: 8px;
+  padding: 16px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  .cardContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    .questionInfo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 0; // Prevents flex items from overflowing
+      .questionType {
+        font-size: 13px;
+        color: #64748b;
+        padding: 6px 12px;
+        background: #f1f5f9;
+        border-radius: 4px;
+        white-space: nowrap;
+        min-width: 120px;
+        text-align: center;
+        text-transform: capitalize;
+      }
+    }
+
+  }
+}
+.questionCell{
+  margin-top: 7px;
+}
+.questionText {
+  font-size: 15px;
+  color: #2c3e50;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+
+}
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 280px;
+  justify-content: space-between;
+
+  .MuiIconButton-root {
+    color: #ebebeb;
+    padding: 8px;
+    
+    &:hover {
+      color: #1976d2;
+      background-color: rgba(25, 118, 210, 0.04);
+    }
+  }
+}
+
+.formRowButton {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 24px;
+
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+.publishButton {
+  color: white;
+  margin-top: -10px;
+}
+.addButton {
+  padding: 12px 24px;
+  background: #2F73F1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background: #1b5cd9;
+  }
+}
+
+.tabsContainer {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.tabsAndSearch {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 24px;
+}
+
+.questionsGrid {
+  min-height: calc(100vh - 250px);
+}
+
+.gridSection {
+  height: 100%;
+}
+
+.noQuestionsText {
+  text-align: center;
+  color: #666;
+  margin-top: 32px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.editButton {
+  color: #1976d2;
+  
+  &:hover {
+    background-color: rgba(25, 118, 210, 0.04);
+  }
+}
+
+.deleteButton {
+  color: #d32f2f;
+  
+  &:hover {
+    background-color: rgba(211, 47, 47, 0.04);
+  }
+}
+

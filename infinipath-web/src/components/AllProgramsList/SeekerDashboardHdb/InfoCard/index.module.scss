@@ -1,0 +1,39 @@
+@import '../../../../common/styles/variables.scss';
+
+.card {
+  width: 90%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 1px;
+  background: var(--Text-White, #FFF);
+  box-shadow: 0px 1px 20px 0px #0000001A;
+ margin-bottom: 30px;
+ 
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  color: #667eea;
+}
+
+.title {
+  color: $darkBlue;
+  font-family: $natoSansBold;
+}
+
+.content {
+  margin-top: 30px;
+  display: grid;
+  gap:40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

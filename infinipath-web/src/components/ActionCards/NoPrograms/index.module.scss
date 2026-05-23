@@ -1,0 +1,48 @@
+.noPrograms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noProgramsContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* gap between image and text */
+}
+
+.noProgramsImage {
+  width: 120px;
+  height: 120px;
+}
+
+.noProgramsText {
+  width: 340px;
+  height: 56px;
+  font-family: 'Noto Sans', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #051B46;
+}
+
+.noProgramsButtonWrapper {
+  margin-top: 40px; /* gap between text and button */
+}
+
+.programsDashboardAddButton {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1859b4;
+  width: 178px !important;
+  height: 40px;
+  font-size: 16px;
+  background-image: none !important;
+  background-color: none !important;
+  border: 1px solid #1859b4 !important;
+  padding: unset !important;
+}

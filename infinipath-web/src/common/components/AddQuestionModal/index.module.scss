@@ -1,0 +1,406 @@
+@import "../../../common/styles/variables.scss";
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 90vw;
+
+  h2 {
+    margin-bottom: 24px;
+    color: #051b46;
+  }
+}
+
+.formGroup {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #051b46;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: #2f73f1;
+    }
+  }
+}
+
+.error {
+  color: $error;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+
+  button {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+
+    &[type="button"] {
+      background: white;
+      border: 1px solid #ddd;
+      color: white;
+
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
+
+    &[type="submit"] {
+      background: #2f73f1;
+      border: none;
+      color: white;
+
+      &:hover {
+        background: #1b5cd9;
+      }
+    }
+  }
+}
+
+.modalContent {
+  background: white;
+  border-radius: 8px;
+  width: calc(100% - 600px);
+  height: calc(100% - 200px);
+  margin: 0 auto;
+  margin-top: 70px;
+  overflow: auto;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #dddddd;
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #051b46;
+    margin: 0;
+  }
+
+  .closeIcon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.modalBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .fieldBlock {
+    position: relative;
+    width: 400px;
+  }
+
+  .inputFields {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #051b46;
+
+    &:focus {
+      outline: none;
+      border-color: #2f73f1;
+    }
+
+    &.errorFields {
+      border-color: $error;
+    }
+  }
+
+  .errorMsg {
+    color: $error;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+}
+
+.fieldLabel {
+  font-size: 18px;
+  font-weight: 500;
+  color: #051b46;
+  margin-bottom: 8px;
+  width: 400px;
+}
+
+.optionsSection {
+  margin-top: 20px;
+
+  .optionsList {
+    margin-bottom: 20px;
+  }
+
+  .optionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #f8f9fa;
+  }
+}
+
+.optionInputContainer {
+  border-radius: 4px;
+  padding-bottom: 16px;
+
+  .categorySelect {
+    margin-bottom: 8px;
+  }
+}
+
+.optionHeader {
+  font-size: 18px;
+  font-weight: 500;
+  color: #051b46;
+  margin-bottom: 8px;
+  width: 400px;
+}
+
+.priorityInput {
+  margin: 12px 0;
+
+  select {
+    width: 100px;
+    height: 35px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 0 8px;
+  }
+}
+
+.addButton {
+  margin-top: 12px;
+  background-color: #1976d2;
+  color: white;
+
+  &:hover {
+    background-color: #1565c0;
+  }
+}
+
+.optionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.optionsList {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.optionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e0e0e0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.otherOptionFields {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  // background-color: #f8f9fa;
+  border-radius: 4px;
+  // border: 1px solid #e0e0e0;
+}
+
+.otherOptionField {
+  width: 400px;
+  input {
+    width: 100%;
+    height: 35px;
+    padding: 0 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+
+    &.errorFields {
+      border-color: #d32f2f;
+    }
+  }
+
+  .errorMsg {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+}
+
+.optionInputContainer {
+  margin-bottom: 16px;
+  // padding: 16px;
+  // border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: white;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.otherValidationField {
+  margin-top: 8px;
+
+  input {
+    width: 100%;
+    height: 35px;
+    padding: 0 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+
+    &.errorFields {
+      border-color: #d32f2f;
+    }
+  }
+
+  .errorMsg {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+}
+
+// Optional: Add these styles if you want to customize the scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.buttonText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: $white;
+  width: 120px;
+  height: 40px;
+}
+
+.addButton {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: $white;
+  height: 40px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.validationsSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-direction: column;
+  // width: 100%;
+  margin-top: 20px;
+  width: 400px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+.validationDropDown {
+  width: 400px;
+}
+
+.select {
+  width: 100%;
+
+  :global {
+    .filterSelect__control {
+      min-height: 35px;
+      border-radius: 4px;
+    }
+
+    .filterSelect__value-container {
+      padding: 2px 8px;
+    }
+
+    .filterSelect__multi-value {
+      margin: 2px;
+    }
+
+    .filterSelect__menu {
+      z-index: 1000;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 194px;
+  height: 160px;
+  gap: 16px;
+  border-radius: 12px;
+border: 1.5px solid transparent;
+background:
+linear-gradient(white, white) padding-box,
+linear-gradient(95.12deg, #f0f0f0 -0.86%, #dcdcdc 104.51%) border-box;
+  box-shadow: 2px 4px 10px 0px #EEF4F9;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+.HomeIconDiv {
+  height: 28px;
+  width: 28px;
+}
+
+.HomeDetailsText, .diffStyles {
+  width:120px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #051b46;
+  line-height: 26px;
+  text-align: center;
+  text-wrap: wrap;
+  align-content: center; 
+}
+.diffStyles{
+  width:70px;
+}
+
+.container:hover{
+  border: 1px solid var(--Colors-Blue-Light, #1859B4);
+  box-shadow: 1px 2px 12px 0px #3BA4FD29;
+  background: linear-gradient(288.51deg, #F5FCFF 12.38%, #F7FDFF 33.17%, #FFFFFF 93.11%);
+
+}

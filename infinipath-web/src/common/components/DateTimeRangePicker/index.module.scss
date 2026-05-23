@@ -1,0 +1,101 @@
+@import "../../../common/styles/variables.scss";
+
+.dateTimeRangeContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.dateTimePickerWrapper {
+  flex: 1;
+  min-width: 0; // Allow flex shrinking
+}
+
+.dateTimeHyphen {
+  font-size: 16px;
+  font-weight: 500;
+  color: $lightBlack;
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.dateTimePicker {
+  width: 100%;
+  
+  :global {
+    .MuiOutlinedInput-root {
+      border-radius: 4px;
+      background-color: $white;
+      
+      &:hover .MuiOutlinedInput-notchedOutline {
+        border-color: $blue;
+      }
+      
+      &.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: $blue;
+        border-width: 2px;
+      }
+      
+      &.Mui-error .MuiOutlinedInput-notchedOutline {
+        border-color: $error;
+      }
+    }
+    
+    .MuiInputLabel-root {
+      color: $grey;
+      font-size: 14px;
+      
+      &.Mui-focused {
+        color: $blue;
+      }
+      
+      &.Mui-error {
+        color: $error;
+      }
+    }
+    
+    .MuiInputBase-input {
+      font-size: 14px;
+      color: $darkBlue;
+      padding: 10px 14px;
+      
+      &::placeholder {
+        color: $grey;
+        opacity: 1;
+      }
+    }
+    
+    .MuiIconButton-root {
+      color: $darkBlue;
+      
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.dateError {
+  color: $error;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .dateTimeRangeContainer {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .dateTimeHyphen {
+    display: none;
+  }
+  
+  .dateTimePickerWrapper {
+    width: 100%;
+  }
+}

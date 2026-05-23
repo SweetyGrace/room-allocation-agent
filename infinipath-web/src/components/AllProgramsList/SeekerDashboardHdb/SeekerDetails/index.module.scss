@@ -1,0 +1,87 @@
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.seekerDetailsContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #374151;
+}
+.detailCards{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  
+  &:disabled {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editButton, .saveButton, .cancelButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.editButton {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.saveButton {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.cancelButton {
+  background-color: #6b7280;
+  color: white;
+  border-color: #6b7280;
+}
+
+.statusContainer {
+  padding: 0.5rem 0;
+}
+
+.editActions {
+  display: flex;
+  gap: 0.5rem;
+}

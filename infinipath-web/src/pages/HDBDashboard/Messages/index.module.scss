@@ -1,0 +1,163 @@
+@import "../../../common/styles/variables.scss";
+.cardWrapper {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.cardHeader {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.image {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%; /* if you want circular */
+  background: rgb(240, 240, 240);
+    border: 1px solid rgb(238, 238, 238);
+}
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  background-color: #ffffff;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px 12px 10px;
+  background-color: #F7F9FB;
+  border-radius: 8px;
+  height: 56px;
+}
+
+.altBackground {
+  background-color: #f9fafb;
+}
+.verticalLine {
+  width: 1px;
+  background-color: #D9D9D9;
+  height: 16px;
+}
+
+.messageInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #111827;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+overflow: hidden;
+color: var(--Text-Blue, #051B46);
+text-overflow: ellipsis;
+/* Body/Regular */
+font-family: "Noto Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 187.5% */
+}
+
+.message {
+ overflow: hidden;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 1;
+color: var(--Text-Blue, #051B46);
+text-overflow: ellipsis;
+
+/* Body/Semibold */
+font-family: "Noto Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+}
+
+.responderWrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  white-space: nowrap;
+}
+.responderSeprator {
+  height: 16px;
+}
+
+.responder {
+  overflow: hidden;
+  color: var(--Text-Blue, #051B46);
+  text-overflow: ellipsis;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 187.5% */
+}
+
+.responderRed {
+  overflow: hidden;
+  color: var(--Primary-Red, #D9251D);
+  text-overflow: ellipsis;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.reply {
+  color: var(--Text-Link, #1859B4);
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 187.5% */
+  cursor: pointer;
+  background: none;
+}
+
+.bodyNoScroll {
+  overflow-y: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  width: 100% !important;
+}
+.noData {
+  margin-top: 3%;
+  text-align: center;
+  color: $mediumGrey;
+  font-size: 1.2rem;
+}
+.valueText {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+}
+.emptyName {
+  color: $textGrey;
+}

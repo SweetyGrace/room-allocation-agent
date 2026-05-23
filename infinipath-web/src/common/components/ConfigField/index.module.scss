@@ -1,0 +1,55 @@
+@import "../../../common/styles/variables.scss";
+
+.labelInput {
+  margin-bottom: 16px;
+  width: 100%;
+
+  .fieldLabel {
+    font-size: 14px;
+    color: #051b46;
+    margin-bottom: 8px;
+  }
+
+  .inputFields {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+
+    &.errorFields {
+      border-color: $error;
+    }
+  }
+
+  .errorMsg {
+    color: $error;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .validationDropDown {
+    margin-bottom: 8px;
+  }
+
+  .otherValidationField {
+    margin-top: 8px;
+  }
+}
+
+.RadioContainer{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.radioInput{
+  margin-right: 4px;
+}

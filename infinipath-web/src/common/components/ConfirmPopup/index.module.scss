@@ -1,0 +1,169 @@
+@import "../../styles/variables.scss";
+// Component-specific variables
+$alert-primary-color: #051b46;
+$alert-secondary-color: #1859b4;
+$alert-white-color: #fff;
+$alert-border-color: #e0e0e0;
+$alert-overlay-bg: rgba(0, 0, 0, 0.4);
+$alert-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+$alert-font-family: "Noto Sans", sans-serif;
+
+// Dimensions
+$alert-container-width: 508px;
+$alert-container-min-height: 150px;
+$alert-container-border-radius: 16px;
+$alert-container-padding: 24px;
+
+// Icon
+$alert-icon-size: 48px;
+$alert-icon-margin-bottom: 16px;
+
+// Buttons
+$alert-button-height: 40px;
+$alert-button-border-radius: 20px;
+$alert-cancel-button-width: 140px;
+$alert-confirm-button-width: 150px;
+$alert-button-gap: 16px;
+
+// Typography
+$alert-message-font-size: 16px;
+$alert-message-line-height: 30px;
+$alert-message-font-weight: 500;
+$alert-title-font-weight: 600;
+$alert-title-font-size: 16px;
+$alert-title-font-style: $natoSansBold;
+
+// Spacing
+$alert-header-margin-bottom: 30px;
+
+// Z-index
+$alert-z-index: 2000;
+
+// Mixins
+@mixin alert-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin alert-text-base {
+  font-family: $alert-font-family;
+  color: $alert-primary-color;
+}
+
+// Main styles
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $alert-overlay-bg;
+  @include alert-flex-center;
+  z-index: $alert-z-index;
+}
+
+.container {
+  background: $alert-white-color;
+  border-radius: $alert-container-border-radius;
+  padding: $alert-container-padding;
+  width: $alert-container-width;
+  min-height: $alert-container-min-height;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: $alert-shadow;
+  position: relative;
+  border: 1px solid $alert-border-color;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: $alert-icon-size;
+  height: $alert-icon-size;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+  }
+}
+
+.message {
+  @include alert-text-base;
+  font-size: $alert-message-font-size;
+  line-height: $alert-message-line-height;
+  font-weight: $alert-message-font-weight;
+  text-align: left;
+}
+
+.title{
+    @include alert-text-base;
+    font-size: $alert-title-font-size;
+    line-height: $alert-message-line-height;
+    font-weight: $alert-title-font-weight;
+    text-align: left;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: $alert-button-gap;
+  width: 100%;
+}
+.border{
+    width: 100%;
+    margin-bottom: $alert-button-border-radius;
+}
+.confirmText {
+  color: $alert-secondary-color;
+}
+
+.cancelText {
+  color: $alert-white-color;
+}
+
+.cancelButton {
+  background-color: $alert-white-color;
+  color: $alert-secondary-color;
+  cursor: pointer;
+  border: 1px solid $alert-secondary-color;
+  border-radius: $alert-button-border-radius;
+  width: $alert-cancel-button-width;
+  height: $alert-button-height;
+  padding: 0 $alert-container-padding;
+  @include alert-flex-center;
+}
+
+.confirmButton {
+  width: $alert-confirm-button-width;
+  height: $alert-button-height;
+}
+
+.header {
+  margin-bottom: $alert-header-margin-bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.iconContainer{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: $alert-icon-margin-bottom;
+}
+
+.closeIcon{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    img{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+}

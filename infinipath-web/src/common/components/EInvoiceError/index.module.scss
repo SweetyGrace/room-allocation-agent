@@ -1,0 +1,68 @@
+
+@import "../../../common/styles/variables.scss";
+
+.confirmCard {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 20px;
+  margin: 15px;
+  box-shadow: 0 2px 4px rgba(10, 13, 18, 0.05);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.warningIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.invoiceLabel {
+  color: $blackBlue;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: 26px;
+}
+
+.fieldRow {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+.errorContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.errorLabel {
+  color: $blackBlue;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: 22px;
+  margin: 0;
+}
+
+.errorMessage {
+  color: $blackBlue;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: 22px;
+  margin: 0;
+  padding-left: 32px;
+}
+
+.loadingText {
+  color: $blackBlue;
+  font-size: $font-size-sm;
+  font-style: italic;
+  margin: 0;
+}

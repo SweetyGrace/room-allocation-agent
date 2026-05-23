@@ -1,0 +1,63 @@
+@import '../../../../../common/styles/variables.scss';
+
+.stepperRoot {
+    // your MUI stepper styles
+  }
+  
+  .stepperIconLabel {
+    // label style
+  }
+  .stepperContent{
+    width: 25%;
+
+  }
+.seekerImg{
+    width: 100px;
+     height: 100px;
+}
+  .stepperLabels {
+    font-size: 14px;
+  }
+  
+  .activeLabel {
+    font-weight: 600;
+    color: #0070f3;
+  }
+  
+  .inactiveLabel {
+    color: #888;
+  }
+  
+  .header{
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+    width: 200px;
+    gap:20px;
+  }
+
+  .title{
+     color: $darkBlue;
+     font-family: $natoSansBold;
+        
+  }
+
+  .profileBlock{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+   gap:10px;
+   margin-bottom: 20px;
+  }
+  .stepperHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+  }
+
+  .backArrow{
+    cursor: pointer;
+  }

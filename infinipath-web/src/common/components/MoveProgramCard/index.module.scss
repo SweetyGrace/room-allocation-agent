@@ -1,0 +1,368 @@
+.swapLabel {
+  color: #051b46;
+  // font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.swapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.moveProgramCard {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  gap: 12px;
+  min-height: 507px;
+  gap: 10px;
+  margin-top: -10px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--Stroke-Grey-2, #d9d9d9);
+  box-shadow: 0px 1px 2px 0px var(--Colors-Effects-Shadows-shadow-xs, rgba(10, 13, 18, 0.05));
+  width: 100%;
+  height: 543px;
+}
+
+.programTag {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.closeIcon {
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+}
+
+.filterContainer {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  gap: 12px 14px;
+  align-self: stretch;
+  flex-wrap: wrap;
+  border-radius: 8px 8px 0px 0px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.07);
+  margin-bottom: 10px;
+}
+
+.filterTags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  gap: 14px;
+}
+
+.filterTag {
+  display: flex;
+  height: 24px;
+  padding: 2px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: -1px;
+  border-radius: 20px;
+  border: 1px solid #1859b4;
+  background: #f5f5f5;
+  font-size: 14px;
+  color: #1859b4;
+  user-select: none;
+  cursor: pointer;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  &:hover {
+    background-color: #e5e7eb;
+  }
+
+  &.selected {
+    background: #1859b4;
+    color: #fff;
+    border-color: #1859b4;
+    font-weight: 500;
+  }
+}
+
+.label {
+  color: #051b46;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.selectBox {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #aaa;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  margin-top: 12px;
+}
+
+.selector {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.dropdownItem {
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+}
+
+.swapButton {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px;
+  background-color: #1859b4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #134c99;
+  }
+}
+
+.searchIcon {
+  margin-right: 8px;
+}
+
+.placeholder {
+  color: #888;
+}
+
+.innercontainer {
+  display: flex;
+  padding: 16px 20px 20px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  align-self: stretch;
+  border-radius: 0px 0px 8px 8px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.07);
+  margin-top: -12px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.filterDivider {
+  width: 100%;
+  height: 1px;
+  background: #e0e0e0;
+  margin-top: 15px;
+}
+
+.inputField {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  flex: 1;
+  padding-left: 8px;
+  color: #051b46;
+}
+
+.moveProgramContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.headingSwap {
+  color: #051B46;
+}
+
+.usersList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.userItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.namePhone {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  align-items: flex-start;
+}
+
+.name {
+  font-weight: 600;
+  color: #1e293b; // dark text
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.phone {
+  font-weight: 600;
+  color: #666;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.selectedUser {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .moveProgramCard {
+    background-color: none;
+    border: none;
+    height: auto;
+    min-height: fit-content;
+    padding: 0px;
+  }
+
+  .label {
+    margin-bottom: 0px;
+  }
+
+  .selectBox {
+    margin-top: 0px;
+  }
+
+  .filterTags {
+    flex-wrap: wrap;
+  }
+
+  .filterTag {
+    border: none;
+    height: 40px;
+    margin-bottom: 0px;
+    padding: 2px 12px;
+    color: #051B46;
+  }
+
+  .filterContainer {
+    gap: 16px;
+    padding: 12px 16px 16px 16px;
+  }
+
+  .name {
+    text-align: start;
+    line-height: 18px;
+    color: #051b46;
+    font-size: 14px;
+  }
+
+  .userInfo {
+    width: 60%;
+  }
+
+  .numberPhone {
+    gap: 4px;
+  }
+
+  .phone {
+    line-height: 18px;
+  }
+}
+
+.usersListWrapper {
+  max-height: 140px;
+  overflow-y: auto;
+  margin-top: 8px;
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+  height: fit-content;
+} 
+
+@media screen and (max-width:400px) {
+  .userItem {
+    padding: 0px;
+  }
+  .phone {
+    width: calc(100% - 70%);
+  }
+}

@@ -1,0 +1,88 @@
+@import "../../common/styles/variables.scss";
+
+.barlinecontainer,
+.barlineChart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 14px;
+  line-height: 28px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 24px;
+  font-weight: 400;
+  align-items: center;
+  color: $darkBlue;
+}
+.barhorizontalline {
+  width: 100%;
+  height: 1px;
+  background-color: #dfe8ef;
+}
+.barlinewrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+}
+
+.chart {
+  width: 90%;
+  height: 80%;
+  max-height: 90%;
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 33%; /* Ensure three labels per row */
+}
+
+.colorBox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.labelText {
+  text-align: center;
+  width: 100%;
+}
+.clickable-label {
+  cursor: pointer !important;
+}
+
+.noData{
+  color: $darkBlue;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.box1, .box2, .box4, .box5, .box6, .box7 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}

@@ -1,0 +1,20 @@
+// index.module.scss
+.row_cell {
+  position: relative; // Ensure the icon can be positioned absolutely
+}
+
+.actionIcon {
+  display: none; // Initially hide the icon
+  position: absolute; // Position it absolutely within the cell
+  cursor: pointer; // Change cursor to pointer
+
+  // Add any additional styles for the icon
+}
+
+.row_cell:hover .actionIcon {
+  display: block; // Show the icon on hover
+}
+
+.customMenuList {
+  padding: 0px !important;
+}

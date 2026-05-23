@@ -1,0 +1,133 @@
+@import "../../../../../common/styles/variables.scss";
+.ratingSection h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: $darkBlue;
+}
+
+.reviewerText {
+  color: $darkBlue;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.ratingDetails {
+  margin-bottom: 16px;
+}
+
+.overallRating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ratingLabel {
+  color: $darkBlue;
+  font-size: 14px;
+}
+
+.ratingScore {
+  font-weight: 600;
+  color: $darkBlue;
+  font-size: 16px;
+   display: flex;
+    gap:5px;
+    align-items: center;
+}
+
+.ratingCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.yetToReviewLabel {
+  color: $darkBlue;
+  font-size: 14px;
+}
+
+.ratingCategory {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.categoryLabel {
+  color: $darkBlue;
+  font-size: 14px;
+}
+
+.reviewText {
+  color: $darkBlue;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.rmReview {
+  color: $darkBlue;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.RatingHeading{
+  font-size: 16px;
+    font-weight:400;
+     color:#051B46;
+     margin-bottom: 10px;
+}
+.prevRatingHeaderContainer
+  {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    .prevRatingHeading{
+    font-size: 16px;
+    font-weight:600;
+     color:#051B46
+  }
+    .prevRatingHeader{
+
+      .caretIcon{
+        cursor: pointer;
+      }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap:16px;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 400;
+      color:#051B46;
+      margin-bottom:10px;
+    }
+  }
+.prevRatingContainer
+{
+  display: flex;
+  flex-direction: column;
+  gap:24px;
+  margin:17px 0px 35px;
+  .prevRatingContent{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    color:#051B46;
+    .prevRatingText{
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .prevRatingReview{
+      margin-top: -14px;
+      text-align: justify;
+    }
+    .prevRatingScore {
+      font-weight: 600;
+      font-size: 16px;
+     color: $darkBlue;
+    }
+
+  }
+}

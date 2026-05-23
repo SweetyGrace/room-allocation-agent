@@ -1,0 +1,58 @@
+/* DefaulterOverlay styles - based on SwapFilterContent styles */
+@import "../../styles/variables.scss";
+
+.container {
+  padding: 0;
+}
+
+.userCardSection {
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+}
+
+.cancelButton {
+  background: transparent;
+  border: none;
+  color: $darkBlue;
+  font-size: $font-size-sm;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: $font-weight-medium;
+  transition: color 0.2s ease;
+}
+
+.cancelButton:hover {
+  color: $darkBlue;
+}
+
+.cancelButtonText{
+  color: $blue !important;
+  font-size: $font-size-sm;
+}
+
+.saveButtonText{
+  color: $white !important;
+  font-size: $font-size-sm;
+}
+
+.defaulterOverlay{
+  width: 50vw;
+}
+@media screen and (max-width: 1023px) {
+  .defaulterOverlay{
+    width:60vw;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .defaulterOverlay{
+    width:70vw;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .defaulterOverlay{
+    width:100vw;
+  }
+}

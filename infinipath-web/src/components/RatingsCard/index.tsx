@@ -1,0 +1,149 @@
+import React from "react";
+import styles from "./index.module.scss";
+import StarRating from "../SeatApprovalFlow/SeekerDetailsOverlay/Common/RatingSeeker";
+import { calculateOverallRating } from "../../utils/commonFunctions";
+import { RATING_KEYS, RECOMMENDATION_LABELS} from "../../constants";
+import { hasPermission } from "../../utils/roleBasedAccess";
+import { colorizeMahatriaInfinitheism } from "../../common/components/ColorizeMahatriaInfinitheism";
+import { CURRENT_RATING_IS } from "../../constants/textConstants";
+import star from "../../assets/images/star.svg"
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+
+interface RatingItem {
+    id: number;
+    programRegistrationId: string;
+    rmId: number;
+    ratingKey: string;
+    rating: string;
+}
+
+interface RatingSectionProps {
+    ratings: RatingItem[];
+    rmReview?: string;
+    userRole: string;
+    recommendations?: object; // Optional prop for recommendations
+    onEdit?: () => void; // Optional callback for edit action
+    seekerDetails?: any; // Optional prop for seeker details
+}
+
+
+
+const RatingSection: React.FC<RatingSectionProps> = ({
+  ratings,
+  rmReview,
+  userRole,
+  onEdit,
+  recommendations,
+  seekerDetails
+}) => {
+  const loader = useSelector((state:RootState) => state.ProgramReducer.loaderCounts.largeLoaderCount);
+  return (
+    <div className={styles.container}>
+      {ratings && ratings.length === 0 && (
+        <div>
+          <div className={styles.detailsCardHeadingWrapper}>
+            <div className={styles.title}>{RECOMMENDATION_LABELS.RM_REVIEW}</div>
+            {hasPermission(userRole, "ADD_REVIEW", "C") && seekerDetails.registrationStatus !== "cancelled" && (
+              <span
+                className={
+                  styles.editButton +
+                  (loader > 0  ? ` ${styles.disabled}` : "")
+                }
+                onClick={onEdit}
+              >
+                {RECOMMENDATION_LABELS.ADD_REVIEW}
+              </span>
+            )}
+          </div>
+          <p className={styles.noRatings}>{RECOMMENDATION_LABELS.NO_RATING}</p>
+        </div>
+      )}
+      {ratings && ratings.length > 0 && (
+        <div className={styles.detailsCard}>
+          <div className={styles.detailsCardHeadingWrapper}>
+            <h2 className={styles.title}>{RECOMMENDATION_LABELS.SEEKER_RATINGS}</h2>
+            {hasPermission(userRole, "ADD_REVIEW", "C") && (
+              <span
+                className={
+                  styles.editButton +
+                  (loader > 0 ? ` ${styles.disabled}` : "")
+                }
+                onClick={onEdit}
+              >
+                {RECOMMENDATION_LABELS.UPDATE_REVIEW}
+              </span>
+            )}
+          </div>
+          <div className={styles.cardContent}>
+            <div className={styles.ratingDetails}>
+              <div className={styles.overallRating}>
+                <span className={styles.ratingLabel}>{CURRENT_RATING_IS}</span>
+                <span className={styles.ratingScore}>
+                  <img src={star} alt="star" width={13} height={13} />
+                  <span>{calculateOverallRating(ratings)}</span>
+                </span>
+              </div>
+
+              {/* <div className={styles.ratingCategories}>
+                {RATING_KEYS.map(({ label, key }) => {
+                  const ratingValue =
+                    ratings.find(
+                      (r) => r.ratingKey.toLowerCase() === key.toLowerCase(),
+                    )?.rating || "0";
+
+                  return (
+                    <div key={key} className={styles.ratingCategory}>
+                      <span className={styles.categoryLabel}>{label}</span>
+                      <StarRating count={Number(ratingValue)} />
+                    </div>
+                  );
+                })}
+              </div> */}
+              <div className={styles.rmReview}>
+                <span className={styles.reviewLabel}>Review Comments:</span>
+                <p className={styles.reviewText}>
+                  {rmReview
+                    ? rmReview.split("\n").map((line, idx) => (
+                        <React.Fragment key={idx}>
+                          {colorizeMahatriaInfinitheism(line)}
+                          {idx < rmReview.split("\n").length - 1 && <br />}
+                        </React.Fragment>
+                      ))
+                    : ""}
+                </p>
+                {recommendations && Object.keys(recommendations).length > 0 && (
+                  <div className={styles.recommendations}>
+                    {recommendations["isRecommended"] === false ? (
+                      <p className={styles.recommendationItem}>
+                        {RECOMMENDATION_LABELS.NOT_RECOMMENDED}
+                      </p>
+                    ) : (
+                      <>
+                        {/* Generated by Copilot - Add follow-up count display */}
+                        {recommendations["followUpCount"] !== null && recommendations["followUpCount"] !== undefined && (
+                          <p className={styles.followUpCount}>
+                            Follow-up count: <span className={styles.followUpValue}>{recommendations["followUpCount"]}</span>
+                          </p>
+                        )}
+                        <p className={styles.recommendationItem}>
+                          {recommendations["recommendationKey"]} {"recommended"}
+                        </p>
+                        <p className={styles.recommendationText}>
+                          {colorizeMahatriaInfinitheism(recommendations["recommendationText"]) ||
+                            RECOMMENDATION_LABELS.NO_COMMENT}
+                        </p>
+                      </>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default RatingSection;

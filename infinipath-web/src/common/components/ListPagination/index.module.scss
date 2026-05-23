@@ -1,0 +1,195 @@
+@import "../../../common/styles/variables.scss";
+.listPagination {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 0;
+  border-top:1px solid $lightGrey;
+  width:100%;
+  justify-content: space-between;
+
+  .showingText {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .navButton {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 6px !important;
+    color: rgba(0, 0, 0, 0.54) !important;
+    border-radius: 50% !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    &:disabled {
+      color: rgba(0, 0, 0, 0.26) !important;
+    }
+
+    svg {
+      font-size: 20px !important;
+    }
+  }
+
+  .ellipsis {
+    color: rgba(0, 0, 0, 0.38) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.43 !important;
+    padding: 0 4px !important;
+    user-select: none;
+  }
+
+  .pageButton {
+    min-width: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 1.43 !important;
+    padding: 6px !important;
+    text-transform: none !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    color: #1976d2 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+
+    &:hover {
+      background-color: rgba(25, 118, 210, 0.04) !important;
+      box-shadow: none !important;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+    }
+
+    &:active {
+      box-shadow: none !important;
+    }
+  }
+
+  .pageButtonActive {
+    background-color: rgba(25, 118, 210, 0.12) !important;
+    color: #1976d2 !important;
+    box-shadow: none !important;
+
+    &:hover {
+      background-color: rgba(25, 118, 210, 0.16) !important;
+      box-shadow: none !important;
+    }
+
+    &:focus {
+      background-color: rgba(25, 118, 210, 0.16) !important;
+      box-shadow: none !important;
+    }
+
+    &:active {
+      box-shadow: none !important;
+    }
+  }
+
+  // Scoped Material-UI component overrides only within this pagination
+  .showingText {
+    // Select component overrides
+    .MuiSelect-root {
+      margin: 0 4px !important;
+      
+      .MuiSelect-select {
+        font-weight: 600 !important;
+        color: #1976d2 !important;
+        padding-right: 24px !important;
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        font-size: 14px !important;
+        line-height: 1.43 !important;
+        background: transparent !important;
+
+        &:focus {
+          background: transparent !important;
+        }
+      }
+
+      .MuiSelect-icon {
+        color: #1976d2 !important;
+        right: 0 !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+      }
+
+      &::before,
+      &::after {
+        display: none !important;
+      }
+    }
+
+    .MuiInputBase-root {
+      &::before,
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.listPagination {
+  @media (max-width: 768px) {
+    gap: 16px;
+    // flex-direction: column;
+    // align-items: flex-start;
+    padding:12px;
+
+    .showingText {
+      font-size: 13px !important;
+    }
+
+    .pagination {
+      gap: 4px;
+    }
+
+    .navButton,
+    .pageButton {
+      width: 28px !important;
+      height: 28px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pagination {
+      gap: 2px;
+    }
+
+    .navButton,
+    .pageButton {
+      width: 24px !important;
+      height: 24px !important;
+      font-size: 11px !important;
+    }
+
+    .ellipsis {
+      font-size: 12px !important;
+      padding: 0 2px !important;
+    }
+  }
+}
+.listPaginationPopover{
+  z-index: 3000 !important;
+}

@@ -1,0 +1,63 @@
+.cardContainer {
+    padding: 24px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    text-align: left;
+    gap: 20px;
+    border: 1px solid #D9D9D9;
+}
+
+.card_content {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #051b46;
+    line-height: 30px;
+    span {
+        font-size: 16px;
+        font-weight: bold;
+        color: #051b46;
+    }
+}
+
+.contentContainer {
+    display: flex; 
+    gap: 20px;   
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.copyImage {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-left: 3px;
+}
+.imageContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipCopied {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff !important;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 10px !important;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+// Generated

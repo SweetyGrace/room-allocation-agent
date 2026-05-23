@@ -1,0 +1,153 @@
+@import "../../../common/styles/variables.scss";
+
+.container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainBody {
+  flex: 1;
+}
+
+.contentWrapper {
+  padding-bottom: 2rem;
+}
+
+.titleSection {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg;
+  padding-bottom: 10px;
+  background: $bg-white-shade;
+}
+
+.titleWithBack {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.mainTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xl;
+  color: $darkBlue;
+  text-align: left;
+  display: flex;
+  gap: $spacing-md;
+  align-items: center;
+  
+  img {
+    cursor: pointer;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xl;
+  color: $darkBlue;
+  padding: 0px $spacing-lg;
+  margin-bottom: 26px;
+}
+
+.templateGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: $spacing-lg;
+  padding: 0px $spacing-lg;
+}
+
+.templateCard {
+  width: calc(33.333% - $spacing-md);
+  border: 1px solid $border-card-gray;
+  box-shadow: 2px 2px 4px 0px $blue-thick-shadow;
+  border-radius: $border-radius-xs;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: $white;
+  padding: $spacing-lg;
+  
+  &:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+.templateCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: $border-radius-xs;
+}
+
+.templateTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  margin: 0;
+}
+
+.templateInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $font-size-sm;
+}
+
+.templateStatus {
+  padding: $spacing-xs $border-radius-xs;
+  border-radius: $border-radius-xs;
+  background: $primaryGreen;
+  color: $white;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  text-transform: capitalize;
+}
+
+.templateDate {
+  color: $footer-gray;
+  font-size: $font-size-xs;
+}
+
+.noTemplates {
+  width: 100%;
+  text-align: center;
+  padding: 48px;
+  color: $footer-gray;
+  font-size: $font-size-md;
+}
+
+@media (max-width: 1024px) {
+  .templateCard {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .templateCard {
+    width: 100%;
+  }
+  
+  .templateGrid {
+    padding: 0px $spacing-md;
+  }
+  
+  .titleSection {
+    padding: $spacing-md;
+  }
+  
+  .subtitle {
+    padding: 0px $spacing-md;
+  }
+}

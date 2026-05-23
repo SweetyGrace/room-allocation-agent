@@ -1,0 +1,145 @@
+.dobContainer {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    position: relative;
+    color: #333;
+  }
+  
+  .dobContainer label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .dateInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  .picker {
+    position: absolute;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    margin-top: 4px;
+    z-index: 100;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .columns {
+    display: flex;
+    position: relative;
+    height: 250px;
+  }
+  
+  .columnWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+
+  .arrow {
+    text-align: center;
+    cursor: pointer;
+    color: #b0b0b0;
+    user-select: none;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  
+  .arrow:hover {
+    color: #333;
+  }
+  
+  .column {
+    flex: 1;
+    overflow-y: scroll;
+    list-style: none;
+    margin: 0;
+    padding: 80px 0; 
+    scrollbar-width: none;
+    scroll-behavior: auto;
+
+    /* Gradient mask for fading top and bottom items */
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.7) 10%,
+      rgba(255,255,255,1) 30%,
+      rgba(255,255,255,1) 70%,
+      rgba(255,255,255,0.7) 90%,
+      rgba(255,255,255,0) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.7) 10%,
+      rgba(255,255,255,1) 30%,
+      rgba(255,255,255,1) 70%,
+      rgba(255,255,255,0.7) 90%,
+      rgba(255,255,255,0) 100%
+    );
+  }
+  
+  .column::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .column li {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #888;
+  }
+  
+  .column li.selected {
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .selectionOverlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 36px;
+    transform: translateY(-50%);
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .setButton {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 20px;
+    // background-image: linear-gradient(90deg, #2879f2, #6f42c1);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  
+  .setButton:hover {
+    opacity: 0.9;
+  }

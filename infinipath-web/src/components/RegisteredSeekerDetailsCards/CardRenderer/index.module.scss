@@ -1,0 +1,250 @@
+@import "../../../common/styles/variables.scss";
+
+.cardContainer {
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 16px;
+  border: 1px solid #d5d7da;
+  box-shadow: 0 2px 4px rgba(10, 13, 18, 0.05);
+  margin: 15px;
+  margin-top: 40px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+  font-weight: 600;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.heading {
+  font-weight: 400;
+  size: 16px;
+  line-height: 32px;
+  color: #000000;
+}
+
+.editButton {
+  font-size: 14px;
+  color: #007bff;
+  margin-left: 8px;
+  cursor: pointer;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.editButton:hover {
+  color: #0056b3;
+}
+
+.cancelButton {
+  font-size: 16px;
+  color: red;
+  margin-left: 8px;
+  cursor: pointer;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.cancelButton:hover {
+  color: red;
+}
+
+.cardHeader h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color:#000000;
+  margin: 0;
+  padding: 10px;
+}
+
+.cardContent {
+  font-size: 16px;
+  color: #333;
+}
+
+.cancelButton {
+  background-image: none !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1859b4
+}
+
+.cancelText {
+  color: var(--primary-blue);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-right: 0px;
+}
+
+.formSection {
+  padding: 15px;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
+}
+
+
+.saveButton {
+  color: #fff;
+  font-size: 16px;
+  width: 150px;
+  height: 40px;
+}
+
+.saveText {
+  color: #fff;
+}
+
+.noDataMessage{
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.uploadContainer {
+  // padding: 0 2rem 2rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #002952;
+}
+.uploadHeading {
+  color: #051B46;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.uploadSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.uploadBox {
+  flex: 1;
+}
+.uploadLabel {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0;
+  text-align: left;
+}
+.dropArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #0070cc;
+  padding: 2rem;
+  height: 150px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  transition: border-color 0.3s ease;
+}
+.fileTypes {
+  color: #051B46;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 0.5rem;
+}
+.uploadLink {
+  color: #1859B4;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.uploadedPreview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.fileName {
+  color: #051B46;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin-left: 0;
+}
+.dragDropLabel {
+  color: #051B46;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+.uploadDivider {
+  width: calc(100% - 64px);
+  height: 1px;
+  background: #D9D9D9;
+  margin: 5px 32px 35px 32px;
+}
+.reuploadLabel {
+  color: #0760CD;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  cursor: pointer;
+  text-align: left;
+  display: block;
+}
+.paymentRequest{
+  display: flex;
+  align-items: center;
+  color: #0760CD;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.goodiesNote{
+  font-size: $font-size-sm;
+  color: $color-grey;
+  margin-top: 4px;
+  font-weight: $font-weight-normal;
+  line-height: 24px;
+  margin-bottom: 16px;
+}

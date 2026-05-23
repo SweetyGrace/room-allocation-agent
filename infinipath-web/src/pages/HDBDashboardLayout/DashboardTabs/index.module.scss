@@ -1,0 +1,158 @@
+.aiTab {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+  }
+
+  &::before {
+    content: "🤖";
+    font-size: 16px;
+  }
+}
+.aiIcon{
+  cursor: pointer;
+  height: 60px;
+  margin-right: -10px;
+}
+.tabsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21px 32px 5px;
+  background: #F9FAFB;
+  position: relative;
+  position: sticky;   // <-- Make it sticky
+  top: 0;             // <-- Stick to the top
+  z-index: 9; 
+  height: 56px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #051B46;
+  font-family: "Noto Sans";
+  margin: 0;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #051B46;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  // padding: 12px 0;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #374151;
+  }
+
+  &.active {
+    color: #2563eb;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: #2563eb;
+      border-radius: 2px 2px 0 0;
+    }
+  }
+}
+
+.headerSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusSelector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.toolbar {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.dropdownArrow {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 0px 2px 0px #0000001f;
+  z-index: 1000;
+  padding: 4px;
+  margin-top: 4px;
+}
+
+.dropdownItem {
+  padding: 8px;
+  &.selected {
+  background-color: #F4F8FB !important;
+}
+  cursor: pointer;
+  font-size: 14px;
+  color: #051B46;
+
+  &:hover {
+    background-color: #f4f8fb;
+  }
+}

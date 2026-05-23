@@ -1,0 +1,289 @@
+@import "../../common/styles/variables.scss";
+.container {
+  padding: 32px;
+  border-radius: 8px;
+  gap: 30px;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 56px;
+  .filtersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .closeIcon {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .floorLevelContainer,
+  .personLevelContainer {
+    margin: 20px 0;
+
+    .overAllFloorLevelContainer,
+    .overAllLevelContainer {
+      display: flex;
+      justify-content: space-between;
+
+      .levelContainer {
+        flex: 1;
+        margin-right: 15px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .levelHeading {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .checkboxesContainer,
+        .radioButtonsContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    }
+  }
+
+  .buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .buttonCancel {
+      cursor: pointer;
+      font-size: 14px;
+      color: #999;
+      text-decoration: underline;
+    }
+
+    .buttonContainer {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}
+
+.seekerRow {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  border: none;
+  padding: 0px;
+  height: fit-content;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .seekerImage {
+    margin: 0 15px;
+    border-radius: 50%;
+  }
+
+  .seekerDetails {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+    }
+
+    .verificationBadge {
+      background-color: #28a745;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  }
+}
+
+.errorMsg {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.growthSessionsText {
+  font-size: 18px;
+  margin: 20px 0;
+
+  span {
+    font-weight: bold;
+    color: #007bff;
+  }
+}
+
+.seekerCard {
+  width: 170px;
+  height: 180px;
+  box-shadow: 2px 4px 10px 0px #eef4f9;
+  border: 1.5px solid transparent;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(95.12deg, #f0f0f0 -0.86%, #dcdcdc 104.51%) border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.seekerName {
+  font-size: 16px;
+  font-weight: 400;
+  color: $darkBlue;
+}
+.seekerCardDelete {
+  width: 170px;
+  height: 180px;
+  box-shadow: 2px 4px 10px 0px #ff66061a;
+  border: 1.5px solid transparent;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(#fff7f2, #fff7f2) padding-box,
+    linear-gradient(95.12deg, #ffefe4 -0.86%, #ffebde 104.51%) border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addNewCard {
+  width: 170px;
+  height: 180px;
+  box-shadow: 2px 4px 10px 0px #eef4f9;
+  border-radius: 8px !important;
+  border: 1.5px solid var(--Colors-Blue-Light, #1859b4);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.addText {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1859b4;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px; /* Adjust the spacing as needed */
+  height: 384px;
+  overflow-y: auto;
+  width: 100%;
+}
+.friendsContainer {
+  height: calc(100vh - 220px);
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 4px 4px 60px 0px #114b7426;
+  display: flex;
+  padding: 40px;
+  background-image: url("../../assets/images/add-seeker-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.flexColumn,
+.noseeker,
+.friendsList,
+.friendsHeading {
+  display: flex;
+  flex-direction: column;
+}
+.personImage {
+  width: 57px;
+  height: 64px;
+  border-radius: 50%;
+}
+.noseeker {
+  width: 207px;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.noseekerText {
+  color: $darkBlue;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.buttonContainer {
+  border-radius: 99px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  padding: 7px 24px;
+  width: fit-content;
+  height: 50px;
+}
+.flexColumn {
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.friendsList {
+  gap: 40px;
+  align-items: start;
+  justify-content: start;
+  padding-bottom: 18px;
+  width: 100%;
+}
+.friendsTitle,
+.friendsLength {
+  color: $darkBlue;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.friendsLength {
+  font-size: 16px;
+}
+.friendsTitle {
+  font-size: 18px;
+  line-height: 28px;
+}
+.friendsHeading {
+  gap: 2px;
+}
+.noMember {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

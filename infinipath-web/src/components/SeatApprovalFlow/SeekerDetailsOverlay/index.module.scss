@@ -1,0 +1,616 @@
+@import '../../../common/styles/common.scss';
+@import '../../../common/styles/variables.scss';
+.seekerDetailsOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.seekerOverlay
+{
+  width:50vw;
+  height:100vh;
+}
+.modalTitle{
+  font-size: 16px;
+  font-weight:600px;
+  color: var(--Text-Blue, #051B46);
+}
+.seekerDetailsModal {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 126px);
+  overflow: auto;
+  background: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1300; // Lower than MahatriaBlessCard
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.seekerDetailsCancelledModal{
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1300; // Lower than MahatriaBlessCard
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+}
+.seekerDetailsCancelledModal.open,
+.seekerDetailsModal.open {
+  transform: translateX(0);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px 20px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: $darkBlue;
+
+  .backButton {
+    display: none;
+  }
+}
+.headerDivider {
+  width: 65%;
+  height: 1px;
+  background: #D9D9D9;
+  align-self: center;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #6b7280;
+  border-radius: 4px;
+}
+.reqPrograms{
+  padding-left:3px;
+}
+.closeButton:hover {
+  background: #f3f4f6;
+}
+
+.modalContent, .modalContentSub {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0px 20px;
+  margin-bottom: 10px;
+}
+
+.modalContentSub{
+  padding: 0px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #6b7280;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #dc2626;
+}
+
+.sendButtonText {
+  font-size: 16px;
+  color: white;
+  height: 40px;
+  width:130px;
+}
+
+.footer , .Defaulterfooter {
+  display: flex;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+  justify-content: end;
+  box-shadow: 0px -2px 4px 0px #0000001A;
+  padding: 15px;
+  position: sticky; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.Defaulterfooter{
+ border-top: none !important;
+ padding-top: 0px;
+ box-shadow:none ;
+}
+
+.queryTextareaSection {
+  position: relative;
+  margin-bottom: 24px;
+  display: flex;
+  padding: 16px;
+  background: white;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+}
+
+.textArea {
+  width: 100%;
+  margin-right: 30px;
+}
+
+.queryTextarea {
+  border: none;
+  outline: none; // Prevents border on focus
+  resize: none; // Optional: disables resizing
+  background-color: transparent; // Optional: for clean look
+  font-family: inherit; // Optional: keeps consistent text style
+  width: 100%;
+}
+
+
+
+.journeyInfo {
+  margin-bottom: 16px;
+}
+
+.journeyIndicators {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.indicator {
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-right: 1px solid #d1d5db;
+  padding-right: 10px;
+
+  span {
+    font-size: 16px; // size of dot
+  }
+}
+
+.hdb2 {
+  color: #f39c12; // example: orange
+}
+
+.hdb3 {
+  color: #27ae60; // example: green
+}
+
+.msd1 {
+  color: #2980b9; // example: blue
+}
+
+
+.journeyText {
+  font-size: 14px;
+  color: $darkBlue;
+}
+
+.boldText {
+  font-weight: 600;
+  color: $darkBlue;
+}
+
+.timeline {
+  width: 60%;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+.timelineItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+
+.timelineDot.active {
+  background: #10b981;
+}
+
+.timelineYear {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.messageConstainer {
+  width: 100% !important;
+  min-width: 60% !important;
+  box-shadow: none !important;
+}
+
+.tabsContainer {
+  width: 100%;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.userCard {
+  background: white;
+  border-radius: 4px;
+  padding: 8px 12px 28px 12px;
+  margin-bottom: 12px;
+  max-width: 643px;
+  box-shadow: 0px 1px 4px 0px #00000040;
+  transition: all 0.3s ease;
+}
+
+.defaulterUserCard {
+  @extend .userCard;
+  border-left: 3px solid $border-orange;
+}
+
+.overlay {
+  z-index: 1299; // Lower than modal
+}
+.recommendationLine {
+  color: $color-primary;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  gap:16px;
+  flex-direction: column;
+}
+.recommendationOption{
+  font-weight: 600;
+}
+.roommatePreferenceRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -12px;
+}
+.roommateLabel {
+  font-size: 14px;
+  color: var(--Text-Grey, #888);
+  font-weight: 400;
+}
+
+.roommateName {
+  font-size: 14px;
+  color: #051b46;
+  font-weight: 400;
+}
+.roommateDot {
+  width: 12px;
+  height: 12px;
+  background: #f32b7f;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 2;
+ 
+}
+.regDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px;
+}
+.regHeading{
+  color:#051b46;
+}
+.regValue{
+  color:$lightBlack
+}
+
+.swapRequestLabel,.swapDemand{
+  background: #dfddff;
+  width:max-content;
+  padding:6px 8px;
+  display: flex;
+  gap:10px;
+  border-radius:8px;
+}
+.swapDemand{
+  background-color: rgba(71, 214, 203, 0.16);
+}
+.swapRequestSectionName{
+  font-size: 16px;
+  font-weight: 600;
+  color: #051B46;
+}
+.swapRequestSection{
+  margin-top:30px;
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+}
+@media (max-width: 1024px) {
+  .userCard {
+    padding: 0px; 
+  }
+  
+}
+
+@media screen and (max-width: 1023px) {
+  .seekerOverlay{
+    width:60vw;
+  }
+  .seekerDetailsModal,.seekerDetailsCancelledModal {
+    width: 100%;
+    top: 70px;
+    transform: translateX(0);
+  }
+
+}
+
+@media screen and (max-width: 840px) {
+  .seekerOverlay{
+    width:70vw;
+  }
+  .seekerDetailsModal,.seekerDetailsCancelledModal {
+    width: 100%;
+    margin-top:50px;
+    // left: 0;
+    transform: translateX(0);
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+  .seekerOverlay{
+    width:70vw;
+  }
+  .headerDivider{
+    width:50%;
+  }
+  .seekerDetailsModal.seekerDetailsCancelledModal {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width:600px) {
+  .regDetails{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .seekerOverlay{
+    width:100vw;
+  }
+  .headerDivider{
+    display: none;
+  }
+  .seekerDetailsModal,.seekerDetailsCancelledModal {
+    top: 40px;
+    width: 100%;
+
+    .modalHeader {
+      font-size: 16px;
+      font-weight: 600;
+      justify-content: start;
+      gap: 8px;
+      margin-top: 12px;
+
+      .closeButton {
+        display: none;
+      }
+
+      .backButton {
+        display: block;
+      }
+    }
+  }
+}
+.seekerAssociation{
+  font-weight:$font-weight-normal;
+  font-size:$font-size-md;
+  color:$darkBlue;
+}
+.contactPersonWrapper{
+   display: inline-block;
+    max-width: 230px;
+    white-space: normal; 
+  overflow: visible; 
+  word-wrap: break-word;
+}
+.swapRequestComment{
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $lightBlack;
+  margin-top:10px;
+}
+
+.defaulterSection, .defaulterSectionLine{
+  display: flex;
+  align-items: center;
+  gap:4px;
+}
+.defaulterSectionLine{
+  gap:16px;
+}
+
+.sectionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-normal;
+  color: $darkBlue;
+  margin-bottom: 7px;
+  margin-top: 0;
+}
+
+.defaulterUpdate{
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $blue-secondary;
+  cursor: pointer;
+}
+
+.defaulterTrackingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.trackingItem {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+  position: relative;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.trackingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.trackingUser {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $light-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  line-height: $line-height-xl;
+}
+
+.userRole {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+  color: $lightBlack;
+  text-transform: lowercase;
+}
+
+.trackingActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.trackingDate {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+  color: $textGrey;
+  line-height: $line-height-lg;
+}
+
+.markedStatus {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+  color: $dark-orange;
+}
+
+.unmarkedStatus {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+  color: $primaryGreen;
+}
+
+.trackingComment {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $blackBlue;
+  border-radius: 8px;
+  margin-left: 52px; // Align with text after avatar
+  line-height: $line-height-xl;
+}
+
+.timelineItemLine {
+  position: absolute;
+  left: 19px; 
+  top: 34px;
+  height: calc(100% - 10px);
+  padding: 20px;
+  background-image: linear-gradient(to bottom, $border-card-gray 50%, transparent 50%);
+  background-size: 1px 10px;
+  background-repeat: repeat-y;
+  background-position: left;
+  border-left: none;
+}
+
+.cancelButton {
+  background: transparent;
+  border: none;
+  color: $darkBlue;
+  font-size: $font-size-sm;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: $font-weight-medium;
+  transition: color 0.2s ease;
+}
+
+.cancelButton:hover {
+  color: $darkBlue;
+}
+
+.cancelButtonText{
+  color: $blue !important;
+  font-size: $font-size-sm;
+}
+
+.buttonSpacer{
+  display: flex;
+  justify-content: flex-end;
+  width:100%;
+  padding: 15px;
+  border-top: 1px solid $thumbnailHover;
+  background: $white;
+}

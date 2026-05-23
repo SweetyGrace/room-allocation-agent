@@ -1,0 +1,76 @@
+@import "../../styles/variables.scss";
+
+.row_cell, .row_cell_left_align {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: $blackBlue;
+  position: relative;
+}
+
+.row_cell{
+  display: flex;
+  justify-content: center;
+}
+.detailsText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $blackBlue;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.grayText {
+  color: $textGrey;
+}
+
+.blueLine {
+  display: inline-flex;
+  width: 116px;
+  border-bottom: 1px dashed $anchorTag;
+  position: relative;
+  margin: 0 24px;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 4px; // Adjust the size of the dot as needed
+    height: 4px; // Adjust the size of the dot as needed
+    background-color: $anchorTag; // Use the same color as the dashed line
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    left: -6px; // Adjust the position of the dot as needed
+  }
+
+  &::after {
+    right: -6px; // Adjust the position of the dot as needed
+  }
+}
+
+.publishButtonText{
+  color: #ffffff;
+}
+
+.cellWithOverflow {
+  overflow: visible !important;
+}
+
+.actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

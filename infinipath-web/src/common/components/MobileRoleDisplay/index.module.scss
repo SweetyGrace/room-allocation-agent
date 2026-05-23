@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.mobileRoleDisplay {
+  display: none;
+  padding: $spacing-sm 12px;
+  background-color: $bg-white-shade;
+  border-radius: $border-radius-md;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 600px) {
+    display: flex;
+  }
+
+  .roleName {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-dark;
+    white-space: nowrap;
+
+    // Allow colored spans from colorizeMahatriaInfinitheism to show their colors
+    span {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+  }
+}

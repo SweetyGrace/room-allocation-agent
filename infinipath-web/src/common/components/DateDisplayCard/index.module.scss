@@ -1,0 +1,58 @@
+@import "../../../common/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background-image: url('../../../assets/images/date-card-bg.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 485px;
+  background-size: 100% 100%;
+  z-index: -1;
+
+}
+
+.textContainer {
+  text-align: center;
+  color: $darkBlue;
+  font-size: 15px;
+  padding: 35px 20px 15px 20px;
+}
+
+.dateText {
+  font-size: 15px;
+  color: $darkBlue;
+  margin-top: 4px;
+  margin-bottom: 21px;
+}
+
+.boldText {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: $natoSansBold;
+}
+
+.fromText {
+  display: inline;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    background-image: url('../../../assets/images/date-card-bg-mobile.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 330px;
+    background-size: 100% 100%;
+    z-index: -1;
+  }
+
+  .textContainer {
+    padding: 25px 30px 15px 26px;
+  }
+
+  .fromText {
+    display: block;
+  }
+}

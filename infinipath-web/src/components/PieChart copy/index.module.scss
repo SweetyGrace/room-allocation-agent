@@ -1,0 +1,190 @@
+.barChartClass {
+  position: relative;
+  width: 635px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 12px 30px 0px #0000000a;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  padding: 20px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap:24px;
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.chartWrapper {
+  text-align: left;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.chartContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.cityList {
+  display: flex;
+  flex-direction: column;
+  height:210px;
+  overflow-y: auto;
+  gap:5px;
+}
+
+
+.cityHighlight {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.charts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.doughnutChart {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.doughnutChart p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.info {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+.infoIcon {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.cityList li {
+  cursor: pointer;
+  
+}
+
+.cityList li.activeCity {
+  font-weight: bold;
+  color: #468eff; /* Highlight color for the selected city */
+}
+
+.chartsDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.nonActiveCity {
+  display: flex;
+  gap: 16px;
+  width: 241px;
+  height: 38px;
+  border-radius: 8px;
+  align-items: center;
+  padding-left: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  // cursor: pointer;
+}
+.activeCity {
+  display: flex;
+  gap: 16px;
+  width: 241px;
+  height: 38px;
+  background: #4d86f314;
+  border-radius: 8px;
+  align-items: center;
+  padding-left: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  // cursor: pointer;
+}
+.chartTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: start;
+  align-self: flex-start;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  margin-left: 24px;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.ageRange {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-left: 8px;
+}
+
+.agepercentage{
+font-size: 16px;
+font-weight: 600;
+line-height: 26px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+}
+
+@media (min-width: 1680px){
+  .barChartClass {
+    width: 780px;
+    height: 300px;
+  }
+}
+@media (min-width:1440px) and (max-width: 1679px){
+  .barChartClass {
+    width: 669px;
+    height: 300px;
+  }
+}

@@ -1,0 +1,61 @@
+@import '../../common/styles/variables.scss';
+
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.cancelButton {
+  border: 1px solid $white !important;
+}
+
+.saveButtonText {
+  color: $white;
+  font-size: $font-size-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-normal;
+}
+
+.saveButton {
+  width: 23%;
+  height: 40px;
+  font-size: $font-size-md;
+
+}
+
+.multiSelectContainer {
+  margin-top: 10px;
+}
+
+.tagsLabel {
+  margin-bottom: 10px;
+}
+
+.addMoreButton {
+  background: $linkColor;
+  color: $white;
+  border: "none";
+  border-radius: 16px;
+  padding: 6px 16px;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.chip {
+  background: #F1F5F9;
+  color: $linkColor;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border: 1px solid $border-card-gray;
+  display: inline-block;
+}

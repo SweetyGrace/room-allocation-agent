@@ -1,0 +1,206 @@
+@import "../../styles/variables.scss";
+
+.roleSwitcher {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+}
+
+.roleSwitcherTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: $spacing-sm;
+}
+
+.roleDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.roleLabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $lightGrey2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.roleName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-dark;
+  
+  // Allow colored spans to maintain their color and weight
+  span {
+    font-size: inherit;
+  }
+}
+
+// Single role display - horizontal layout
+.roleDisplaySingle {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: $spacing-sm;
+}
+
+// Dropdown role display - horizontal layout for mobile
+.roleDisplayHorizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+  flex: 1;
+}
+
+.arrow {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.roleSwitcherDropdown {
+  position: absolute;
+  top: calc(100% + #{$spacing-sm});
+  right: 0;
+  min-width: 240px;
+  background: $white;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-xs;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdownHeader {
+  padding: 12px $spacing-md;
+  border-bottom: 1px solid $bg-secondary-white;
+  background: $bg-secondary-gray;
+}
+
+.dropdownTitle {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $lightGrey2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rolesList {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.roleItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px $spacing-md;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  gap: 12px;
+
+  &:not(.active):hover {
+    background-color: $bg-light-gray;
+  }
+
+  &.active {
+    background-color: #bed9f4;
+    cursor: default;
+  }
+}
+
+.roleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  flex: 1;
+}
+
+.roleItemName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-dark;
+  text-align: left;
+
+  // Allow colored spans to maintain their color and weight
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+.roleDescription {
+  font-size: $font-size-xs;
+  color: $lightGrey2;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+// Mobile responsive styles
+@media (max-width: 768px) {
+
+  .roleSwitcherTrigger {
+    padding: 6px $spacing-sm;
+  }
+
+  .roleLabel {
+    font-size: $font-size-xs;
+  }
+
+  .roleName {
+    font-size: $font-size-xs;
+  }
+
+  .arrow {
+    width: 11px;
+    height: 11px;
+  }
+
+  .roleSwitcherDropdown {
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roleSwitcher {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .roleName {
+    font-size: $font-size-xs;
+  }
+
+  .roleSwitcherTrigger {
+    padding: 12px $spacing-md;
+    border: 1px solid $border-gray;
+    border-radius: $border-radius-md;
+    background-color: $bg-white-shade;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
+  }
+
+  .roleSwitcherDropdown {
+    right: 0;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .roleItemName {
+    font-size: $font-size-xs;
+  }
+}

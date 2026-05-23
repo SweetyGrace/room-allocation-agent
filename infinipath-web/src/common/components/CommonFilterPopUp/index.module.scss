@@ -1,0 +1,226 @@
+@import "../../../common/styles/variables.scss";
+
+.checkboxesContainer,
+.radioButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  // gap: 94px;
+  font-family: $natoSansRegular;
+}
+
+.checkboxesContainer{
+  gap:20px;
+}
+.radioButtonsContainer {
+  gap: 158px;
+}
+
+.levelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: $natoSansRegular;
+}
+
+.overAllLevelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: $natoSansRegular;
+  flex: 1; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 5px;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    
+    &:hover {
+      background: #555;
+    }
+  }
+}
+
+.overAllFloorLevelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  // border-bottom: 1px solid #bfbfbf;
+  // padding-bottom: 14px;
+  font-family: $natoSansRegular;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: $natoSansRegular;
+  background-image: url("../../../assets/images/filterBackground.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 158% 66%;
+  padding: 10px 10px 4px 10px;
+  height: calc(100vh - 250px); 
+  max-height: 600px; 
+  overflow: hidden;
+}
+.personLevelContainer,
+.floorLevelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: $natoSansRegular;
+  // margin-top: 20px;
+}
+
+.personLevelContainer {
+  margin-top: 20px;
+}
+
+.levelHeading {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $darkBlue;
+  font-family: $natoSansRegular;
+  // text-decoration: underline;
+}
+
+.heading {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $darkBlue;
+  letter-spacing: 0.5px;
+  font-family: $natoSansRegular;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  font-family: $natoSansRegular;
+  align-items: center;
+  // margin-right: 30px;
+  margin-top: 18px;
+
+}
+.stickyFooter{
+  position: sticky;
+  bottom: 0;
+  background-color: $white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+  }
+}
+.filtersHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.buttonContainer {
+  color: $white;
+  // width: 158px;
+  height: 40px;
+  padding: 7px 54px 7px 53px !important;
+}
+
+.buttonContainerText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.buttonCancel {
+  background-image: none !important;
+  color: #1859b4;
+  font-size: 16px;
+  cursor: pointer;
+}
+.closeIcon {
+  cursor: pointer;
+}
+
+.datePickerContainer {
+  border: 1px solid $lightGrey;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  
+  &:hover {
+    border-color: $blue;
+  }
+  
+  &:has(.rs-picker-focused) {
+    border-color: $blue;
+    box-shadow: 0 0 0 2px rgba(24, 89, 180, 0.1);
+  }
+  
+  :global(.rs-picker-default) {
+    width: 100%;
+    
+    :global(.rs-picker-toggle) {
+      border: none !important;
+      padding: 8px 12px;
+      height: 40px;
+    }
+  }
+}
+
+.hdbFilterRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hdbSelectWithIcon {
+  height: 40px;
+  padding: 10px 32px 10px 12px; 
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../../assets/images/dropdownDown.svg") no-repeat right 8px
+    center;
+  background-size: 20px 20px;
+  border: 1px solid $lightGrey;
+  border-radius: 8px;
+  font-size: $font-size-md;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.hdbInputFlex {
+  display: flex;
+  width: 80px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
+  align-self: stretch;
+  border-radius:  8px;
+  border: 1px solid var(--Colors-Border-border-primary, $border-grey);
+  background: var(--Colors-Background-bg-primary, $white);
+  box-shadow: 0px 1px 2px 0px $shadow-black;
+  text-align: center;
+  min-width: 100px;
+}

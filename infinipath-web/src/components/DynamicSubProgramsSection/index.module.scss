@@ -1,0 +1,152 @@
+@import "../../styles.scss";
+@import "../../common/styles/variables.scss";
+
+.subProgramsSection {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  box-shadow: $box-shadow-sm;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $spacing-xl;
+  padding-bottom: $spacing-md;
+  border-bottom: 2px solid $border-gray;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+}
+
+.sectionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $darkBlue;
+  margin: 0 0 $spacing-sm 0;
+}
+
+.sectionSubtitle {
+  font-size: $font-size-md;
+  color: $footer-gray;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.subProgramsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.emptyState {
+  text-align: center;
+  padding: $spacing-xl;
+  background: $bg-light-gray;
+  border-radius: $border-radius-md;
+  color: $footer-gray;
+
+  p {
+    margin: 0;
+    font-size: $font-size-md;
+  }
+}
+
+// Dialog styles
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+  background: $modal-overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background: $white;
+  padding: $spacing-xl;
+  border-radius: $border-radius-md;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: $box-shadow-dialog;
+
+  h3 {
+    margin: 0 0 $spacing-md 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $darkBlue;
+  }
+
+  p {
+    margin: 0 0 $spacing-lg 0;
+    color: $footer-gray;
+    line-height: 1.5;
+  }
+}
+
+.dialogActions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: flex-end;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background: transparent;
+  border: 1px solid $blue;
+  border-radius: $border-radius-sm;
+  color: $blue;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $lightBlue;
+  }
+}
+
+.addIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.cancelButton {
+  padding: $spacing-sm $spacing-md;
+  background: transparent;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  color: $darkBlue;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $bg-light-gray;
+  }
+}
+
+.deleteButtonDialog {
+  padding: $spacing-sm $spacing-md;
+  background: $errorText;
+  border: none;
+  border-radius: $border-radius-sm;
+  color: $white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $error-dark-red;
+  }
+}

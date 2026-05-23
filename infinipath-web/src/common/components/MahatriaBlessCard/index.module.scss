@@ -1,0 +1,119 @@
+
+
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.blessMessageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.mahatriaText {
+   color: #ff3a3a;
+}
+
+.card {
+  width: 500px;
+  height: 300px;
+  justify-content: space-between;
+  padding: 24px 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/images/blessCard-BG.svg");
+  position: relative;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-width: 1px;
+  border-style: solid;
+  border: 1px solid #00000014;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  top: 0.35px;
+  left: 122.6px;
+}
+
+.cardTitle {
+  font-family: "Noto Sans";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #051b46;
+  // margin: 16px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  gap:6px;
+}
+
+.programs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.program {
+  padding: 2px 6px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  gap: 4px;
+
+  &.active {
+    background: #e6f0ff;
+    border: 2px solid #4976b6;
+    font-weight: 600;
+  }
+}
+
+.blessBtn {
+  width: 100px;
+  height: 40px;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 12px auto 34px auto;
+  box-shadow: 0px 8px 16px 0px #2066BE4D;
+  
+}
+.blessText {
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: lowercase;
+  color: #FFFFFF;
+}
+.closeIcon {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}

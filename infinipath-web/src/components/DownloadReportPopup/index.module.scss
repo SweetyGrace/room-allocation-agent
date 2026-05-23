@@ -1,0 +1,76 @@
+.downloadreportText{
+    font-size:16px;
+    font-weight: 400;
+}
+.optionsContainer{
+  margin-top:20px;
+}
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+
+  cursor: pointer;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0%;
+}
+
+.radio {
+  margin-right: 10px;
+}
+
+.optionContent{
+    display: flex;
+    gap:5px;
+}
+.optionText {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  flex: 1;
+}
+
+.countText {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  margin-left: 12px;
+  color:#888888;
+
+  white-space: nowrap;
+}
+
+.cancelButton {
+  border: 1px solid white !important;
+}
+.iconContainer{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.saveButtonText {
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.saveButton {
+  width: 23%;
+  height: 40px;
+  font-size: 16px;
+
+}

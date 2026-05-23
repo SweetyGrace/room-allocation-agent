@@ -1,0 +1,259 @@
+@import "../../common/styles/variables.scss";
+
+.cardContainer{
+  width: 100%;
+}
+.container, .femaleContainer {
+  display: flex;
+  gap: 7px;
+  padding: 14px 12px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 1px 2px 5px 0px #00000026;
+  width: 100%;
+}
+
+.profileContainer {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+.seekerName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #051b46;
+  margin-bottom: 2px;
+}
+
+.seekerDetails {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.gender,
+.age {
+  font-size: 12px;
+  font-weight: 400;
+  color: #051b46;
+}
+.mateStyles{
+  font-size: 12px;
+  font-weight: 400;
+  color: #F32B7F;
+  font-style: italic;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.gender {
+  border-right: 1px solid #70707080;
+}
+.ageBorder{
+  border-right: 1px solid #70707080;
+}
+
+.city {
+  font-size: 12px;
+  font-weight: 400;
+  color: #051b46;
+  max-width: 26%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rmName{
+  font-size: 12px;
+  font-weight: 400;
+  color: #051b46;
+  max-width:40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.age {
+  width:35px;
+}
+
+.seekerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 74.067%;
+  cursor: pointer;
+}
+
+.occupantDetailsColor {
+  border: 1px solid #62ACF6;
+  background-color: #F4F8FB;
+}
+.femaleOccupantDetailsColor {
+  border: 1px solid #8762F6;
+  background-color:#F4F8FB ;
+}
+
+.pairedUnallocateIcon{
+  transform: rotate(90deg);
+  position: absolute;
+  left: 40%;
+  top: 93%;
+  z-index: 11;
+  img{
+    height: 31px;
+    width: 50px;
+  }
+}
+
+.pairedUnallocateUnpairIcon{
+  transform: rotate(90deg);
+  position: absolute;
+  left: 40%;
+  top: 73%;
+  z-index: 11;
+  img{
+    height: 64px;
+    width: 64px;
+  }
+}
+.seekerName {
+  width: fit-content;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.marginBottom{
+  margin-bottom: 16px;
+}
+.tooltip {
+  z-index: 1; // Lower z-index for the tooltip
+}
+
+.imageContainer {
+  position: relative;
+  display: inline-block;
+  width: 21%;
+  
+  .hoverEyePreview {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 56px;
+    height: 53.27px;
+    border-radius: 50%;
+    background-color: rgba(51, 68, 102, 0.4); 
+    background-image: url("../../assets/images/eye-preview.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px 15px;
+    cursor: pointer;
+    z-index: 4;
+  }
+  
+  &:hover .hoverEyePreview {
+    display: block;
+  }
+}
+
+.hdbDotPopoverWrapper {
+  position: absolute;
+  bottom: 28px;
+  left: 35px;
+  display: inline-block;
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.hdbDot {
+  width: 10px;
+  height: 10px;
+  background: #f32b7f;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.roommatePopupWrapper {
+  position: absolute;
+  left: -20px; 
+  top: 90px;
+  transform: translateY(-50%);
+  z-index: 9999;
+  pointer-events: auto;
+  min-width: 200px; 
+}
+
+.menuIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.hdbBadge {
+  background: #ffffff;
+  color: #0c1e42;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 4px 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  white-space: nowrap;
+  position:absolute;
+  bottom: 12px;
+  left: 15px;
+}
+
+.departureTime {
+  position: absolute;
+  right: 9px;
+  top: 0;
+  color: #666;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 220% */
+  white-space: nowrap;
+}
+
+.separator {
+  width: 1px;
+  height: 16px;
+  border-radius: 10px;
+  border-right: 1px solid $secondaryGrey;
+  margin-top: 3px;
+}
+
+.hdbBadge {
+  background-color: $male-hdb-bg; // default for male
+}
+
+.femaleHdbBadge {
+  background-color: $female-hdb-bg; // for female
+}
+
+.maleHdbDot {
+  border: 2px solid $male-hdb-bg;
+}
+
+.femaleHdbDot {
+  border: 2px solid $female-hdb-bg; // Female border color
+}
+
+

@@ -1,0 +1,117 @@
+@import "../../../common/styles/variables.scss";
+
+.seekerName {
+  font-size: 16px;
+  font-weight: 400;
+  color: $darkBlue;
+}
+
+.joinseekerCard,
+.seekerCard {
+  cursor: pointer;
+  width: 170px;
+  height: 180px;
+  position: relative;
+  box-shadow: 2px 4px 10px 0px #eef4f9;
+  border: 1.5px solid transparent;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(95.12deg, #f0f0f0 -0.86%, #dcdcdc 104.51%) border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  align-items: center;
+}
+
+.joinseekerCard,
+.joinedCardClicked {
+  width: 200px;
+  height: 224px;
+  padding: 24px;
+  margin-top: 0px;
+  transition: background-color 0.3s ease;
+}
+
+.joinedCardClicked {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 12px 24px 12px;
+  align-items: center;
+  position: relative;
+  border: 1.5px solid $blue;
+  border-radius: 8px !important;
+  background: linear-gradient(288.51deg, #F5FCFF 12.38%, #F7FDFF 33.17%, #FFFFFF 93.11%);
+  box-shadow: 1px 2px 12px 0px #3BA4FD29;
+}
+
+.separator {
+  width: 64px;
+  height: 1px;
+  border: 0.1px solid $lineSeparator;
+}
+
+.seekerCard {
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.selected {
+  background-color: #f0f0f0; // Change this to your desired color
+}
+
+.checkboxStyles {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.seekerCardDelete {
+  position: absolute;
+  top: 0px;
+  width: 170px;
+  height: 180px;
+  box-shadow: 2px 4px 10px 0px #ff66061a;
+  border: 1.5px solid transparent;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(#fff7f2, #fff7f2) padding-box,
+    linear-gradient(95.12deg, #ffefe4 -0.86%, #ffebde 104.51%) border-box;
+  display: flex;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 58px;
+  right: 58px;
+}
+
+.deleteParent {
+  position: relative;
+  width: 170px;
+  height: 180px;
+}
+
+.markAttendanceColor,
+.joiningColor,
+.failedColor {
+  color: $blue ;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+}
+
+.joiningColor {
+  color: $primaryGreen;
+}
+
+.failedColor {
+  color: $lightGrey;
+}
+.customTooltip{
+  height: auto !important;
+  width: 150px !important;
+}

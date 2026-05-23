@@ -1,0 +1,21 @@
+.pieChartContainer {
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.chartTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.chartWrapper {
+  height: 220px;
+  position: relative;
+}

@@ -1,0 +1,3531 @@
+{
+  "programTypes": {
+    "HDB": {
+      "name": "HDB",
+      "hasSubPrograms": true,
+      "sections": [
+        {
+          "sectionId": "program-info",
+          "sectionTitle": "Program Information",
+          "sectionSubtitle": "Provide the details for your program",
+          "fields": [
+            {
+              "name": "programName",
+              "label": "Program Name",
+              "type": "text",
+              "placeholder": "Enter program name",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "programCode",
+              "label": "Program Code",
+              "type": "text",
+              "placeholder": "Enter program code",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "textarea",
+              "placeholder": "Enter program description",
+              "required": false,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "modeOfProgram",
+              "label": "Mode of Program",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "value": "offline",
+              "options": [
+                { "value": "online", "label": "Online" },
+                { "value": "offline", "label": "Offline" },
+                { "value": "hybrid", "label": "Hybrid" }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "isResendential",
+              "label": "Is this a residential program?",
+              "type": "radio",
+              "required": false,
+              "column": 2,
+              "options": [
+                { "value": "yes", "label": "Yes" },
+                { "value": "no", "label": "No" }
+              ],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "modeOfProgram",
+                "values": ["offline", "hybrid"]
+              }
+            },
+            {
+              "name": "venueAddress",
+              "label": "Venue",
+              "type": "creatableSelect",
+              "maxLength": 250,
+              "placeholder": "Select venue",
+              "required": false,
+              "column": 2,
+              "options": [],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "modeOfProgram",
+                "values": [
+                  "offline",
+                  "hybrid"
+                ]
+              }
+            },
+            {
+              "name": "totalBedCount",
+              "label": "Total Bed / Seat Count",
+              "type": "number",
+              "placeholder": "Enter total bed / Seat  count",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "isResendential",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "hasSeatLimit",
+              "label": "Do you want to limit participants?",
+              "type": "radio",
+              "required": false,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Limit Participants"
+                },
+                {
+                  "value": "no",
+                  "label": "Unlimited Participants"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "seatLimit",
+              "label": "Number of Seats",
+              "type": "number",
+              "placeholder": "Enter seat count",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasSeatLimit",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "hasWaitlist",
+              "label": "Enable Waitlist?",
+              "type": "radio",
+              "required": false,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes, allow waitlist"
+                },
+                {
+                  "value": "no",
+                  "label": "No waitlist"
+                }
+              ],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasSeatLimit",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "waitlistTriggerCount",
+              "label": "Waitlist Trigger Count",
+              "type": "number",
+              "placeholder": "Enter trigger count",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasWaitlist",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "programDates",
+              "label": "Program Dates",
+              "type": "daterange",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "fields": [
+                "startDate",
+                "endDate"
+              ]
+            },
+            {
+              "name": "registrationStartDate",
+              "label": "Registration Start",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationStartDate",
+                "registrationStartTime"
+              ]
+            },
+            {
+              "name": "registrationEndDate",
+              "label": "Registration End",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationEndDate",
+                "registrationEndTime"
+              ]
+            },
+            {
+              "name": "approvalRequired",
+              "label": "Is approval required for registration?",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes, require approval"
+                },
+                {
+                  "value": "no",
+                  "label": "No, auto-approve"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "currency",
+              "label": "Currency",
+              "type": "text",
+              "value": "INR",
+              "required": true,
+              "column": 2,
+              "disabled": true
+            },
+            {
+              "name": "hdbFee",
+              "label": "HDB Fee",
+              "type": "number",
+              "placeholder": "Enter HDB fee",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "prefix": "₹"
+            },
+            {
+              "name": "msdFee",
+              "label": "MSD Fee",
+              "type": "number",
+              "placeholder": "Enter MSD fee",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "prefix": "₹"
+            },
+            {
+              "name": "childMinAge",
+              "label": "Child Minimum Age",
+              "type": "number",
+              "placeholder": "Enter minimum age for children",
+              "required": false,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "elderMaxAge",
+              "label": "Elder Maximum Age",
+              "type": "number",
+              "placeholder": "Enter maximum age for elders",
+              "required": false,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "helpLineNumber",
+              "label": "Help Line Number",
+              "type": "text",
+              "placeholder": "Enter help line number",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailSenderName",
+              "label": "Email Sender Name",
+              "type": "text",
+              "placeholder": "Enter email sender name",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailSenderAddress",
+              "label": "Email Sender Address",
+              "type": "email",
+              "placeholder": "Enter email sender address",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailBccName",
+              "label": "Email BCC Name",
+              "type": "text",
+              "placeholder": "Enter BCC name (optional)",
+              "required": false,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailBccAddress",
+              "label": "Email BCC Address",
+              "type": "email",
+              "placeholder": "Enter BCC email (optional)",
+              "required": false,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "venueNameInEmail",
+              "label": "Venue Name in Email",
+              "type": "text",
+              "placeholder": "Enter venue name for emails",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "sectionId": "invoice-details",
+          "sectionTitle": "Business Tax Information",
+          "fields": [
+            {
+              "name": "tdsLimit",
+              "label": "TDS (%)",
+              "type": "number",
+              "placeholder": "Enter TDS percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "tdsApplicableTo",
+              "label": "TDS Applicable To",
+              "type": "select",
+              "placeholder": "Select TDS applicability",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "base_only",
+                  "label": "Base Amount"
+                },
+                {
+                  "value": "base_plus_tax",
+                  "label": "Total Amount"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "cgstLimit",
+              "label": "CGST (%)",
+              "type": "number",
+              "placeholder": "Enter CGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "sgstLimit",
+              "label": "SGST (%)",
+              "type": "number",
+              "placeholder": "Enter SGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "igstLimit",
+              "label": "IGST (%)",
+              "type": "number",
+              "placeholder": "Enter IGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "nameInInvoice",
+              "label": "Name in Invoice",
+              "type": "text",
+              "placeholder": "Enter business name for invoice",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "address",
+              "label": "Business Address",
+              "type": "textarea",
+              "placeholder": "Enter business address",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "pan",
+              "label": "PAN",
+              "type": "text",
+              "placeholder": "Enter PAN number",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+              "maxLength": 10
+            },
+            {
+              "name": "gstin",
+              "label": "GSTIN",
+              "type": "text",
+              "placeholder": "Enter GSTIN",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+              "maxLength": 15
+            },
+            {
+              "name": "cin",
+              "label": "CIN",
+              "type": "text",
+              "placeholder": "Enter CIN",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[A-Z]{1}[0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$",
+              "maxLength": 21
+            }
+          ]
+        }
+      ]
+    },
+    "TAT": {
+      "name": "TAT",
+      "hasSubPrograms": true,
+      "sections": [
+        {
+          "sectionId": "program-info",
+          "sectionTitle": "Program Information",
+          "sectionSubtitle": "Provide the details for your TAT program",
+          "fields": [
+            {
+              "name": "programName",
+              "label": "Program Name",
+              "type": "text",
+              "placeholder": "Enter program name",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "programCode",
+              "label": "Program Code",
+              "type": "text",
+              "placeholder": "Enter program code",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "textarea",
+              "placeholder": "Enter program description",
+              "required": false,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "modeOfProgram",
+              "label": "Mode of Program",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "value": "online",
+              "options": [
+                {
+                  "value": "online",
+                  "label": "Online"
+                },
+                {
+                  "value": "offline",
+                  "label": "Offline"
+                },
+                {
+                  "value": "hybrid",
+                  "label": "Hybrid"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "venueAddress",
+              "label": "Venue",
+              "type": "creatableSelect",
+              "maxLength": 250,
+              "placeholder": "Select venue",
+              "required": false,
+              "column": 1,
+              "options": [],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "modeOfProgram",
+                "values": [
+                  "offline",
+                  "hybrid"
+                ]
+              }
+            },
+            {
+              "name": "hasSeatLimit",
+              "label": "Do you want to limit participants?",
+              "type": "radio",
+              "required": false,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Limit Participants"
+                },
+                {
+                  "value": "no",
+                  "label": "Unlimited Participants"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "seatLimit",
+              "label": "Number of Seats",
+              "type": "number",
+              "placeholder": "Enter seat count",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasSeatLimit",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "programDates",
+              "label": "Program Dates",
+              "type": "daterange",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "fields": [
+                "startDate",
+                "endDate"
+              ]
+            },
+            {
+              "name": "registrationStartDate",
+              "label": "Registration Start",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationStartDate",
+                "registrationStartTime"
+              ]
+            },
+            {
+              "name": "registrationEndDate",
+              "label": "Registration End",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationEndDate",
+                "registrationEndTime"
+              ]
+            },
+            {
+              "name": "approvalRequired",
+              "label": "Is approval required for registration?",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes, require approval"
+                },
+                {
+                  "value": "no",
+                  "label": "No, auto-approve"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "currency",
+              "label": "Currency",
+              "type": "text",
+              "value": "INR",
+              "required": true,
+              "column": 2,
+              "disabled": true
+            },
+            {
+              "name": "programFee",
+              "label": "Program Fee",
+              "type": "number",
+              "placeholder": "Enter program fee",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "prefix": "₹"
+            },
+            {
+              "name": "helpLineNumber",
+              "label": "Help Line Number",
+              "type": "text",
+              "placeholder": "Enter help line number",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailSenderName",
+              "label": "Email Sender Name",
+              "type": "text",
+              "placeholder": "Enter email sender name",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailSenderAddress",
+              "label": "Email Sender Address",
+              "type": "email",
+              "placeholder": "Enter email sender address",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "venueNameInEmail",
+              "label": "Venue Name in Email",
+              "type": "text",
+              "placeholder": "Enter venue name for emails",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "sectionId": "invoice-details",
+          "sectionTitle": "Business Tax Information",
+          "fields": [
+            {
+              "name": "tdsLimit",
+              "label": "TDS (%)",
+              "type": "number",
+              "placeholder": "Enter TDS percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "tdsApplicableTo",
+              "label": "TDS Applicable To",
+              "type": "select",
+              "placeholder": "Select TDS applicability",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "base_only",
+                  "label": "Base Amount"
+                },
+                {
+                  "value": "base_plus_tax",
+                  "label": "Total Amount"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "cgstLimit",
+              "label": "CGST (%)",
+              "type": "number",
+              "placeholder": "Enter CGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "sgstLimit",
+              "label": "SGST (%)",
+              "type": "number",
+              "placeholder": "Enter SGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "igstLimit",
+              "label": "IGST (%)",
+              "type": "number",
+              "placeholder": "Enter IGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "nameInInvoice",
+              "label": "Name in Invoice",
+              "type": "text",
+              "placeholder": "Enter business name for invoice",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "address",
+              "label": "Business Address",
+              "type": "textarea",
+              "placeholder": "Enter business address",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "pan",
+              "label": "PAN",
+              "type": "text",
+              "placeholder": "Enter PAN number",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+              "maxLength": 10
+            },
+            {
+              "name": "gstin",
+              "label": "GSTIN",
+              "type": "text",
+              "placeholder": "Enter GSTIN",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+              "maxLength": 15
+            },
+            {
+              "name": "cin",
+              "label": "CIN",
+              "type": "text",
+              "placeholder": "Enter CIN",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[A-Z]{1}[0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$",
+              "maxLength": 21
+            }
+          ]
+        }
+      ]
+    },
+    "Entrainment": {
+      "name": "Entrainment",
+      "hasSubPrograms": false,
+      "sections": [
+        {
+          "sectionId": "program-info",
+          "sectionTitle": "Program Information",
+          "sectionSubtitle": "Provide the details for your entrainment program",
+          "fields": [
+            {
+              "name": "programName",
+              "label": "Program Name",
+              "type": "text",
+              "placeholder": "Enter program name",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "programCode",
+              "label": "Program Code",
+              "type": "text",
+              "placeholder": "Enter program code",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "textarea",
+              "placeholder": "Enter program description",
+              "required": false,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "modeOfProgram",
+              "label": "Mode of Program",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "value": "online",
+              "options": [
+                {
+                  "value": "online",
+                  "label": "Online"
+                },
+                {
+                  "value": "offline",
+                  "label": "Offline"
+                },
+                {
+                  "value": "hybrid",
+                  "label": "Hybrid"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "venueAddress",
+              "label": "Venue",
+              "type": "creatableSelect",
+              "maxLength": 250,
+              "placeholder": "Select venue",
+              "required": false,
+              "column": 1,
+              "options": [],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "modeOfProgram",
+                "values": [
+                  "offline",
+                  "hybrid"
+                ]
+              }
+            },
+            {
+              "name": "hasSeatLimit",
+              "label": "Do you want to limit participants?",
+              "type": "radio",
+              "required": false,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Limit Participants"
+                },
+                {
+                  "value": "no",
+                  "label": "Unlimited Participants"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "seatLimit",
+              "label": "Number of Seats",
+              "type": "number",
+              "placeholder": "Enter seat count",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasSeatLimit",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "hasWaitlist",
+              "label": "Enable Waitlist?",
+              "type": "radio",
+              "required": false,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes, allow waitlist"
+                },
+                {
+                  "value": "no",
+                  "label": "No waitlist"
+                }
+              ],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasSeatLimit",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "waitlistTriggerCount",
+              "label": "Waitlist Trigger Count",
+              "type": "number",
+              "placeholder": "Enter trigger count",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasWaitlist",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "programDates",
+              "label": "Program Dates",
+              "type": "daterange",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "fields": [
+                "startDate",
+                "endDate"
+              ]
+            },
+            {
+              "name": "registrationStartDate",
+              "label": "Registration Start",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationStartDate",
+                "registrationStartTime"
+              ]
+            },
+            {
+              "name": "registrationEndDate",
+              "label": "Registration End",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationEndDate",
+                "registrationEndTime"
+              ]
+            },
+            {
+              "name": "currency",
+              "label": "Currency",
+              "type": "text",
+              "value": "INR",
+              "required": true,
+              "column": 2,
+              "disabled": true
+            },
+            {
+              "name": "programFee",
+              "label": "Program Fee",
+              "type": "number",
+              "placeholder": "Enter program fee",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "prefix": "₹"
+            },
+            {
+              "name": "helpLineNumber",
+              "label": "Help Line Number",
+              "type": "text",
+              "placeholder": "Enter help line number",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailSenderName",
+              "label": "Email Sender Name",
+              "type": "text",
+              "placeholder": "Enter email sender name",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailSenderAddress",
+              "label": "Email Sender Address",
+              "type": "email",
+              "placeholder": "Enter email sender address",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "venueNameInEmail",
+              "label": "Venue Name in Email",
+              "type": "text",
+              "placeholder": "Enter venue name for emails",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "sectionId": "invoice-details",
+          "sectionTitle": "Business Tax Information",
+          "fields": [
+            {
+              "name": "tdsLimit",
+              "label": "TDS (%)",
+              "type": "number",
+              "placeholder": "Enter TDS percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "tdsApplicableTo",
+              "label": "TDS Applicable To",
+              "type": "select",
+              "placeholder": "Select TDS applicability",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "base_only",
+                  "label": "Base Amount"
+                },
+                {
+                  "value": "base_plus_tax",
+                  "label": "Total Amount"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "cgstLimit",
+              "label": "CGST (%)",
+              "type": "number",
+              "placeholder": "Enter CGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "sgstLimit",
+              "label": "SGST (%)",
+              "type": "number",
+              "placeholder": "Enter SGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "igstLimit",
+              "label": "IGST (%)",
+              "type": "number",
+              "placeholder": "Enter IGST percentage",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "name": "nameInInvoice",
+              "label": "Name in Invoice",
+              "type": "text",
+              "placeholder": "Enter business name for invoice",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "address",
+              "label": "Business Address",
+              "type": "textarea",
+              "placeholder": "Enter business address",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "pan",
+              "label": "PAN",
+              "type": "text",
+              "placeholder": "Enter PAN number",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+              "maxLength": 10
+            },
+            {
+              "name": "gstin",
+              "label": "GSTIN",
+              "type": "text",
+              "placeholder": "Enter GSTIN",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+              "maxLength": 15
+            },
+            {
+              "name": "cin",
+              "label": "CIN",
+              "type": "text",
+              "placeholder": "Enter CIN",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "pattern": "^[A-Z]{1}[0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$",
+              "maxLength": 21
+            }
+          ]
+        }
+      ]
+    },
+    "CUSTOM": {
+      "name": "CUSTOM",
+      "hasSubPrograms": true,
+      "sections": [
+        {
+          "sectionId": "basic-info",
+          "sectionTitle": "Basic Information",
+          "sectionSubtitle": "Core program details",
+          "fields": [
+            {
+              "name": "programName",
+              "label": "Program Name",
+              "type": "text",
+              "placeholder": "Enter program name",
+              "required": true,
+              "column": 1,
+              "disabled": false
+            },
+            {
+              "name": "programCode",
+              "label": "Program Code",
+              "type": "text",
+              "placeholder": "Enter program code",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 50
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "textarea",
+              "placeholder": "Enter program description",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 200
+            },
+            {
+              "name": "logoUrl",
+              "label": "Logo Image",
+              "type": "imageUpload",
+              "placeholder": "Add Logo",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "allowedFormats": ["image/jpeg", "image/jpg", "image/png", "image/webp"],
+              "maxFileSizeKB": 200,
+              "minWidth": 50,
+              "maxWidth": 1200,
+              "minHeight": 50,
+              "maxHeight": 1200
+            },
+            {
+              "name": "subProgramType",
+              "label": "Program Type",
+              "type": "creatableSelect",
+              "placeholder": "Select or add program type",
+              "required": true,
+              "column": 2,
+              "maxLength": 50,
+              "options": [
+                {
+                  "value": "PST_HDB",
+                  "label": "PST_HDB"
+                },
+                {
+                  "value": "PST_MSD",
+                  "label": "PST_MSD"
+                },
+                {
+                  "value": "PST_TAT",
+                  "label": "PST_TAT"
+                },
+                {
+                  "value": "PST_ENTRAINMENT",
+                  "label": "PST_ENTRAINMENT"
+                }
+              ],
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "sectionId": "mode-structure",
+          "sectionTitle": "Mode & Structure",
+          "fields": [
+            {
+              "name": "modeOfProgram",
+              "label": "Mode of Program",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "options": [
+                {
+                  "value": "online",
+                  "label": "Online"
+                },
+                {
+                  "value": "offline",
+                  "label": "Offline"
+                },
+                {
+                  "value": "hybrid",
+                  "label": "Hybrid"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "programStructure",
+              "label": "Program Structure",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "options": [
+                {
+                  "value": "single",
+                  "label": "Single"
+                },
+                {
+                  "value": "multiple",
+                  "label": "Sessions"
+                },
+                {
+                  "value": "grouped",
+                  "label": "Programs"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "noOfSession",
+              "label": "Number of Sessions",
+              "type": "number",
+              "placeholder": "Enter number",
+              "required": true,
+              "column": 2,
+              "min": 1,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "programStructure",
+                "values": [
+                  "multiple"
+                ]
+              }
+            },
+            {
+              "name": "noOfSubPrograms",
+              "label": "Number of Sub-programs",
+              "type": "number",
+              "placeholder": "Enter number",
+              "required": true,
+              "column": 2,
+              "min": 1,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "programStructure",
+                "values": [
+                  "grouped"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sectionId": "registration-rules",
+          "sectionTitle": "Registration Rules",
+          "fields": [
+            {
+              "name": "approvalRequired",
+              "label": "Approval Required",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "allowsProxyRegistration",
+              "label": "Allow Registration for Others",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "allowSaveAsDraft",
+              "label": "Allow Save as Draft",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "seekerCanShareExperience",
+              "label": "Seeker Can Share Experience",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "requiresPayment",
+              "label": "Payment Required",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "isTravelInvolved",
+              "label": "Travel Involved",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "value": "no",
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false,
+              "disabledWhen": {
+                "field": "modeOfProgram",
+                "values": [
+                  "online"
+                ]
+              }
+            },
+            {
+              "name": "hasGoodies",
+              "label": "Goodies Included",
+              "type": "radio",
+              "required": true,
+              "column": 1,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "hasSeatLimit",
+              "label": "Limit Participants",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false
+            },
+            {
+              "name": "totalSeats",
+              "label": "Total Seats",
+              "type": "number",
+              "placeholder": "Enter total seats",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasSeatLimit",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "waitlistApplicable",
+              "label": "Waitlist",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes, allow waitlist"
+                },
+                {
+                  "value": "no",
+                  "label": "No waitlist"
+                }
+              ],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "hasSeatLimit",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "waitlistTriggerCount",
+              "label": "Waitlist Trigger Count",
+              "type": "number",
+              "placeholder": "Enter trigger count",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "waitlistApplicable",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+                        {
+              "name": "isResidenceRequired",
+              "label": "Residential Program",
+              "type": "radio",
+              "required": true,
+              "column": 2,
+              "value": "no",
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ],
+              "disabled": false,
+              "disabledWhen": {
+                "field": "modeOfProgram",
+                "values": [
+                  "online"
+                ]
+              }
+            },
+            {
+              "name": "totalBedCount",
+              "label": "Total Bed Count",
+              "type": "number",
+              "placeholder": "Enter total bed count",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "isResidenceRequired",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "elderMinAge",
+              "label": "Elder Minimum Age",
+              "type": "number",
+              "placeholder": "Enter minimum age for elders",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "max": 150,
+              "disabled": false
+            },
+            {
+              "name": "childMaxAge",
+              "label": "Child Maximum Age",
+              "type": "number",
+              "placeholder": "Enter minimum age for children",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "max": 150,
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "sectionId": "schedule-dates",
+          "sectionTitle": "Schedule & Dates",
+          "fields": [
+            {
+              "name": "startDate",
+              "label": "Program Start Date & Time",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "startDate",
+                "startTime"
+              ],
+              "visibleWhen": {
+                "field": "programStructure",
+                "values": ["single"]
+              }
+            },
+            {
+              "name": "endDate",
+              "label": "Program End Date & Time",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "endDate",
+                "endTime"
+              ],
+              "visibleWhen": {
+                "field": "programStructure",
+                "values": ["single"]
+              }
+            },
+            {
+              "name": "blessEndsAt",
+              "label": "Bless Ends At",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "approvalRequired",
+                "values": [
+                  "yes"
+                ]
+              },
+              "fields": [
+                "blessEndsAt",
+                "blessEndsAtTime"
+              ]
+            },
+            {
+              "name": "registrationStartDate",
+              "label": "Registration Start",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationStartDate",
+                "registrationStartTime"
+              ]
+            },
+            {
+              "name": "registrationEndDate",
+              "label": "Registration End",
+              "type": "datetime",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "fields": [
+                "registrationEndDate",
+                "registrationEndTime"
+              ]
+            },
+            {
+              "name": "checkinAt",
+              "label": "Check-in At",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "visibleWhenAll": [
+                { "field": "programStructure", "values": ["single"] },
+                { "field": "hasCheckinCheckout", "values": ["yes"] }
+              ],
+              "fields": [
+                "checkinAt",
+                "checkinAtTime"
+              ]
+            },
+            {
+              "name": "checkinEndsAt",
+              "label": "Check-in Ends At",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "visibleWhenAll": [
+                { "field": "programStructure", "values": ["single"] },
+                { "field": "hasCheckinCheckout", "values": ["yes"] }
+              ],
+              "fields": [
+                "checkinEndsAt",
+                "checkinEndsAtTime"
+              ]
+            },
+            {
+              "name": "checkoutAt",
+              "label": "Check-out At",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "visibleWhenAll": [
+                { "field": "programStructure", "values": ["single"] },
+                { "field": "hasCheckinCheckout", "values": ["yes"] }
+              ],
+              "fields": [
+                "checkoutAt",
+                "checkoutAtTime"
+              ]
+            },
+            {
+              "name": "checkoutEndsAt",
+              "label": "Check-out Ends At",
+              "type": "datetime",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "visibleWhenAll": [
+                { "field": "programStructure", "values": ["single"] },
+                { "field": "hasCheckinCheckout", "values": ["yes"] }
+              ],
+              "fields": [
+                "checkoutEndsAt",
+                "checkoutEndsAtTime"
+              ]
+            }
+          ]
+        },
+        {
+          "sectionId": "venue-location",
+          "sectionTitle": "Venue Details",
+          "sectionVisibleWhen": {
+            "field": "modeOfProgram",
+            "values": [
+              "offline",
+              "hybrid"
+            ]
+          },
+          "fields": [
+            {
+              "name": "venue",
+              "label": "Venue Name",
+              "type": "creatableSelect",
+              "placeholder": "Select or enter venue name",
+              "required": true,
+              "column": 1,
+              "maxLength": 250,
+              "disabled": false,
+              "options": [
+                {
+                  "value": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078.",
+                  "label": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078."
+                }
+              ],
+              "visibleWhen": {
+                "field": "modeOfProgram",
+                "values": [
+                  "offline",
+                  "hybrid"
+                ]
+              }
+            },
+            {
+              "name": "venueNameInEmail",
+              "label": "Venue Name in Emails",
+              "type": "creatableSelect",
+              "placeholder": "Select or enter venue name for emails",
+              "required": true,
+              "column": 1,
+              "maxLength": 250,
+              "disabled": false,
+              "options": [
+                {
+                  "value": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078.",
+                  "label": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078."
+                }
+              ],
+              "visibleWhen": {
+                "field": "modeOfProgram",
+                "values": [
+                  "offline",
+                  "hybrid"
+                ]
+              }
+            },
+            {
+              "name": "sameVenueForAll",
+              "label": "Same venue for all sessions/programs?",
+              "type": "radio",
+              "required": false,
+              "column": 1,
+              "options": [
+                { "value": "yes", "label": "Yes, same for all" },
+                { "value": "no", "label": "No, I'll set them individually" }
+              ],
+              "disabled": false,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["offline", "hybrid"] },
+                { "field": "programStructure", "values": ["multiple", "grouped"] }
+              ]
+            }
+          ]
+        },
+        {
+          "sectionId": "online-details",
+          "sectionTitle": "Online Details",
+          "sectionVisibleWhen": {
+            "field": "modeOfProgram",
+            "values": ["online"]
+          },
+          "fields": [
+            {
+              "name": "onlineType",
+              "label": "Online Type",
+              "type": "select",
+              "placeholder": "Select online type",
+              "required": true,
+              "column": 1,
+              "options": [
+                {
+                  "value": "meeting",
+                  "label": "Meeting"
+                },
+                {
+                  "value": "webinar",
+                  "label": "Webinar"
+                },
+                {
+                  "value": "live_stream",
+                  "label": "Live Stream"
+                }
+              ],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "modeOfProgram",
+                "values": ["online"]
+              }
+            },
+            {
+              "name": "sameOnlineDetailsForAll",
+              "label": "Same online link for all sessions/programs?",
+              "type": "radio",
+              "required": false,
+              "column": 1,
+              "options": [
+                { "value": "yes", "label": "Yes, same for all" },
+                { "value": "no", "label": "No, I'll set them individually" }
+              ],
+              "disabled": false,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "programStructure", "values": ["multiple", "grouped"] }
+              ]
+            },
+            {
+              "name": "meetingLink",
+              "label": "Meeting Link",
+              "type": "text",
+              "placeholder": "Enter meeting join URL",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 2048,
+              "isUrl": true,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["meeting"] }
+              ]
+            },
+            {
+              "name": "meetingId",
+              "label": "Meeting ID",
+              "type": "text",
+              "placeholder": "Enter meeting ID",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 100,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["meeting"] }
+              ]
+            },
+            {
+              "name": "meetingPassword",
+              "label": "Meeting Password",
+              "type": "text",
+              "placeholder": "Enter meeting passcode",
+              "required": false,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 100,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["meeting"] }
+              ]
+            },
+            {
+              "name": "webinarLink",
+              "label": "Webinar Link",
+              "type": "text",
+              "placeholder": "Enter attendee join URL",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 2048,
+              "isUrl": true,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["webinar"] }
+              ]
+            },
+            {
+              "name": "webinarId",
+              "label": "Webinar ID",
+              "type": "text",
+              "placeholder": "Enter webinar ID",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 100,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["webinar"] }
+              ]
+            },
+            {
+              "name": "webinarPassword",
+              "label": "Webinar Password",
+              "type": "text",
+              "placeholder": "Enter webinar passcode",
+              "required": false,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 100,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["webinar"] }
+              ]
+            },
+            {
+              "name": "panelistLink",
+              "label": "Panelist Link",
+              "type": "text",
+              "placeholder": "Enter host/speaker link",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "maxLength": 2048,
+              "isUrl": true,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["webinar"] }
+              ]
+            },
+            {
+              "name": "registrationLink",
+              "label": "Registration Link",
+              "type": "text",
+              "placeholder": "Enter external registration URL",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "maxLength": 2048,
+              "isUrl": true,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["webinar"] }
+              ]
+            },
+            {
+              "name": "streamUrl",
+              "label": "Stream URL",
+              "type": "text",
+              "placeholder": "Enter public watch URL",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 2048,
+              "isUrl": true,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["live_stream"] }
+              ]
+            },
+            {
+              "name": "backupStreamUrl",
+              "label": "Backup Stream URL",
+              "type": "text",
+              "placeholder": "Enter fallback stream URL (optional)",
+              "required": false,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 2048,
+              "isUrl": true,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["live_stream"] }
+              ]
+            },
+            {
+              "name": "chatUrl",
+              "label": "Chat / Q&A URL",
+              "type": "text",
+              "placeholder": "Enter chat or Q&A link (optional)",
+              "required": false,
+              "column": 2,
+              "disabled": false,
+              "maxLength": 2048,
+              "isUrl": true,
+              "visibleWhenAll": [
+                { "field": "modeOfProgram", "values": ["online"] },
+                { "field": "onlineType", "values": ["live_stream"] }
+              ]
+            }
+          ]
+        },
+        {
+          "sectionId": "payment-billing",
+          "sectionTitle": "Payment & Billing",
+          "sectionVisibleWhen": {
+            "field": "requiresPayment",
+            "values": [
+              "yes"
+            ]
+          },
+          "fields": [
+            {
+              "name": "currency",
+              "label": "Currency",
+              "type": "text",
+              "value": "INR",
+              "required": false,
+              "column": 2,
+              "disabled": true,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "programFee",
+              "label": "Program Fee",
+              "type": "number",
+              "placeholder": "Enter program fee",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "prefix": "₹",
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "gstPercentage",
+              "label": "GST (%)",
+              "type": "number",
+              "placeholder": "Auto-calculated from CGST + SGST",
+              "required": false,
+              "column": 2,
+              "min": 0,
+              "max": 100,
+              "disabled": true,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "cgst",
+              "label": "CGST (%)",
+              "type": "number",
+              "placeholder": "Enter CGST percentage",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "max": 100,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "sgst",
+              "label": "SGST (%)",
+              "type": "number",
+              "placeholder": "Enter SGST percentage",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "max": 100,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "igst",
+              "label": "IGST (%)",
+              "type": "number",
+              "placeholder": "Enter IGST percentage",
+              "required": false,
+              "column": 2,
+              "min": 0,
+              "max": 100,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "gstNumber",
+              "label": "GST Number",
+              "type": "text",
+              "placeholder": "Enter GST number",
+              "required": true,
+              "column": 2,
+              "maxLength": 15,
+              "minLength": 15,
+              "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "tdsPercent",
+              "label": "TDS (%)",
+              "type": "number",
+              "placeholder": "Enter TDS percentage",
+              "required": true,
+              "column": 2,
+              "min": 0,
+              "max": 100,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "tdsApplicability",
+              "label": "TDS Applicable To",
+              "type": "select",
+              "placeholder": "Select TDS applicability",
+              "required": true,
+              "column": 2,
+              "options": [
+                {
+                  "value": "base_only",
+                  "label": "Base Amount"
+                },
+                {
+                  "value": "base_plus_tax",
+                  "label": "Total Amount"
+                }
+              ],
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "invoiceSenderName",
+              "label": "Invoice Sender Name",
+              "type": "text",
+              "placeholder": "Enter name for invoice",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "invoiceSenderPan",
+              "label": "PAN",
+              "type": "text",
+              "placeholder": "Enter PAN number",
+              "required": true,
+              "column": 2,
+              "maxLength": 10,
+              "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "invoiceSenderCin",
+              "label": "CIN",
+              "type": "text",
+              "placeholder": "Enter CIN",
+              "required": true,
+              "column": 2,
+              "maxLength": 21,
+              "pattern": "^[A-Z]{1}[0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$",
+              "disabled": false,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            },
+            {
+              "name": "invoiceSenderAddress",
+              "label": "Business Address",
+              "type": "textarea",
+              "placeholder": "Enter business address",
+              "required": true,
+              "column": 1,
+              "disabled": false,
+              "maxLength": 255,
+              "visibleWhen": {
+                "field": "requiresPayment",
+                "values": [
+                  "yes"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sectionId": "email-communication",
+          "sectionTitle": "Email & Communication",
+          "fields": [
+            {
+              "name": "emailSenderName",
+              "label": "Email Sender Name",
+              "type": "text",
+              "placeholder": "Enter email sender name",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailSenderAddress",
+              "label": "Email Sender Address",
+              "type": "email",
+              "placeholder": "Enter email sender address(email)",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailBccName",
+              "label": "BCC Name",
+              "type": "text",
+              "placeholder": "Enter BCC name",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "emailBccAddress",
+              "label": "BCC Email",
+              "type": "email",
+              "placeholder": "Enter BCC email",
+              "required": true,
+              "column": 2,
+              "disabled": false
+            },
+            {
+              "name": "helplineNumber",
+              "label": "Helpline Number",
+              "type": "text",
+              "placeholder": "Enter helpline number",
+              "required": true,
+              "column": 2,
+              "disabled": false,
+              "maxLength": 50
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "subProgramFields": {
+    "HDB": [
+      {
+        "name": "title",
+        "label": "Sub-program Title",
+        "type": "text",
+        "placeholder": "Enter sub-program title",
+        "required": true,
+        "column": 2,
+        "disabled": false
+      },
+      {
+        "name": "code",
+        "label": "Sub-program Code",
+        "type": "text",
+        "placeholder": "e.g. PROGRAM_NAME_2026_01 (auto-generated if left blank)",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 50
+      },
+      {
+        "name": "sessionType",
+        "label": "Sub-program Type",
+        "type": "select",
+        "placeholder": "Select sub-program type",
+        "required": true,
+        "column": 2,
+        "options": [
+          {
+            "value": "HDB",
+            "label": "HDB"
+          },
+          {
+            "value": "MSD",
+            "label": "MSD"
+          }
+        ],
+        "disabled": false
+      },
+      {
+        "name": "sessionPrice",
+        "label": "Price",
+        "type": "number",
+        "placeholder": "Enter price",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "prefix": "₹",
+        "dynamicPrefill": {
+          "sourceField": "sessionType",
+          "mapping": {
+            "HDB": "hdbFee",
+            "MSD": "msdFee"
+          }
+        }
+      },
+      {
+        "name": "programStartDate",
+        "label": "Sub-program Start Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "programStartDate",
+          "programStartTime"
+        ]
+      },
+      {
+        "name": "programEndDate",
+        "label": "Sub-program End Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "programEndDate",
+          "programEndTime"
+        ]
+      },
+      {
+        "name": "modeOfProgram",
+        "label": "Mode of Sub-program",
+        "type": "radio",
+        "required": true,
+        "column": 2,
+        "options": [
+          {
+            "value": "online",
+            "label": "Online"
+          },
+          {
+            "value": "offline",
+            "label": "Offline"
+          },
+          {
+            "value": "hybrid",
+            "label": "Hybrid"
+          }
+        ],
+        "disabled": false,
+        "disabledWhen": {
+          "field": "modeOfProgram",
+          "values": ["online", "offline"]
+        }
+      },
+      {
+        "name": "venueAddress",
+        "label": "Venue",
+        "type": "creatableSelect",
+        "maxLength": 250,
+        "placeholder": "Select venue",
+        "required": false,
+        "column": 2,
+        "options": [],
+        "disabled": false,
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkInStartDate",
+        "label": "Check-in Starts Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkInStartDate",
+          "checkInStartTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkInEndDate",
+        "label": "Check-in Ends Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkInEndDate",
+          "checkInEndTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkOutStartDate",
+        "label": "Check-out Starts Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkOutStartDate",
+          "checkOutStartTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkOutEndDate",
+        "label": "Check-out Ends Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkOutEndDate",
+          "checkOutEndTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "hasSeatLimit",
+        "label": "Has Seat Limit?",
+        "type": "radio",
+        "required": true,
+        "column": 2,
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          },
+          {
+            "value": "no",
+            "label": "No"
+          }
+        ],
+        "disabled": false,
+        "prefillFrom": "hasSeatLimit"
+      },
+      {
+        "name": "seatLimit",
+        "label": "Seat Limit",
+        "type": "number",
+        "placeholder": "Enter seat limit",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "min": 1,
+        "prefillFrom": "seatLimit",
+        "visibleWhen": {
+          "field": "hasSeatLimit",
+          "values": [
+            "yes"
+          ]
+        }
+      },
+      {
+        "name": "hasWaitlist",
+        "label": "Has Waitlist?",
+        "type": "radio",
+        "required": false,
+        "column": 2,
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          },
+          {
+            "value": "no",
+            "label": "No"
+          }
+        ],
+        "disabled": false,
+        "prefillFrom": "hasWaitlist"
+      },
+      {
+        "name": "waitlistTriggerCount",
+        "label": "Waitlist Trigger Count",
+        "type": "number",
+        "placeholder": "Enter waitlist trigger",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "min": 1,
+        "prefillFrom": "waitlistTriggerCount",
+        "visibleWhen": {
+          "field": "hasWaitlist",
+          "values": [
+            "yes"
+          ]
+        }
+      }
+    ],
+    "TAT": [
+      {
+        "name": "title",
+        "label": "Session Title",
+        "type": "text",
+        "placeholder": "Enter session title",
+        "required": true,
+        "column": 2,
+        "disabled": false
+      },
+      {
+        "name": "code",
+        "label": "Session Code",
+        "type": "text",
+        "placeholder": "e.g. PROGRAM_NAME_2026_01 (auto-generated if left blank)",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 50
+      },
+      {
+        "name": "programStartDate",
+        "label": "Session Start Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "programStartDate",
+          "programStartTime"
+        ]
+      },
+      {
+        "name": "programEndDate",
+        "label": "Session End Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "programEndDate",
+          "programEndTime"
+        ]
+      },
+      {
+        "name": "modeOfProgram",
+        "label": "Mode of Session",
+        "type": "radio",
+        "required": true,
+        "column": 2,
+        "value": "online",
+        "options": [
+          {
+            "value": "online",
+            "label": "Online"
+          },
+          {
+            "value": "offline",
+            "label": "Offline"
+          },
+          {
+            "value": "hybrid",
+            "label": "Hybrid"
+          }
+        ],
+        "disabled": false,
+        "disabledWhen": {
+          "field": "modeOfProgram",
+          "values": ["online", "offline"]
+        }
+      },
+      {
+        "name": "venueAddress",
+        "label": "Venue",
+        "type": "creatableSelect",
+        "maxLength": 250,
+        "placeholder": "Select venue",
+        "required": false,
+        "column": 2,
+        "options": [],
+        "disabled": false,
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkInStartDate",
+        "label": "Check-in Starts Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkInStartDate",
+          "checkInStartTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkInEndDate",
+        "label": "Check-in Ends Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkInEndDate",
+          "checkInEndTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkOutStartDate",
+        "label": "Check-out Starts Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkOutStartDate",
+          "checkOutStartTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      },
+      {
+        "name": "checkOutEndDate",
+        "label": "Check-out Ends Date & Time",
+        "type": "datetime",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "checkOutEndDate",
+          "checkOutEndTime"
+        ],
+        "visibleWhen": {
+          "field": "modeOfProgram",
+          "values": [
+            "offline",
+            "hybrid"
+          ]
+        }
+      }
+    ],
+    "CUSTOM_grouped": [
+      {
+        "name": "name",
+        "label": "Sub-program Name",
+        "type": "text",
+        "placeholder": "Enter sub-program name",
+        "required": true,
+        "column": 1,
+        "disabled": false
+      },
+      {
+        "name": "groupDisplayOrder",
+        "label": "Display Order",
+        "type": "number",
+        "placeholder": "Enter display order",
+        "required": true,
+        "column": 1,
+        "min": 1,
+        "disabled": false
+      },
+      {
+        "name": "code",
+        "label": "Code",
+        "type": "text",
+        "placeholder": "e.g. PROGRAM_NAME_2026_01 (auto-generated if left blank)",
+        "required": false,
+        "column": 1,
+        "disabled": false,
+        "maxLength": 50
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "textarea",
+        "placeholder": "Enter description",
+        "required": false,
+        "column": 1,
+        "disabled": false,
+        "maxLength": 200
+      },
+      {
+        "name": "startsAt",
+        "label": "Start Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "startsAt",
+          "startsAtTime"
+        ]
+      },
+      {
+        "name": "endsAt",
+        "label": "End Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "endsAt",
+          "endsAtTime"
+        ]
+      },
+      {
+        "name": "blessEndsAt",
+        "label": "Bless Ends At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhen": {
+          "field": "approvalRequired",
+          "values": ["yes"]
+        }
+      },
+      {
+        "name": "canRegisterTill",
+        "label": "Can Register Till",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhen": {
+          "field": "approvalRequired",
+          "values": ["yes"]
+        }
+      },
+      {
+        "name": "modeOfOperation",
+        "label": "Mode of Sub-program",
+        "type": "radio",
+        "required": true,
+        "column": 1,
+        "value": "offline",
+        "options": [
+          {
+            "value": "offline",
+            "label": "Offline"
+          },
+          {
+            "value": "online",
+            "label": "Online"
+          }
+        ],
+        "disabled": false,
+        "disabledWhen": {
+          "field": "modeOfProgram",
+          "values": ["online", "offline"]
+        }
+      },
+      {
+        "name": "onlineType",
+        "label": "Online Type",
+        "type": "select",
+        "placeholder": "Select online type",
+        "required": true,
+        "column": 2,
+        "options": [
+          { "value": "meeting", "label": "Meeting" },
+          { "value": "webinar", "label": "Webinar" },
+          { "value": "live_stream", "label": "Live Stream" }
+        ],
+        "disabled": false,
+        "prefillFrom": "onlineType",
+        "visibleWhen": { "field": "modeOfOperation", "values": ["online"] }
+      },
+      {
+        "name": "meetingLink",
+        "label": "Meeting Link",
+        "type": "text",
+        "placeholder": "Enter meeting URL",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "meetingLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["meeting"] }
+        ]
+      },
+      {
+        "name": "meetingId",
+        "label": "Meeting ID",
+        "type": "text",
+        "placeholder": "Enter meeting ID",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "meetingId",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["meeting"] }
+        ]
+      },
+      {
+        "name": "meetingPassword",
+        "label": "Meeting Password",
+        "type": "text",
+        "placeholder": "Enter meeting password",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "meetingPassword",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["meeting"] }
+        ]
+      },
+      {
+        "name": "webinarLink",
+        "label": "Webinar Link",
+        "type": "text",
+        "placeholder": "Enter webinar URL",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "webinarLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "webinarId",
+        "label": "Webinar ID",
+        "type": "text",
+        "placeholder": "Enter webinar ID",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "webinarId",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "webinarPassword",
+        "label": "Webinar Password",
+        "type": "text",
+        "placeholder": "Enter webinar password",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "webinarPassword",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "panelistLink",
+        "label": "Panelist Link",
+        "type": "text",
+        "placeholder": "Enter panelist link",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "panelistLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "registrationLink",
+        "label": "Registration Link",
+        "type": "text",
+        "placeholder": "Enter registration link",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "registrationLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "streamUrl",
+        "label": "Stream URL",
+        "type": "text",
+        "placeholder": "Enter stream URL",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "streamUrl",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["live_stream"] }
+        ]
+      },
+      {
+        "name": "backupStreamUrl",
+        "label": "Backup Stream URL",
+        "type": "text",
+        "placeholder": "Enter backup stream URL",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "backupStreamUrl",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["live_stream"] }
+        ]
+      },
+      {
+        "name": "chatUrl",
+        "label": "Chat URL",
+        "type": "text",
+        "placeholder": "Enter chat URL",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "chatUrl",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["live_stream"] }
+        ]
+      },
+      {
+        "name": "venue",
+        "label": "Venue Name",
+        "type": "creatableSelect",
+        "maxLength": 250,
+        "placeholder": "Select or enter venue name",
+        "required": true,
+        "column": 2,
+        "options": [
+          {
+            "value": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078.",
+            "label": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078."
+          }
+        ],
+        "disabled": false,
+        "prefillFrom": "venue",
+        "visibleWhen": {
+          "field": "modeOfOperation",
+          "values": [
+            "offline"
+          ]
+        }
+      },
+      {
+        "name": "venueNameInEmail",
+        "label": "Venue Name in Emails",
+        "type": "creatableSelect",
+        "maxLength": 250,
+        "placeholder": "Select or enter venue name for emails",
+        "required": true,
+        "column": 2,
+        "options": [
+          {
+            "value": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078.",
+            "label": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078."
+          }
+        ],
+        "disabled": false,
+        "prefillFrom": "venueNameInEmail",
+        "visibleWhen": {
+          "field": "modeOfOperation",
+          "values": [
+            "offline"
+          ]
+        }
+      },
+      {
+        "name": "checkinAt",
+        "label": "Check-in At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      },
+      {
+        "name": "checkinEndsAt",
+        "label": "Check-in Ends At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      },
+      {
+        "name": "checkoutAt",
+        "label": "Check-out At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      },
+      {
+        "name": "checkoutEndsAt",
+        "label": "Check-out Ends At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      }
+    ],
+    "CUSTOM_session": [
+      {
+        "name": "name",
+        "label": "Session Name",
+        "type": "text",
+        "placeholder": "Enter session name",
+        "required": true,
+        "column": 1,
+        "disabled": false
+      },
+      {
+        "name": "code",
+        "label": "Session Code",
+        "type": "text",
+        "placeholder": "e.g. PROGRAM_NAME_2026_01 (auto-generated if left blank)",
+        "required": false,
+        "column": 1,
+        "disabled": false,
+        "maxLength": 50
+      },
+      {
+        "name": "displayOrder",
+        "label": "Display Order",
+        "type": "number",
+        "placeholder": "Enter display order",
+        "required": true,
+        "column": 1,
+        "min": 1,
+        "disabled": false
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "textarea",
+        "placeholder": "Enter session description",
+        "required": false,
+        "column": 1,
+        "disabled": false,
+        "maxLength": 200
+      },
+      {
+        "name": "startsAt",
+        "label": "Start Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "startsAt",
+          "startsAtTime"
+        ]
+      },
+      {
+        "name": "endsAt",
+        "label": "End Date & Time",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "fields": [
+          "endsAt",
+          "endsAtTime"
+        ]
+      },
+      {
+        "name": "modeOfOperation",
+        "label": "Mode of Session",
+        "type": "radio",
+        "required": true,
+        "column": 1,
+        "value": "offline",
+        "options": [
+          {
+            "value": "offline",
+            "label": "Offline"
+          },
+          {
+            "value": "online",
+            "label": "Online"
+          }
+        ],
+        "disabled": false,
+        "disabledWhen": {
+          "field": "modeOfProgram",
+          "values": ["online", "offline"]
+        }
+      },
+      {
+        "name": "onlineType",
+        "label": "Online Type",
+        "type": "select",
+        "placeholder": "Select online type",
+        "required": true,
+        "column": 2,
+        "options": [
+          { "value": "meeting", "label": "Meeting" },
+          { "value": "webinar", "label": "Webinar" },
+          { "value": "live_stream", "label": "Live Stream" }
+        ],
+        "disabled": false,
+        "prefillFrom": "onlineType",
+        "visibleWhen": { "field": "modeOfOperation", "values": ["online"] }
+      },
+      {
+        "name": "meetingLink",
+        "label": "Meeting Link",
+        "type": "text",
+        "placeholder": "Enter meeting URL",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "meetingLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["meeting"] }
+        ]
+      },
+      {
+        "name": "meetingId",
+        "label": "Meeting ID",
+        "type": "text",
+        "placeholder": "Enter meeting ID",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "meetingId",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["meeting"] }
+        ]
+      },
+      {
+        "name": "meetingPassword",
+        "label": "Meeting Password",
+        "type": "text",
+        "placeholder": "Enter meeting password",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "meetingPassword",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["meeting"] }
+        ]
+      },
+      {
+        "name": "webinarLink",
+        "label": "Webinar Link",
+        "type": "text",
+        "placeholder": "Enter webinar URL",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "webinarLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "webinarId",
+        "label": "Webinar ID",
+        "type": "text",
+        "placeholder": "Enter webinar ID",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "webinarId",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "webinarPassword",
+        "label": "Webinar Password",
+        "type": "text",
+        "placeholder": "Enter webinar password",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 100,
+        "prefillFrom": "webinarPassword",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "panelistLink",
+        "label": "Panelist Link",
+        "type": "text",
+        "placeholder": "Enter panelist link",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "panelistLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "registrationLink",
+        "label": "Registration Link",
+        "type": "text",
+        "placeholder": "Enter registration link",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "registrationLink",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["webinar"] }
+        ]
+      },
+      {
+        "name": "streamUrl",
+        "label": "Stream URL",
+        "type": "text",
+        "placeholder": "Enter stream URL",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "streamUrl",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["live_stream"] }
+        ]
+      },
+      {
+        "name": "backupStreamUrl",
+        "label": "Backup Stream URL",
+        "type": "text",
+        "placeholder": "Enter backup stream URL",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "backupStreamUrl",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["live_stream"] }
+        ]
+      },
+      {
+        "name": "chatUrl",
+        "label": "Chat URL",
+        "type": "text",
+        "placeholder": "Enter chat URL",
+        "required": false,
+        "column": 2,
+        "disabled": false,
+        "maxLength": 2048,
+        "isUrl": true,
+        "prefillFrom": "chatUrl",
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["online"] },
+          { "field": "onlineType", "values": ["live_stream"] }
+        ]
+      },
+      {
+        "name": "venue",
+        "label": "Venue Name",
+        "type": "creatableSelect",
+        "maxLength": 250,
+        "placeholder": "Select or enter venue name",
+        "required": true,
+        "column": 2,
+        "options": [
+          {
+            "value": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078.",
+            "label": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078."
+          }
+        ],
+        "disabled": false,
+        "prefillFrom": "venue",
+        "visibleWhen": {
+          "field": "modeOfOperation",
+          "values": [
+            "offline"
+          ]
+        }
+      },
+      {
+        "name": "venueNameInEmail",
+        "label": "Venue Name in Emails",
+        "type": "creatableSelect",
+        "maxLength": 250,
+        "placeholder": "Select or enter venue name for emails",
+        "required": true,
+        "column": 2,
+        "options": [
+          {
+            "value": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078.",
+            "label": "Leonia Holistic Destination, Bommarasipet, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500078."
+          }
+        ],
+        "disabled": false,
+        "prefillFrom": "venueNameInEmail",
+        "visibleWhen": {
+          "field": "modeOfOperation",
+          "values": [
+            "offline"
+          ]
+        }
+      },
+      {
+        "name": "checkinAt",
+        "label": "Check-in At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      },
+      {
+        "name": "checkinEndsAt",
+        "label": "Check-in Ends At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      },
+      {
+        "name": "checkoutAt",
+        "label": "Check-out At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      },
+      {
+        "name": "checkoutEndsAt",
+        "label": "Check-out Ends At",
+        "type": "datetime",
+        "required": true,
+        "column": 2,
+        "disabled": false,
+        "visibleWhenAll": [
+          { "field": "modeOfOperation", "values": ["offline"] },
+          { "field": "hasCheckinCheckout", "values": ["yes"] }
+        ]
+      }
+    ]
+  }
+}

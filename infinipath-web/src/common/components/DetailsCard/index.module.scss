@@ -1,0 +1,102 @@
+@import "../../../common/styles/variables.scss";
+
+.detailsCard {
+  height: 580px;
+  box-shadow: 4px 4px 60px 0px rgba(17, 75, 116, 0.15);
+  border-radius: 16px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 1;
+  background-position: bottom 17px center;
+  background-repeat: no-repeat;
+  background-size: 355px;
+  float: right;
+  margin-top: 120px;
+  box-sizing: border-box;
+  margin-right: 100px;
+  padding: 24px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.boldText {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: $natoSansBold;
+  color: $darkBlue;
+}
+
+.normalText {
+  font-size: 15px;
+  color: $darkBlue;
+  margin-top: 4px;
+  margin-bottom: 21px;
+}
+
+.infinipathIcon {
+  width: 250px;
+  height: 64.43px;
+  margin: auto;
+}
+
+.formLine {
+  width: 412px;
+  height: 2px; // Adjust the height to make it visible
+  gap: 0px;
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(238, 236, 236, 0) 0%,
+    #eeecec 10%,
+    #eeecec 50%,
+    #eeecec 90%,
+    rgba(238, 236, 236, 0) 100%
+  );
+  border-image-slice: 1;
+  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.06);
+  opacity: 1; // Set opacity to 1 to make it visible
+  transform: rotate(0deg); // No need to rotate
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.regOpen {
+  width: 412px;
+  height: 46px;
+  padding: 8px 16px 16px 16px;
+  gap: 10px;
+  font-size: 12px;
+  background: linear-gradient(180.52deg, #eaf2ff 2.92%, #a5caff 99.55%);
+  border-radius: 12px 12px 0px 0px;
+  text-align: left;
+}
+
+.regOpenText {
+  font-size: 12px;
+  font-weight: 600px;
+  line-height: 22px;
+  color: $darkBlue;
+  font-family: $natoSansBold;
+}
+
+@media (max-height: 800px) {
+  .detailsCard{
+    height: 550px;
+  }
+}
+
+.upperTextContainer{
+    height: 25px;
+    width: 400px;
+}

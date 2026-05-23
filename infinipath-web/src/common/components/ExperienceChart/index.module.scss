@@ -1,0 +1,153 @@
+@import "../../../common/styles/variables.scss";
+
+.container {
+  width: 100%;
+  background-color: $bg-white-shade;
+  padding: 24px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+  justify-content: center;
+
+  &Item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &Dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  &Text {
+    font-size: $font-size-sm;
+    color: $darkBlue;
+  }
+}
+
+.infiniJourneyTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  margin-bottom: 16px;
+  color: $darkBlue;
+}
+
+.tooltip {
+  background-color: $white;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  &Year {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-lg;
+    margin: 0 0 8px 0;
+  }
+
+  &Timeline {
+    font-size: $font-size-sm;
+    margin: 0 0 8px 0;
+  }
+}
+
+.timelineValue {
+  font-weight: $font-weight-medium;
+  color: $priority2Bg;
+}
+
+.events {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &Title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    margin: 0;
+  }
+
+  &Item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &Dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  &Text {
+    font-size: $font-size-sm;
+  }
+}
+
+.noEvents {
+  font-size: $font-size-sm;
+  color: $footer-gray;
+  margin: 0;
+}
+
+.footer {
+  margin-top: 16px;
+  font-size: $font-size-sm;
+  color: $footer-gray;
+  text-align: center;
+
+  &Grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+}
+.otherExperiencesSection {
+  margin-top: 16px;
+}
+.otherExperiencesTitle {
+  font-weight: $font-weight-semibold;
+  margin-bottom: 8px;
+ 
+}
+.otherExperiencesTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.otherExperiences{
+  margin-top:10px;
+}
+.associatedQuestions{
+  flex: 1 1 45%;
+  min-width: 260px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.associatedQuestionsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+.regHeading{
+  color:$darkBlue;
+  margin-bottom:30px;
+}
+.associatedLabel,
+.associatedAnswer {
+  color: $darkBlue;
+}
+.otherExperiencesContainer {
+  margin-bottom: 30px;
+}

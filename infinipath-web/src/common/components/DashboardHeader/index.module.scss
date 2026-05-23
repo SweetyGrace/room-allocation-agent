@@ -1,0 +1,118 @@
+@import "../../styles/variables.scss";
+
+.dashboardHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 8px 10px 8px 10px;
+  height: 30px;
+}
+
+.heading {
+  color: var(--Text-Blue, #051b46);
+  font-family: $natoSansRegular;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.view {
+    color: $greyColor;
+    font-family: $natoSansRegular;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+  }
+
+  .tableData {
+    color: $blackBlue;
+    font-family: $natoSansRegular;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal ;
+  }
+
+.select {
+  margin-left: 8px;
+}
+
+.totalRecords {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #051b46;
+}
+.iconsBlock {
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+  gap: 10px;
+}
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.searchInput {
+  width: 330px;
+  border: 1px solid $mediumGray;
+  border-radius: 20px;
+  padding: 4px 14px;
+  padding-right: 20px; // Make space for the clear icon
+  background-color: transparent;
+  color: $darkBlue;
+  outline: none !important;
+}
+
+.clearIcon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.filter {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.errorMsg {
+  font-size: 14px;
+  color: #e28619;
+  margin: 0px;
+  text-align: left;
+}
+
+.uploadIcon {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+.emailIcon {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.downloadReportText {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #1859b4;
+  font-weight: 400;
+  margin-right:10px;
+  cursor: pointer;
+  font-size: 16px;
+}

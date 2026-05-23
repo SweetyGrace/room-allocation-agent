@@ -1,0 +1,289 @@
+@import "../../../common/styles/variables.scss";
+.toolbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 16px;
+
+  .statusSelector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+
+    .toolbar {
+      font-size: 14px;
+      font-weight: 400;
+      color: #051B46;
+    }
+
+    .dropdownMenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      min-width: 200px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      margin-top: 4px;
+      max-height: 545px;
+      overflow-y: auto;
+
+      .dropdownItem, .dropdownItemSort  {
+        padding: 12px 16px;
+        cursor: pointer;
+        color: #051B46;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &.selected {
+          background-color: #F4F8FB !important;
+        }
+
+        .sortArrow {
+          width: 16px;
+          height: 16px;
+          opacity: 0;
+          transition: all 0.2s ease;
+
+          &.rotated {
+            transform: rotate(180deg);
+          }
+          &.visible {
+            opacity: 0.5;
+          }
+        }
+
+        &:hover {
+          background-color: #F4F8FB;
+          &.visible {
+            transform: rotate(180deg) !important;
+          }
+          .sortArrow {
+            opacity: 0.5;
+          }
+        }
+
+        // Special styling for sessions with spacing (sub-sessions)
+        &.sessionWithSpacing {
+          position: relative;
+          
+          // Continuous vertical line from previous item - moved to 10px from left
+          &::before {
+            content: '';
+            position: absolute;
+            left: 19px; // Changed from 14px to 10px as requested
+            top: -1px; // Start from above the item
+            bottom: 0.2px; // Extend below the item
+            width: 2px;
+            background-color: #D9D9D9;
+            border-radius: 1px;
+          }
+          
+          // Remove the horizontal connector line (::after)
+          // &::after - REMOVED
+          
+          &:hover {
+            background: linear-gradient(to right, transparent 23px, #F4F8FB 23px); // Adjusted to match spaceLeft margin
+          }
+          
+          // Add selected state styling for sessionWithSpacing
+          &.selected {
+            background: linear-gradient(to right, transparent 23px, #F4F8FB 23px) !important;
+          }
+          
+          // For the last sub-session item, stop the vertical line
+          &:last-child::before {
+            bottom: 50%; // Stop at the middle of the current item
+          }
+        }
+      }
+      .dropdownItemSort {
+        padding: 8px 8px;
+      }
+
+      .dropdownDivider {
+        height: 1px;
+        background-color: #e5e7eb;
+        margin: 8px 0;
+      }
+    }
+  }
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .search {
+      border: 1px solid #c1c4c5;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      padding: 5px 5px 5px 5px;
+      position: relative;
+
+      span {
+        cursor: pointer;
+      }
+
+      .searchInput,.searchInputWithText {
+        width: 309px;
+        padding: 0px 10px 0px 5px;
+        border: none;
+        color: $darkBlue;
+
+        &::placeholder {
+          color: #9ca3af;
+        }
+      }
+      .searchInputWithText{
+        padding: 0px 30px 0px 5px;
+      }
+
+      .searchInput , .searchInputWithText:focus {
+        border: none;
+        outline: none;
+      }
+
+      .clearIcon {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        position: absolute;
+        right: 7px;
+        top: 47%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        .img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover {
+          color: #333;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .searchIcon {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+     .filterIcon {
+        width: 20px;
+        height: 20px;
+        object-fit: none;
+        cursor: pointer;
+      }
+  }
+
+  .sortContainer {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 160px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0px 0px 2px 0px #0000001f;
+    z-index: 1000;
+    padding: 4px;
+  }
+
+.dropdownItem, .dropdownItemSort {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #051B46;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &.selected {
+    background-color: #F4F8FB !important;
+  }
+
+  .sortArrow {
+    width: 16px;
+    height: 16px;
+  }
+}
+.dropdownItemSort {
+  padding: 8px 8px;
+}
+
+.sortLabelContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortIconContainer {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; // Prevent shrinking
+}
+
+.sortIconLeft {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+}
+
+.blueDot{
+  width: 5px;
+  height: 5px;
+  fill: #0953cc;
+  background-color: #0953cc;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5px;
+  right: 1px;
+}
+
+.spaceLeft{
+  margin-left: 18px; // Increased to accommodate the tree structure
+}
+
+@media screen and (max-height:670px) {
+  .dropdownMenu{
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-height:560px) {
+  .dropdownMenu{
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}

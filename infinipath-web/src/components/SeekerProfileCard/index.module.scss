@@ -1,0 +1,166 @@
+@import "../../common/styles/variables.scss";
+.containerCard{
+    background-image: url("../../assets/images/cardbg.png");
+    padding: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+    background-position: center;
+    margin: 15px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    .edit{
+        display: flex;
+        justify-content: end;
+        color: #0760CD;
+        cursor: pointer;
+    }
+   .mainCard{
+    display: flex;
+    gap: 24px;
+    
+.profileSection{
+    margin: 20px 0px;
+    width: 140px;
+    height: 140px;
+    min-width: 140px; // Prevents container from shrinking
+    min-height: 140px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover; // Modern browsers - prevents stretching
+        object-position: center;
+        
+        // Fallback for older browsers
+        @supports not (object-fit: cover) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+    
+    .caption{
+        background-color: white;
+        height: 26.418px;
+        padding: 5px 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #FFF;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+        position: absolute;
+        bottom: -13px; // Positions caption at bottom edge
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 2; // Ensures caption appears above image
+    }
+}
+    }
+}
+.defaulterCard {
+    @extend .containerCard;
+    border-left: 3px solid $border-orange;
+}
+ .profileDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0px 12px;
+    .name {
+        color: #051B46;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px
+    }
+}
+.profileDetailsInfo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    .info{
+        display: flex;
+        // align-items: center;
+        color:  #051B46;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        gap: 6px;
+        justify-content: center;
+        // img{
+        //     // margin-left: 6px;
+        // }
+        .gender{
+            text-transform: capitalize;
+        }
+    }
+   .verticalLine {
+    width: 0.5px;
+    height: 13px;
+    border: 0.5px solid rgba(112, 112, 112, 0.50);
+    }
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    box-shadow: 0 2px 4px rgba(10, 13, 18, 0.05);
+    padding: 24px;
+    margin: 15px;
+}
+.formSection {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 38px;
+}
+.buttonSection{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+.cancelButton {
+  background-image: none !important;
+  font-size: 16px;
+  margin-left: 8px;
+  cursor: pointer;
+  line-height: 30px;
+  font-weight: 400;
+  color: #1859b4
+}
+
+.saveButton {
+  color: #fff;
+  font-size: 16px;
+  width: 150px;
+  height: 40px;
+}
+
+.saveText {
+  color: #fff;
+}

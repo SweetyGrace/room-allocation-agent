@@ -1,0 +1,62 @@
+@import "../../common/styles/variables.scss";
+
+.container {
+  background-color: $color-white;
+  border-radius: 1px;
+  border-bottom: 1px solid $lightGrey;
+  justify-content: space-between;
+  position: relative;
+}
+
+.mainWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logoIcon {
+  width: 120px;
+  height: 39px;
+  img {
+    width: 100%;
+  }
+  @media (min-width: 1080px) and (max-width: 1260px) {
+   margin-left: 20px;
+  }
+}
+
+.kpiContainer {
+  display: flex;
+  gap: 25px;
+  position: relative;
+  padding-bottom: 3px;
+  
+  @media (min-width: 1080px) and (max-width: 1260px) {
+    gap: 20px;
+  }
+}
+
+.kpiWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.headingSubheadingContainer {
+  cursor: pointer;
+  padding: 10px 0 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+// Animated indicator
+.indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: $blue;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px 2px 0 0;
+  z-index: 1;
+}
+

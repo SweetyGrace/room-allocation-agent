@@ -1,0 +1,41 @@
+// CustomStepperIcon/index.module.scss
+
+.stepperIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.iconDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+// Completed state - Green dot
+.completedIcon .iconDot {
+  background-color: #4CAF50; // Green
+  border: 2px solid #4CAF50;
+}
+
+// Active/In-progress state - Yellow dot
+.isPendingIcon .iconDot {
+  background-color: #FFC107; // Yellow/Orange
+  border: 2px solid #FFC107;
+}
+
+// Inactive/Not started state - Yellow dot
+.notStartedIcon .iconDot {
+  background-color: #E0E0E0; // Light gray
+  border: 2px solid #E0E0E0;
+}
+
+// Default state
+.defaultIcon .iconDot {
+  background-color: #E0E0E0; // Light gray
+  border: 2px solid #E0E0E0;
+}

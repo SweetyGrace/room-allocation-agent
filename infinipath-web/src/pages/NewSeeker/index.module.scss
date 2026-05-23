@@ -1,0 +1,33 @@
+@import "../../common/styles/variables.scss";
+
+.cards {
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 16px;
+  z-index: 1;
+  margin-top: 48px;
+  border: 1px solid #ededed;
+  box-shadow: 4px 4px 60px 0px #114b7426;
+  padding: 40px;
+  background-image: url("../../assets/images/add-seeker-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 200px);
+  overflow: scroll;
+}
+
+.cards,
+.cardsWrapper,
+.organisationLandingPage {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.cardsWrapper {
+  padding: 32px;
+  min-height: 100%;
+  flex-direction: row;
+  max-width: 100%;
+}

@@ -1,0 +1,195 @@
+@import "../../../common/styles/variables.scss";
+
+.modalBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  width: 75%;
+  height: 70%;
+}
+
+.closeButton {
+  cursor: pointer;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $darkBlue;
+  font-size: 18px;
+  line-height: 26px;
+  gap: 3px;
+}
+
+.modalHeader {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: $darkBlue;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Search field styling */
+.searchField {
+  margin-bottom: 16px;
+}
+
+/* Divider styling */
+.divider {
+  margin: 16px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Link section styling */
+.linkContainer {
+  margin-top: 16px;
+}
+
+.link {
+  color: #007bff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.orDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  width: 400px;
+  margin: auto;
+}
+
+.bottomText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  color: $darkBlue;
+}
+
+.createSeekerText {
+  font-weight: 400;
+  font-size: 16px;
+  color: $blue;
+  cursor: pointer;
+}
+
+.fieldBlock {
+  width: 100%;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.emptySearch {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancelButton {
+  position: absolute !important;
+  right: 10px !important;
+  top: 15px !important;
+}
+
+.emptyUser {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.inputFields,
+.errorFields {
+  width: 100%;
+  color: $darkBlue;
+  border-radius: 8px;
+  height: 45px;
+  padding: 32px 50px 32px 48px;
+  font-size: 26px;
+  flex-grow: 1;
+  background: #fff;
+  box-shadow: 4px 4px 60px 0px #114b7414;
+  border: 0.5px solid #ededed;
+
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  padding: 14px 12px;
+  border-bottom: 1px solid #ededed;
+
+  &:hover {
+    background-color: $secondaryBlue;
+    border-radius: 10px;
+  }
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.userBlocks {
+  height: 100%;
+  overflow: scroll;
+}
+
+.phoneText {
+  font-size: 14px;
+  color: $lightGrey2;
+}
+
+.searchContent {
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  height: 100%;
+}
+
+.results {
+  margin-top: 30px;
+  height: calc(100% - 140px);
+}

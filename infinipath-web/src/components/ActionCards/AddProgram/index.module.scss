@@ -1,0 +1,329 @@
+@import "../../../common/styles/variables.scss";
+
+// Success Screen
+.successContainer {
+  padding: 40px;
+  text-align: center;
+  background-color: $bg-light-gray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.successCard {
+  background-color: $white;
+  padding: 40px;
+  border-radius: $border-radius-xs;
+  box-shadow: 0 4px 12px $black-border-shadow;
+  max-width: 500px;
+}
+
+.successCheckmark {
+  font-size: 48px;
+  color: $primaryGreen;
+  margin-bottom: 20px;
+}
+
+.successTitle {
+  color: $color-dark;
+  margin-bottom: 16px;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+}
+
+.successMessage {
+  color: $footer-gray;
+  margin-bottom: 32px;
+  font-size: $font-size-md;
+}
+
+.successButton {
+  background-color: $linkColor;
+  color: $white;
+  border: none;
+  padding: 12px $spacing-lg;
+  border-radius: 6px;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $blue-secondary;
+  }
+}
+
+// Main Form Container
+.formContainer {
+  padding: $spacing-lg;
+  background-color: $bg-light-gray;
+  min-height: 100vh;
+}
+
+.formWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// Stepper
+.stepperContainer {
+  margin-bottom: 32px;
+}
+
+.stepperWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-md;
+
+  &.active {
+    background-color: $linkColor;
+    color: $white;
+  }
+
+  &.inactive {
+    background-color: $border-light-gray;
+    color: $footer-gray;
+  }
+}
+
+.stepLabel {
+  margin-left: 12px;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+
+  &.active {
+    color: $linkColor;
+  }
+
+  &.inactive {
+    color: $footer-gray;
+  }
+}
+
+.stepLine {
+  flex: 1;
+  height: 2px;
+  margin-left: 12px;
+
+  &.active {
+    background-color: $linkColor;
+  }
+
+  &.inactive {
+    background-color: $border-light-gray;
+  }
+}
+
+// Form Content
+.formContent {
+  background-color: $white;
+  padding: 32px;
+  border-radius: $border-radius-xs;
+  box-shadow: 0 2px 8px $shadow-black;
+}
+
+.formTitle {
+  margin-bottom: $spacing-lg;
+  color: $color-dark;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+}
+
+// Form Fields
+.formField {
+  margin-bottom: $spacing-lg;
+}
+
+.label {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  font-size: $font-size-sm;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $border-gray;
+  border-radius: 6px;
+  font-size: $font-size-md;
+  color: $darkBlue;
+  background-color: $white;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $linkColor;
+  }
+
+  &.error {
+    border: 2px solid $error;
+  }
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.errorText {
+  color: $error;
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+  display: block;
+}
+
+// Checkbox
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.checkbox {
+  margin-right: $spacing-sm;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: $font-size-md;
+  color: $darkBlue;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+}
+
+// Section Headers
+.sectionHeader {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  margin-top: 32px;
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-sm;
+  border-bottom: 2px solid $border-light-gray;
+}
+
+// Session Grid
+.sessionGrid {
+  margin-bottom: $spacing-lg;
+}
+
+.sessionCard {
+  background-color: $bg-white-shade;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.sessionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  margin-bottom: $spacing-md;
+}
+
+.sessionFieldRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+// Actions Footer
+.actionsFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: $spacing-lg;
+  border-top: 1px solid $border-light-gray;
+}
+
+.actionsLeft {
+  display: flex;
+  gap: 12px;
+}
+
+.actionsRight {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  padding: 12px $spacing-lg;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  transition: all 0.2s;
+  border: none;
+
+  &.primary {
+    background-color: $linkColor;
+    color: $white;
+
+    &:hover {
+      background-color: $blue-secondary;
+    }
+  }
+
+  &.secondary {
+    background-color: $bg-light-gray;
+    color: $footer-gray;
+    border: 1px solid $border-gray;
+
+    &:hover {
+      background-color: $border-light-gray;
+    }
+  }
+}
+
+// Empty Screen
+.emptyContainer {
+  padding: $spacing-lg;
+  background-color: $bg-light-gray;
+  min-height: 100vh;
+}
+
+// Section Container
+.sectionContainer {
+  padding: $spacing-md;
+  background-color: $bg-white-shade;
+  border-radius: $border-radius-xs;
+  margin-bottom: $spacing-lg;
+}
+
+// Checkbox Group
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: $spacing-md;
+}
+
+// Nested Field
+.nestedField {
+  margin-left: 28px;
+}

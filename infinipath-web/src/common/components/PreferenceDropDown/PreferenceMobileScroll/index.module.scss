@@ -1,0 +1,158 @@
+@import "../../../styles/variables.scss";
+
+.toolbarContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 94%;
+  margin-left: 20px;
+}
+
+.horizontalScrollContainer {
+  flex: 1;
+  overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.scrollableContent {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 0;
+  
+  // Hide scrollbar but keep functionality
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  
+  &::-webkit-scrollbar {
+    display: none; /* WebKit browsers */
+  }
+}
+.orgCount{
+  font-family: $natoSansLight;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  margin-left: 3px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color:#051B46;
+  line-height: 10px;
+
+ 
+}
+.buildingOfficeIcon {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.verticalLine {
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background-color: #ccc;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+.horizontalItem {
+  flex-shrink: 0;
+  padding: 12px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $darkBlue;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+  min-width: fit-content;
+  text-align: center;
+  
+}
+
+.selectedItem {
+  color: $darkBlue !important;
+  border-bottom-color: $blue !important;
+  font-weight: 600 !important;
+}
+
+// Search container styles (keep your existing ones or use these)
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: relative;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  padding: 6px 8px;
+  font-size: 14px;
+  width: 200px;
+  
+  &::placeholder {
+    color: $darkBlue;
+  }
+}
+
+.clearIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.searchIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  
+  &:hover {
+    background-color: #f5f5f5;
+  }
+  
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1023px) {
+  .horizontalItem {
+    padding: 10px 12px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .searchInput {
+    width: 150px;
+  }
+}

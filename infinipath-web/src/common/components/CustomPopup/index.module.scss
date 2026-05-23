@@ -1,0 +1,119 @@
+@import "../../styles/variables.scss";
+
+.container {
+  background-color: $white;
+  padding: 24px 24px 24px 24px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  width: 500px;
+  background-image: url("../../../assets/images/cloud-bg-popup.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px;
+  border: unset !important;
+  outline: none !important;
+
+  .headContainer {
+    display: flex;
+    justify-content: space-between;
+    .headingText {
+      font-size: 16px;
+      font-weight: 400;
+      color: $darkBlue;
+    }
+
+    .closeIcon {
+      cursor: pointer;
+    }
+  }
+
+  .containerText {
+    font-size: 16px;
+    color: $lightBlack;
+    white-space: pre-line;
+    line-height: 1.5;
+    font-family: "Noto sans", serif;
+    margin-bottom: 24px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-bottom: 16px;
+
+    .confirmText {
+      color: $white;
+    }
+
+    .cancelButton {
+      background-image: none !important;
+      border: 1px solid $blue;
+      height: 50px;
+      width: 48%;
+      font-size: 16px;
+    }
+
+    .confirmButton {
+      width: 48%;
+      height: 50px;
+      font-size: 16px;
+    }
+
+    .cancelText {
+      color: $blue;
+    }
+  }
+
+  .horizontalLine {
+    border: 1px solid #d9d9d9;
+    height: 0px;
+  }
+}
+
+.iconTitle {
+  display: flex;
+  gap: 0px;
+}
+
+.iconTitle2 {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.requestIcon {
+  margin-top: -6px;
+  margin-left: -10px;
+}
+
+.successIcon {
+  width: 45px;
+  margin-top: -6px;
+  margin-left: -10px;
+}
+
+.noteText {
+  color: $grey;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.deleteIcon {
+  margin-right: 8px;
+}
+
+.exitIcon {
+  margin-right: 8px;
+  height: 24px;
+  width: 24px;
+}

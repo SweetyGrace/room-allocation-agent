@@ -1,0 +1,190 @@
+
+// Color variables
+$primary-color: #051B46;
+$secondary-color: #007bff;
+$border-color: #ccc;
+$white-color: #fff;
+$shadow-color: #0000001F;
+
+// Font variables
+$font-family: "Noto Sans", sans-serif;
+$header-font-size: 18px;
+$label-font-size: 14px;
+$button-font-size: 14px;
+$header-font-weight: 600;
+$label-font-weight: 600;
+$normal-font-weight: 400;
+
+// Layout dimensions
+$modal-width: 500px;
+$modal-padding: 24px;
+$button-width: 150px;
+$button-height: 40px;
+$close-button-size: 24px;
+$textarea-height: 48px;
+
+// Spacing variables
+$header-margin-bottom: 16px;
+$section-margin-top: 40px;
+$footer-margin-top: 24px;
+$label-margin-bottom: 8px;
+$textarea-margin-top: 6px;
+$footer-gap: 16px;
+$footer-bottom: 24px;
+$footer-right: 24px;
+$radio-gap-vertical: 20px;
+$radio-gap-horizontal: 40px;
+$radio-margin-right: 8px;
+$header-line-margin: 8px 0;
+$textarea-padding: 8px;
+
+// Border radius
+$border-radius: 6px;
+$border-radius-8: 8px;
+
+// Line heights
+$header-line-height: 32px;
+$label-line-height: 28px;
+
+// Background image
+$overlay-bg-image: url('../../../assets/images/OverlayBg.svg');
+
+.overlay {
+  position: fixed;
+  top: 70px;
+  left: auto;
+  right: 0;
+  height: calc(100vh - 70px);
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  height: calc(100vh - 70px);
+  background: $white-color;
+  background-image: $overlay-bg-image;
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  width: $modal-width;
+  padding: $modal-padding;
+  position: relative;
+  box-shadow: 0px 1px 6px 0px $shadow-color;
+
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $header-margin-bottom;
+}
+
+.header {
+  font-family: $font-family;
+  font-weight: $header-font-weight;
+  font-style: normal;
+  font-size: $header-font-size;
+  line-height: $header-line-height;
+  color: $primary-color;
+}
+
+.headerLine {
+  width: 100%;
+  margin: $header-line-margin;
+}
+
+.closeButton {
+  cursor: pointer;
+  padding: 0;
+  width: $close-button-size;
+  height: $close-button-size;
+  display: flex;
+  background: none;
+  border: none;
+}
+
+.closeIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  margin-top: $section-margin-top;
+}
+
+.footerLine {
+  margin-top: $footer-margin-top;
+}
+
+.reasonLabel {
+  font-family: $font-family;
+  font-weight: $label-font-weight;
+  font-style: normal;
+  font-size: $label-font-size;
+  line-height: $label-line-height;
+  letter-spacing: 0%;
+  margin-bottom: $label-margin-bottom;
+}
+
+.radioGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $radio-gap-vertical $radio-gap-horizontal;
+  margin-top: $textarea-margin-top;
+  
+  label {
+    display: flex;
+    align-items: center;
+    font-weight: $normal-font-weight;
+    cursor: pointer;
+    
+    input[type="radio"] {
+      margin-right: $radio-margin-right;
+    }
+  }
+}
+
+textarea {
+  width: 100%;
+  height: $textarea-height;
+  margin-top: $textarea-margin-top;
+  padding: $textarea-padding;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  resize: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: $footer-gap;
+  margin-top: $footer-margin-top;
+  position: fixed;
+  bottom: $footer-bottom;
+  right: $footer-right;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: $secondary-color;
+  cursor: pointer;
+  font-size: $button-font-size;
+}
+
+.saveBtn {
+  color: $white-color;
+  font-size: $button-font-size;
+  border: none;
+  cursor: pointer;
+  width: $button-width;
+  height: $button-height;
+}

@@ -1,0 +1,51 @@
+@import "../../common/styles/variables.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+  gap: 40px;
+  background-image: url("../../assets/images/confirm-bg.webp");
+  background-size: cover;
+  .imagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    .successIcon {
+      padding-top: 50px;
+    }
+  }
+  .buttonClass {
+    color: #1859b4;
+    height: 50px;
+    font-family: "Noto Sans", serif;
+    font-size: 16px;
+    background-image: none !important;
+    background-color: none !important;
+    border: 1px solid #1859b4;
+  }
+}
+
+.text {
+  font-weight: 300;
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  color: #051b46;
+  line-height: 28px;
+  .mahatriaText {
+    color: #ff3a3a;
+  }
+}
+
+.growthSessionsText {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  color: #0e3c81;
+  span {
+    color: $mahatriaName;
+  }
+}

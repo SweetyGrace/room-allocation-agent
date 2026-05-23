@@ -1,0 +1,30 @@
+.meetingCard {
+    border-bottom: 1px solid #DFE8EF;
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+  
+  .meetingName {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .dateContainer {
+    display: flex;
+    align-items: center;
+    color: #555;
+  }
+  
+  .icon {
+    color: #007bff;
+  }
+  
+  .dateText {
+    font-size: 14px;
+  }
+  

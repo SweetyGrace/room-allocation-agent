@@ -1,0 +1,193 @@
+
+@import "../../../common/styles/variables.scss";
+// index.module.scss
+.hamburgerDrawer {
+  width: 350px;
+  min-height: 100vh;
+  background-color: $white;
+  position: relative;
+  padding: 16px 0px;
+  color: $white;
+  border-radius: 8px;
+
+  @media(max-width: 600px)
+  {
+    width: 100vw;
+  }
+}
+
+.closeIconContainer {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding-right: 32px;
+  
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+.hamburgerListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (max-width:600px) {
+    padding: 0 20px;
+    gap: 8px;
+  }
+}
+.hamburgerList {
+  margin: 0 6px;
+  &:hover {
+    background-color: $secondaryBlue;
+    cursor: pointer;
+  }
+
+  @media (max-width:600px)
+  {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      height: 64px;
+      padding: 8px 13px;
+  }
+}
+
+.hamburgerContent {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0px;
+  margin: 0px 13px 0 6px;
+  font-size: $font-size-md;
+  color: $darkBlue;
+}
+
+.drawerProfileSection {
+  display: none;
+}
+.drawerProfileName {
+   font-weight: $font-weight-semibold;
+  font-size: $font-size-md;     
+  color: $color-dark;
+  text-align: center;
+}
+
+.drawerRoleSwitcherContainer {
+  display: none;
+}
+
+.profileNameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: $spacing-md 0;
+}
+
+.drawerRoleSwitcher {
+  width: 100%;
+}
+ .drawerBottomBgImage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none; 
+    z-index: 1;
+    opacity: 0.5; 
+  }
+  .horizontalLine{
+    display: none;
+  }
+  .profileContainer {
+    display: none;
+  }
+
+@media (max-width: 600px)
+{
+    .drawerProfileSection{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+        margin: 16px 0 8px 0;
+        gap: 6px;
+        margin-bottom: 24px;
+    }
+    .closeIcon {
+      display: none;
+    }
+    .horizontalLine {
+      display: block;
+      width: 90%;
+      height: 1px;
+      background-color: $lightGrey;
+      text-align: center;
+      margin-top: 23px;
+    }
+
+    .drawerRoleSwitcherContainer {
+      display: block;
+      padding: $spacing-md 20px;
+    }
+
+    .drawerRoleSwitcher {
+      width: 100%;
+    }
+
+    .hamburgerDrawer{
+      padding: 0;
+    }
+
+    .avatarBorderWrapper {
+    position: relative;
+    display: inline-block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 200px; 
+    height: 200px;
+    border: 10px solid $white;
+    border-radius: 50%;
+    opacity: 0.4;
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  // Ensure Avatar is above the border
+  > .MuiAvatar-root {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+    .drawerTopBgImageContainer {
+      padding-top: 16px;
+      position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../../assets/images/drawer-bg1.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    opacity: 0.7; 
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+   
+  }
+  

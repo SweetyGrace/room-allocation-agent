@@ -1,0 +1,96 @@
+@import "../../common/styles/variables.scss";
+.roomNumber {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $darkBlue;
+}
+.floorName {
+  font-size: 12px;
+  font-weight: 400;
+  color: $textGrey;
+  margin-right: 20px;
+}
+
+.container, .noSeparatorContainer {
+  display: flex;
+  flex-direction: column;
+  width: 7.469%;
+  
+  @media (min-width: 1080px) and (max-width: 1260px) {
+    width: 84px;
+  }
+}
+
+.container {
+  border-top: 1px solid $lightGrey;
+}
+
+.floorRoom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.roomInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+// ADD: Bed indicators container
+.bedIndicators {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+// ADD: Individual bed indicator
+.bedIndicator {
+  width: 4.49px;
+  height: 6.92px;
+  transition: all 0.2s ease;
+  
+  &.occupied {
+    background: $blue;
+  }
+  
+  &.vacant {
+    background: $thick-gray;
+  }
+
+}
+
+.line {
+  width: 120px;
+  border: 1px solid $lightGrey;
+  margin-top: 23px;
+  @media (min-width: 1080px) and (max-width: 1260px) {
+    width: 84px;
+  }
+}
+.container, .noSeparatorContainer {
+  position: relative;
+}
+.categoryIcon {
+  position: absolute;
+  top: 67px;
+  width: 20px;
+  height: 20px;
+}
+.reservedBadge {
+  display: flex;
+  height: 20px;
+  padding: 0 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 1px;
+  background: $bg-secondary-white;
+  font-size: 12px;
+  font-weight: 500;
+  color: $textGrey;
+  margin-top: 8px;
+}

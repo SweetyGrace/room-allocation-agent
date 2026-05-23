@@ -1,0 +1,60 @@
+@import "../../../common/styles/variables.scss";
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+    
+  
+}
+
+.icon {
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  &:hover{
+    color: $blue;
+  }
+}
+
+.count {
+  color: var(--Text-Text-Fill, #051B46);
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+   &:hover{
+    color: $blue;
+  }
+}
+
+.highlighted {
+  color: #1d4ed8; // bright blue
+  text-decoration: underline;
+}
+
+.label {
+  color: var(--Text-Text-Fill, #051B46);
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  &:hover{
+    color: $blue;
+  }
+}

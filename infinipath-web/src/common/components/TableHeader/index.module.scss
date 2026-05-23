@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+
+.row_cell {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $blackBlue;
+    position: relative; // Ensure the icon can be positioned absolutely
+}
+
+.detailsText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $blackBlue;
+    font-size: 14px;
+    font-weight: 400;
+    // text-transform: capitalize;
+    line-height: 24px;
+}
+
+.actionIcon {
+    display: none; // Initially hide the icon
+    position: absolute; // Position it absolutely within the cell
+    right: 10px; // Adjust as needed
+    cursor: pointer; // Change cursor to pointer
+
+    // Add any additional styles for the icon
+}
+
+.row_cell:hover .actionIcon {
+    display: block; // Show the icon on hover
+}
+
+.menuTooltip{
+    position: unset !important;
+}
+.actionButtonText{
+    color:white !important;
+}

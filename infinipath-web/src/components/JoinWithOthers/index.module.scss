@@ -1,0 +1,96 @@
+@import "../../common/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  .imagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+.growthSessionsText {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  color: #0e3c81;
+
+  span {
+    color: $mahatriaName;
+  }
+}
+
+.seekerRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  /* Add padding for better appearance */
+}
+
+.seekerImage {
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.seekerDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.seekerCard {
+  width: 170px;
+  height: 180px;
+  position: relative;
+  box-shadow: 2px 4px 10px 0px #eef4f9;
+  border: 1.5px solid transparent;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(95.12deg, #f0f0f0 -0.86%, #dcdcdc 104.51%) border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  align-items: center;
+}
+
+.seekerName {
+  font-size: 16px;
+  font-weight: 400;
+  color: $darkBlue;
+}
+
+.checkboxStyles {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  /* Adjust the spacing as needed */
+}
+
+.joinWIthOthersHeading {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  color: $darkBlue;
+}
+
+.joinMeeting {
+  margin: 76px 32px 32px 32px;
+}

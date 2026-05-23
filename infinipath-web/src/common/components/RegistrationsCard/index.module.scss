@@ -1,0 +1,183 @@
+@import "../../../common/styles/variables.scss";
+
+.cardContainer,
+.diffContainer {
+  width: 614px;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(95.12deg, #f0f0f0 -0.86%, #dcdcdc 104.51%) border-box;
+  box-shadow: 2px 4px 10px 0px #eef4f9;
+  position: relative;
+  top: -10px;
+}
+
+.diffContainer {
+  width: 400px;
+}
+
+.diffContainer:hover {
+  border: 1px solid var(--Colors-Blue-Light, #1859b4);
+  box-shadow: 1px 2px 12px 0px #3ba4fd29;
+  background: linear-gradient(
+    288.51deg,
+    #f5fcff 12.38%,
+    #f7fdff 33.17%,
+    #ffffff 93.11%
+  );
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.diffCardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.titleDisplay {
+  text-align: start;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  color: $darkBlue;
+  width: 320px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.dateTime {
+  margin-top: 8px;
+  color: $darkBlue;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.timer {
+  width: Hug (66px) px;
+  height: Hug (24px) px;
+  padding: 4px 8px 4px 8px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  background-color: #ddeefb;
+  margin-left: 12px;
+}
+
+.buttonContainer, .buttonContainerPublish {
+  width: 150px;
+  font-size: 16px;
+  height: 40px;
+}
+
+.buttonContainerPublish{
+  width:170px;
+  
+}
+
+.buttonText {
+  color: white !important;
+}
+
+.buttonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.buttonsDivEdit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.regOpen {
+  gap: 16px;
+  font-size: 10px;
+  text-align: left;
+  background: linear-gradient(180.52deg, #eaf2ff 2.92%, #a5caff 99.55%);
+  padding: 2px;
+}
+
+.regOpenText {
+  font-size: 10px;
+  font-weight: 600px;
+  line-height: 22px;
+  color: $darkBlue;
+  font-family: $natoSansBold;
+}
+
+.meetingRegistrationsDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 96px;
+  position: relative;
+  // gap: 16px;
+  // align-items: center;
+  // margin-top: 20px;
+}
+
+.diffMeeetingRegistrationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.mainTitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #051b46;
+}
+
+.subtitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-align: left;
+  color: #051b46;
+}
+
+.buttonContainerBorder {
+  justify-content: center !important;
+  color: #1859b4;
+  width: 150px;
+  font-size: 16px;
+  height: 40px;
+  background-image: none !important;
+  background-color: none !important;
+  border: 1px solid #1859b4 !important;
+  padding: unset !important;
+  margin-top: 16px;
+}

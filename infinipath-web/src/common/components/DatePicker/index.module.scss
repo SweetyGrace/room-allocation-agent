@@ -1,0 +1,386 @@
+//styles for wheel picker component
+@import "../../../common/styles/variables.scss";
+
+.wheelPickerContainer {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  margin-top: 5px;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  padding: 0px 8px 12px 8px;
+  height: 333px;
+}
+
+.wheelPicker {
+  display: flex;
+  // border: 1px solid #D9D9D9;
+  // border-radius: 8px;
+  // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.08);
+  // width: 320px;
+  // // gap: 8px;
+}
+
+.wheelColumnCaretIcons {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.wheelColumn {
+  // border: 1px solid #eee;
+  // border-radius: 8px;
+  height: 100px;
+  // background: #fafafa;
+  scrollbar-width: thin;
+  overflow-y: scroll;
+}
+
+.wheelColumnIcon {
+  width: 80px;
+  // overflow-y: scroll;
+  // scrollbar-width: thin;
+  // overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+
+.wheelColumnMonthIcon {
+  width: 144px;
+  // overflow-y: scroll;
+  // scrollbar-width: thin;
+  // overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+
+.wheelColumnMonth {
+  height: 170px;
+
+  scrollbar-width: thin;
+  overflow-y: scroll;
+}
+
+.wheelColumn,
+.wheelColumnMonth {
+  padding-bottom: 312px;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  overflow-x: hidden;
+  /* Hide horizontal scrollbar */
+}
+
+.item {
+  color: #d6d5d5;
+  width: 80px;
+  background: transparent;
+}
+
+.selected {
+  width: 80px;
+  color: #222;
+  font-weight: bold;
+  background: #e0e0e0;
+}
+
+.setButton {
+  margin-top: 12px;
+  padding: 6px 24px;
+  border-radius: 6px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.errorMessage {
+  color: #d32f2f;
+  margin-top: 8px;
+}
+
+.fieldInput {
+  width: 100%;
+  // padding: 0.5rem 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-md);
+  font-size: 16px;
+  height: 48px;
+  padding: 0px 8px 0px 12px;
+  color: #051B46;
+  transition: var(--transition);
+}
+
+.selectedMonth {
+  width: 144px;
+  color: #222;
+  font-weight: bold;
+  background: #e0e0e0;
+}
+
+.monthitem {
+  color: #d6d5d5;
+  width: 144px;
+  background: transparent;
+}
+
+.horizontalDivider {
+  height: 1px;
+  width: 100%;
+  border: 0.5px solid #D9D9D9;
+  margin-bottom: 16px;
+}
+
+.buttonText {
+  color: #ffffff;
+}
+
+.buttonContainer {
+  width: 92px;
+  height: 40px;
+}
+
+.wheelPickerContainerBottom {
+  display: flex;
+  justify-content: center;
+}
+
+.noScroll {
+  // overflow-y: hidden;
+  // height: auto;
+}
+
+.wheelColumn,
+.wheelColumnMonth {
+  padding-bottom: 222px;
+}
+
+// @import "../../../common/styles/variables.scss";
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 0.75rem;
+// }
+
+// .label {
+//   font-size: 0.875rem;
+//   font-weight: 500;
+//   color: $lighterBlack;
+// }
+
+// .dateGrid {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: 0.75rem;
+// }
+
+// .selectTrigger {
+//   height: 2.5rem;
+//   border: 1px solid $lightGrayFocus;
+//   border-radius: 0.375rem;
+//   padding: 0.5rem 0.75rem;
+//   background-color: white;
+//   font-size: 0.875rem;
+//   transition: all 0.2s ease-in-out;
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+// .selectTrigger:focus {
+//   outline: none;
+//   border-color: $lightBlue2;
+//   box-shadow: 0 0 0 1px $lightBlue2;
+// }
+
+// .selectTrigger:hover {
+//   border-color: $lightGray3;
+// }
+
+// .selectContent {
+//   background-color: white;
+//   border: 1px solid $lightGrayFocus;
+//   border-radius: 0.375rem;
+//   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+//   max-height: 15rem;
+//   overflow-y: auto;
+//   z-index: 50;
+// }
+
+// .selectItem {
+//   padding: 0.5rem 0.75rem;
+//   font-size: 0.875rem;
+//   cursor: pointer;
+//   transition: background-color 0.2s ease-in-out;
+// }
+
+// .selectItem:hover {
+//   background-color: $lightGray4;
+// }
+
+// .selectItem:focus {
+//   background-color: $lightGrayFocus;
+//   outline: none;
+// }
+
+// .placeholder {
+//   color: $lightGray5;
+// }
+
+// .errorMessage {
+//   font-size: 0.875rem;
+//   color: $crimsonRed;
+//   margin-top: 0.25rem;
+// }
+
+// /* Additional styles for better visual appearance */
+// .selectTrigger[data-state="open"] {
+//   border-color: $lightBlue2;
+//   box-shadow: 0 0 0 1px $lightBlue2;
+// }
+
+// .selectValue {
+//   color: $thickBlack;
+// }
+
+// .selectValue[data-placeholder] {
+//   color: $lightGray5;
+// }
+
+// .selectItem > span[style*="position: absolute"] {
+//   display: none !important;
+// }
+
+.birthDatePickerWrapper {
+  position: relative;
+  width: 100%;
+  // z-index: 1;
+}
+
+.wheelPickerPopup {
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  // box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.wheelPickerPopupTop {
+  bottom: 100%;
+  margin-bottom: 8px;
+}
+
+.wheelPickerPopupBottom {
+  top: 100%;
+  margin-top: 8px;
+}
+
+.wheelPickerContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.15); // Stronger shadow
+  width: 320px;
+  padding: 0px 8px 12px 8px;
+  height: 333px;
+  background: white; // Ensure white background
+  position: relative; // Ensure proper positioning
+  z-index: 1; // Add z-index
+}
+
+@media (max-width: 768px) {
+  .wheelPickerPopup {
+    left: -10px;
+    right: -10px;
+  }
+}
+
+.wheelPicker {
+  display: flex;
+  position: relative; // for overlay
+}
+
+
+.wheelCenterLine {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 32px; // must match item height
+  width: 100%;
+  pointer-events: none; 
+  border-top: 1.3px solid #888a8b;
+  border-bottom:  1.3px solid #888a8b;
+  z-index: 2;
+  background: transparent; 
+}
+
+.selected,
+.selectedMonth {
+  color: #222;
+  font-weight: 500;
+  font-size:18px;
+  background: transparent; 
+}
+
+.circularWheel {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  /* Optional: add border-radius for more circular look */
+  border-radius: 16px;
+}
+
+
+/* Center line indicator */
+.wheelCenterLine {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px; // must match item height
+  width: 100%;
+  pointer-events: none;
+  border-top: 1.3px solid #888a8b;
+  border-bottom: 1.3px solid #888a8b;
+  z-index: 2;
+  background: transparent;
+}
+
+/* Gradient fade effect for top and bottom */
+.wheelPicker::before,
+.wheelPicker::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 25%; // adjust fade area
+  z-index: 3;
+  pointer-events: none; // allow scrolling
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.7) 30%,
+    rgba(255, 255, 255, 0) 80%
+  );
+}
+
+.wheelPicker::after {
+  top: auto;
+  bottom: 0;
+  transform: rotate(180deg);
+}

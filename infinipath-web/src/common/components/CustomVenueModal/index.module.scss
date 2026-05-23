@@ -1,0 +1,133 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  width: 624px;
+  height: 272px;
+  top: 28px;
+  left: 372px;
+}
+
+.inputContainer {
+  margin: 16px 0;
+  display: flex;
+  gap:20px;
+  flex-direction: column;
+}
+
+.inputContainer label {
+  width: 167px;
+  height: 20px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  font-size: var(--text-sm, 14px);
+  line-height: var(--line-height-text-sm, 20px);
+  letter-spacing: 0%;
+  color: var(--colors-text-text-secondary-700, #414651);
+}
+
+.input {
+  width: 564px;
+  height: 72px;
+  padding-top: 10px;
+  padding-right: 14px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  border-radius: var(--radius-md, 8px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--Colors-Border-border-primary, #d5d7da);
+  background-color: var(--Colors-Background-bg-primary, #ffffff);
+  color: #051b46;
+  box-shadow: 0px 1px 2px 0px
+    var(--ColorsEffectsShadowsshadow-xs, rgba(0, 0, 0, 0.08));
+  gap: var(--spacing-md, 16px);
+}
+
+.cancelButton {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.buttonContainer {
+  width: 150px;
+  height: 40px;
+  min-width: 150px;
+  gap: 31px;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 99px;
+  box-shadow: 0px 8px 16px 0px #2066BE4D;
+  cursor: pointer;
+
+}
+.heading {
+  width: 187px;
+  height: 26px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: #051b46;
+}
+.headerLine {
+  height: 1px;
+  width: 313px;
+  background: #e0e0e0;
+  flex-shrink: 0;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 564px; /* Fill (564px) */
+  height: 26px; /* Hug (26px) */
+  gap: 20px;
+}
+.bottomLine {
+  height: 1px;
+  width: 564px; /* Fill (564px) */ 
+  background: #e0e0e0;
+  flex-shrink: 0;
+}
+.closeIcon
+{
+  width: 24px;
+  height: 24px;
+}
+.buttonText {
+  color: white;
+}
+.Container{
+display: flex;
+gap: 16px;
+margin-left: 349px;
+margin-top: 27px;
+
+}
+.cancelText {
+  background-color: white;
+  width: 48px;
+  height: 20px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  color:#1859B4;
+  margin-top: 11px;
+
+}

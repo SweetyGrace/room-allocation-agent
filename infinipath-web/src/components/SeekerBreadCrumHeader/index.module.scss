@@ -1,0 +1,151 @@
+@import "../../common/styles/variables.scss";
+.headerContainer {
+  width: 100%;
+  padding: 12px 0px;
+  background-color: #fff;
+  position: relative;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #1859B4;
+  font-size: 14px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1859B4;
+  padding: 4px;
+  margin-right: 8px;
+  display: flex;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  color: #1859B4 !important;
+}
+.breadcrumbSessionItem {
+  cursor: pointer;
+}
+.breadcrumbSessionType {
+  color: #000;
+}
+.calendarIcon {
+  margin-right: 4px;
+}
+
+.audienceCountContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0px;
+}
+.chipDataContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.audienceCount {
+  display: flex;
+  align-items: center;
+  min-width: 150px;
+}
+
+.audienceLabel {
+  font-size: 18px;
+  color: #051B46;
+  font-weight: 600;
+}
+
+.audienceNumber {
+  font-size: 18px;
+  color: #051B46;
+  margin-left: 4px;
+}
+
+.searchFilterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  border: 1px solid #c1c4c5;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 5px;
+  position: relative;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.searchInput {
+  width: 369px;
+  padding: 5px 16px 5px 6px;
+  border: none;
+  color: $darkBlue;
+}
+
+.searchInput:focus {
+  border: none;
+  outline: none;
+}
+
+
+.searchContainer , .searchContainerInCompleted{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+.searchContainerInCompleted{
+  margin-right: 20px;
+  height: 50px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+.searchIcon{
+  background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+.clearIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute; /* Position it relative to the .search container */
+  right: 10px; /* Adjust spacing from the right edge of the input */
+  top: 50%; /* Vertically center the icon */
+  transform: translateY(-50%);
+  color: #999;
+
+  &:hover {
+    color: #333;
+  }
+}
+.filterButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+
+ 
+}
+.filterButtonDisabled{
+  background: none;
+  border: none;
+  cursor: not-allowed;
+  padding: 8px;
+  border-radius: 4px;
+}

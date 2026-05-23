@@ -1,0 +1,1024 @@
+.formSection {
+  margin-bottom: 2rem;
+
+  .fieldGroup {
+    margin-bottom: 1.5rem;
+
+    .titleHeadingDiv {
+      margin-bottom: 16px;
+
+      .titleHeading {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+      }
+    }
+
+    .fieldBlock {
+      width: 100%;
+
+      .inputFields {
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.2s;
+
+        &:focus {
+          outline: none;
+          border-color: #1976d2;
+          box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+        }
+
+        &.errorFields {
+          border-color: #e28619;
+        }
+
+        &.textArea {
+          height: auto;
+          min-height: 120px;
+          padding: 12px 16px;
+          resize: vertical;
+        }
+      }
+
+      .errorMsg {
+        color: #e28619;
+        font-size: 12px;
+        margin-top: 4px;
+        display: block;
+      }
+    }
+  }
+
+  .dateErrorMsg {
+    width: 85%;
+    display: flex;
+    justify-content: flex-end;
+    color: #e28619;
+    font-size: 12px;
+  }
+
+  .uploadArea {
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus-within {
+      border-color: #1976d2;
+      background: rgba(25, 118, 210, 0.04);
+    }
+
+    .uploadContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  .radioGroup {
+    display: flex;
+    gap: 16px;
+
+    .radioOption {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+
+      input[type="radio"] {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+.subProgramHeader
+{
+  display: flex;
+  width:100%;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  color:#000000
+}
+.subProgramCard {
+  background: #fff;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  .deleteButton {
+    background: unset !important;
+    text-align: right;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(211, 47, 47, 0.04);
+    }
+  }
+
+  .fieldGroup {
+    margin-bottom: 1.5rem;
+
+    .fieldLabel {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      color: #414651;
+      margin-bottom: 12px;
+    }
+
+    .inputField {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: #1976d2;
+      }
+    }
+
+    .textareaField {
+      @extend .inputField;
+      height: auto;
+      min-height: 120px;
+      padding: 12px 16px;
+      resize: vertical;
+    }
+
+    .radioGroup {
+      display: flex;
+      gap: 16px;
+
+      .radioOption {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+
+        .radioInput {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+
+        .radioLabel {
+          font-size: 16px;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .dateRow {
+    display: flex;
+    gap: 24px;
+
+    .dateField {
+      flex: 1;
+
+      .dateLabel {
+        display: block;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .uploadArea {
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: #1976d2;
+      background: rgba(25, 118, 210, 0.04);
+    }
+
+    .uploadContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      .uploadIcon {
+        font-size: 32px;
+        color: #666;
+      }
+
+      .uploadText {
+        font-size: 16px;
+        color: #333;
+      }
+
+      .uploadSubtext {
+        font-size: 14px;
+        color: #666;
+      }
+    }
+  }
+
+  .currencyInput {
+    position: relative;
+
+    .currencySymbol {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+    }
+
+    .inputField {
+      padding-left: 32px;
+    }
+  }
+}
+
+.formRow {
+  margin-bottom: 24px;
+
+  &.twoColumns {
+    display: flex;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    >div {
+      flex: 1;
+    }
+  }
+
+  .labelInput {
+    .titleHeadingDiv {
+      margin-bottom: 16px;
+
+      .titleHeading {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+      }
+    }
+
+    .fieldBlock {
+      width: 100%;
+
+      .inputFields {
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.2s;
+
+        &:focus {
+          outline: none;
+          border-color: #1976d2;
+          box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+        }
+
+        &.errorFields {
+          border-color: #d32f2f;
+        }
+
+        &.textArea {
+          height: auto;
+          min-height: 120px;
+          padding: 12px 16px;
+          resize: vertical;
+        }
+
+        &.withCurrency {
+          padding-left: 32px;
+        }
+      }
+
+      .errorMsg {
+        color: #d32f2f;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      .uploadArea {
+        border: 2px dashed #e0e0e0;
+        border-radius: 8px;
+        padding: 24px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          border-color: #1976d2;
+          background: rgba(25, 118, 210, 0.04);
+        }
+
+        .uploadContent {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+      }
+
+      .radioGroup {
+        display: flex;
+        gap: 16px;
+
+        .radioOption {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          input[type="radio"] {
+            width: 20px;
+            height: 20px;
+          }
+
+          label {
+            font-size: 16px;
+            color: #333;
+          }
+        }
+      }
+
+      .currencyWrapper {
+        position: relative;
+
+        .currencySymbol {
+          position: absolute;
+          left: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+
+@import "../../../common/styles/variables.scss";
+
+$primary-color: #4285f4;
+$text-primary: #333333;
+$text-secondary: #666666;
+$text-light: #999999;
+$border-color: #e0e0e0;
+$border-hover: #ccc;
+$background-light: #f5f7fa;
+$header-bg: #e8f0fe;
+$white: #ffffff;
+$error-color: #e28619;
+
+// Container
+.formContainer {
+  background: #fcfdff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+}
+
+// Header Section
+.header {
+  background: #edf4ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  text-align: start;
+
+  .headerIcon {
+    display: none; // Remove the icon to match the design
+  }
+
+  .headerContent {
+    .headerTitle {
+      font-size: 16px;
+      font-weight: 500;
+      color: $darkBlue;
+      margin: 0;
+      line-height: 24px;
+    }
+
+    .badge {
+      display: none; // Remove the badge to match the design
+    }
+  }
+}
+
+// Form Content
+.formContent {
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  .deleteButton {
+    background: unset !important;
+    text-align: right;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(211, 47, 47, 0.04);
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .dateRangePicker {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    width: 100%;
+    transition: border 0.2s;
+
+    &:focus-within {
+      border: 2px solid $primary-color; // Blue border on focus
+      outline: none;
+    }
+  }
+
+  .dateRangePickerError,
+  .dateRangePickerError:focus-within {
+    border: 1px solid #e28619 !important; // Brown border for error/empty
+    border-radius: 4px;
+  }
+
+  .dateRangePickerError:hover,
+  .dateRangePickerError:focus {
+    border: 1px solid $primary-color !important; // Brown border for error/empty
+  }
+
+  .programTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: 16px;
+  }
+
+  .Detailstitle {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    color: $darkBlue;
+    margin-bottom: 16px;
+    text-align: start;
+  }
+
+  .subtitle {
+    text-align: start;
+    font-size: 16px;
+    color: $darkBlue;
+    margin-bottom: 32px;
+    line-height: 24px;
+  }
+}
+
+// Form Sections
+.formSection {
+  margin-top: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.fieldGroup {
+  margin-top: 20px;
+  text-align: start;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.fieldGroupMode {
+  margin-bottom: 32px;
+  text-align: start;
+  display: flex;
+  gap: 120px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.venueField {
+  width: 38%;
+}
+
+// Field Labels
+.fieldLabel {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #414651;
+  margin-bottom: 12px;
+  display: block;
+}
+
+// Input Fields
+.inputField {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  font-size: 14px;
+  color: $text-primary;
+  background: $white;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $primary-color;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &::placeholder {
+    color: $text-light;
+  }
+
+  &.inputError {
+    border-color: $error-color;
+  }
+}
+
+input.inputError {
+  border: 1px solid $error-color !important; // Brown border for error/empty
+  border-radius: 8px;
+  height: 48px;
+  line-height: 1;
+}
+
+input.inputError:hover,
+input.inputError:focus {
+  border: 1px solid $primary-color !important; // Brown border for error/empty
+}
+
+.textareaField {
+  @extend .inputField;
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.selectField {
+  @extend .inputField;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%2C9%2012%2C15%2018%2C9%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  width: 340px;
+}
+
+// File Upload
+.uploadArea {
+  border: 2px dashed $border-color;
+  border-radius: 8px;
+  background: $white;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadLabel {
+  display: block;
+  padding: 48px 24px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.uploadContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.uploadIcon {
+  display: none; // Hide icon to match design
+}
+
+.uploadText {
+  font-size: 14px;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.uploadLink {
+  color: $primary-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.uploadSubtext {
+  font-size: 12px;
+  color: $text-light;
+  margin: 0;
+  margin-top: 4px;
+}
+
+// Radio Groups
+.radioGroup {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: $text-primary;
+
+  &:hover .radioLabel {
+    color: $primary-color;
+  }
+}
+
+.radioInput {
+  width: 18px;
+  height: 18px;
+  border: 2px solid $border-color;
+  border-radius: 50%;
+  background: $white;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s ease;
+
+  &:checked {
+    border-color: #1859B4;
+    background: white;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: #1859B4;
+      border-radius: 50%;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+  }
+}
+
+.radioLabel {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+// Date Fields
+.dateRow {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.dateField {
+  flex: 1;
+
+  .dateLabel {
+    display: block;
+    font-size: 12px;
+    color: $text-light;
+    margin-bottom: 8px;
+  }
+}
+
+// Fee Section
+.feeSection {
+  margin-top: 24px;
+  padding-top: 24px;
+}
+
+.feeRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.feeField {
+  flex: 1;
+
+  .fieldLabel {
+    margin-bottom: 8px;
+    flex: none;
+    margin-right: 0;
+  }
+}
+
+// Currency Input
+.currencyInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .currencySymbol {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: $text-secondary;
+    z-index: 1;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .inputField {
+    padding-left: 40px;
+    background-color: #f5f5f5; // Light gray background
+    color: #888; // Dimmed text color
+    border: 1px dashed #bdbdbd;
+    border-radius: 0px;
+  }
+}
+
+// Seat Limit & Waitlist
+.seatLimitSection,
+.waitlistSection {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid $border-color;
+}
+
+.seatField,
+.waitlistField {
+  width: 38%;
+
+  .fieldLabel {
+    margin-bottom: 8px;
+    flex: none;
+    margin-right: 0;
+  }
+}
+
+// Sub-Program Section
+.subProgramSection {
+  margin-top: 48px;
+  padding: 24px;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  background: $background-light;
+}
+
+.subProgramHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.subProgramTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0;
+}
+
+.addSubProgramBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: $primary-color;
+  color: $white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+    transform: translateY(-1px);
+  }
+
+  .addIcon {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.subProgramContent {
+  .fieldLabel {
+    margin-bottom: 8px;
+    flex: none;
+    margin-right: 0;
+  }
+}
+
+// Error Text
+.errorText {
+  color: $error-color;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+  text-align: end;
+  font-style: italic;
+}
+
+.uploadedImagePreview {
+  font-size: 14px;
+  color: #666666;
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .formContainer {
+    padding: 16px;
+  }
+
+  .header {
+    .headerTitle {
+      font-size: 18px;
+    }
+  }
+
+  .fieldGroup {
+    gap: 12px;
+  }
+
+  .fieldLabel {
+    font-size: 13px;
+  }
+
+  .radioGroup {
+    gap: 16px;
+  }
+
+  .subProgramHeader {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+:global(.rs-picker-popup) {
+  z-index: 1500 !important;
+}
+
+:global(.rs-input-group-addon) {
+  display: none !important;
+}
+
+:global(.rs-picker-error > .rs-picker-input-group) {
+  border: none !important;
+
+}
+
+:global(.rs-input-group) {
+  border: none !important;
+  /* neutral gray */
+}
+
+.timeInputs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.timePickerGroup {
+  width: 147px; // Figma: width: 147
+  height: 40px; // Figma: height: 40
+  padding-top: var(--spacing-md);
+
+}
+
+.timePickerDivider {
+  width: 14px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.ProgramDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.programInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.containerDateTime {
+  display: flex;
+}
+
+.containerDate,
+.containerTime {
+  width: 50%;
+}
+
+.labelText {
+  color: #414651;
+}
+
+.INRInputField {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background-color: #f5f5f5; // Light gray background
+  color: #888; // Dimmed text color
+  border: 1px dashed #bdbdbd;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.subSessionDeleteIcon{
+  cursor: pointer;
+}

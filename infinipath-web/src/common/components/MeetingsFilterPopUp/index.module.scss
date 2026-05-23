@@ -1,0 +1,129 @@
+@import "../../../common/styles/variables.scss";
+
+.checkboxesContainer,
+.radioButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $natoSansRegular;
+}
+.checkboxesContainer {
+  gap: 24px;
+}
+
+.radioButtonsContainer {
+  gap: 158px;
+}
+
+.levelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: $natoSansRegular;
+}
+
+.overAllLevelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: $natoSansRegular;
+  margin-bottom:322px;
+}
+
+.overAllFloorLevelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  font-family: $natoSansRegular;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position:fixed;
+  right:0;
+  gap: 30px;
+  font-family: $natoSansRegular;
+  background-color: #ffffff;
+  background-position: 158% 66%;
+  padding: 32px 32px 24px 32px;
+  height:100vh;
+  width:500px;
+}
+
+.personLevelContainer,
+.floorLevelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: $natoSansRegular;
+}
+
+.levelHeading {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $darkBlue;
+  font-family: $natoSansRegular;
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $darkBlue;
+  letter-spacing: 0.5px;
+  font-family: $natoSansRegular;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  font-family: $natoSansRegular;
+  align-items: center;
+
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.filtersHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.buttonContainer {
+  color: white;
+  // width: 158px;
+  height: 40px;
+
+  padding: 7px 54px 7px 53px !important;
+}
+
+.buttonContainerText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.buttonCancel {
+  background-image: none !important;
+  color: #1859b4;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.closeIcon {
+  cursor: pointer;
+}

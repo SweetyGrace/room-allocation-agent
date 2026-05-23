@@ -1,0 +1,32 @@
+// index.module.scss
+@import "../../common/styles/variables.scss";
+
+.dashboardLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 55px);
+  background-color: #f9fafb;
+}
+
+.contentArea {
+  flex: 1;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+.subheaderIcons{
+  width: 19px;
+  height: 19px;
+}
+
+.mobileRoleWrapper {
+  padding: 12px $spacing-md;
+  background-color: $white;
+  border-bottom: 1px solid $bg-secondary-white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  @media (min-width: 601px) {
+    display: none;
+  }
+}

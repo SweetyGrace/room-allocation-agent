@@ -1,0 +1,26 @@
+.floatingButtons {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    gap: 8px; // Add gap between buttons
+    z-index: 1000;
+    padding: 16px;
+  }
+.buttonContainer {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.backButton {
+  padding: 12px 24px !important;
+  color:white;
+}
+
+.nextButton {
+  padding: 12px 24px !important;
+  color:white;
+}

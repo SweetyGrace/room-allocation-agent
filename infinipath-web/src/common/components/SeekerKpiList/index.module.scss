@@ -1,0 +1,153 @@
+@import "../../styles/variables.scss";
+
+.seekerKpiList {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    overflow: auto;
+    border: 1px solid #d5d7da;
+    box-shadow: 2px 2px 4px 0 rgba(10, 13, 18, .051);
+    padding: 24px;
+    border-radius: 8px;
+    width: 100%;
+    gap:120px
+}
+.kpiValue{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.kpiValueContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    
+}
+
+.kpiImage{
+    width: 42px;
+    height: 42px;
+    margin-top: 5px;
+}
+
+.countText{
+font-weight: 400;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+color: $darkBlue;
+}
+.text{
+font-weight: 400;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+color: rgba($darkBlue, 0.6);
+}
+
+
+.statisticsCard__icon {
+    display: block;
+    transition: opacity 0.1s ease-in-out;
+    width: 40px;
+    height: 40px;
+    margin-top: 12px;
+  }
+  
+  .statisticsCard__hoverIcon {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    margin-top: 12px;
+  }
+
+  .statisticsCard__iconContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.statisticsCard__subtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba($darkBlue, 0.6);
+  
+    &:hover{
+      color: #1859b4;
+    }
+  
+    @media (max-width: 1024px) and (min-width: 769px) {
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .statisticsCard__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* gap: 12px; */
+    max-width: 300px;
+    height: 44px;
+    color: $darkBlue;
+  
+    &:hover{
+        color: #1859b4;
+    }
+    @media (max-width: 1024px) and (min-width: 769px) {
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+    }
+  }
+.statisticsCard__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  
+    &:hover .statisticsCard__icon {
+      opacity: 0;
+    }
+  
+    &:hover .statisticsCard__hoverIcon {
+      opacity: 1;
+    }
+  
+    &:hover .statisticsCard__text {
+      color: #1859b4;
+    }
+  
+    &:hover .statisticsCard__subtext {
+      color: #1859b4;
+    }
+  
+  }
+
+  .statisticsCard__subtextcount {
+    font-size: 20px;
+  }

@@ -1,0 +1,149 @@
+
+.programs-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.programs-dashboard-sidebar {
+  width: 5rem;
+  flex-shrink: 0;
+}
+
+.programs-dashboard-sidebar-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.programs-dashboard-main {
+  flex: 1;
+  position: relative;
+}
+
+.programs-dashboard-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.programs-dashboard-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.programs-dashboard-header-logo img {
+  height: 2rem;
+}
+
+.programs-dashboard-header-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.programs-dashboard-header-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ef4444;
+  border-radius: 50%;
+}
+
+.programs-dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.programs-dashboard-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #1f2937;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.programs-dashboard-content {
+  padding-top: 6rem;
+  padding: 1.25rem 2rem;
+}
+
+.programs-dashboard-title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.programs-dashboard-title {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.programs-dashboard-add-button {
+  background-color: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.programs-dashboard-add-button:hover {
+  background-color: #f9fafb;
+}
+
+.programs-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.programs-dashboard-footer {
+  text-align: left;
+}
+
+.programs-dashboard-footer-text {
+  color: #6b7280;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.programs-dashboard-footer-link {
+  color: #2563eb;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.programs-dashboard-footer-link:hover {
+  color: #1d4ed8;
+}
+
+@media (min-width: 768px) {
+  .programs-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .programs-dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

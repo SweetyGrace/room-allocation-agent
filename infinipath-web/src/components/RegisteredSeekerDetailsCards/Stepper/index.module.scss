@@ -1,0 +1,191 @@
+@import '../../../common/styles/variables.scss';
+
+.stepperScroll {
+    height: calc(100vh - 330px); // Adjust height as needed
+    overflow-y: auto;
+    transform:translateZ(0);
+    padding-right: 16px;
+
+    &::-webkit-scrollbar {
+        display:none;
+    }
+
+}
+.stepperRoot {
+  width: 100%;
+  margin-left: 0px;
+  margin-top: 20px;
+  height: 100%;
+
+  // Override MUI stepper default styles
+  .MuiStep-root {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 8px 0;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+    }
+  }
+
+  // Custom step icon styling
+  .MuiStepLabel-iconContainer {
+    padding-right: 12px;
+
+    .MuiSvgIcon-root {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  }
+
+  // Remove default MUI active styles
+  .MuiStepLabel-root.Mui-active .MuiStepLabel-labelContainer .MuiStepLabel-label {
+    color: inherit;
+  }
+
+  .MuiStepLabel-root.Mui-completed .MuiStepLabel-labelContainer .MuiStepLabel-label {
+    color: inherit;
+  }
+
+  :global(.MuiStepConnector-root) {
+    flex: unset !important;
+  }
+}
+
+.stepperContent {
+  position: fixed;
+}
+
+
+.profileImageContainer {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .seekerImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; // Prevents stretching and maintains aspect ratio
+    object-position: center; // Centers the image within the container
+    
+    // Fallback for older browsers
+    @supports not (object-fit: cover) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+}
+
+.stepperLabels {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+// Completed steps - Dark blue text
+.completedLabel {
+  color: #051B46 !important; // Dark blue for completed text
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+// Active/In-progress steps - Dark blue text  
+.activeLabel {
+  color: #051B46 !important; // Dark blue for active text
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+// Not started steps - Gray text
+.inactiveLabel {
+  color: #707070 !important;  // Gray for not started text
+  font-weight: 500;
+}
+
+.backArrow {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+  width: 250px;
+  gap: 16px;
+}
+
+.title {
+  color: $darkBlue;
+  font-family: $natoSansBold;
+  font-size: 16px;
+}
+
+.profileBlock {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stepperHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nameText {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  color: #051B46;
+}
+
+.stepSubtitle {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  font-weight: normal;
+}
+
+.stepperScroll {
+  overflow-y: auto;
+}
+
+// Status text styling for the profile section
+.statusText {
+  font-size: 14px;
+  color: #666;
+
+  .statusLabel {
+    font-weight: 500;
+  }
+
+  .statusValue {
+    font-weight: 600;
+    color: #051B46;
+  }
+}
+
+.stagesText {
+  font-weight: 600;
+  font-size: 16px;
+  color: #051B46;
+}

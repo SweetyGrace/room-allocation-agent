@@ -1,0 +1,105 @@
+@import '../../styles/variables.scss';
+
+.KPIContainer{
+    margin-top: 16px;
+    margin-left: 30px;
+}
+.tabsContainer {
+    width: 100%;
+}
+
+.tabValue {
+    font-size: 24px;
+    font-weight: 400;
+    color: $blackBlue;
+}
+
+.tabLabel {
+    line-height: 26px;
+}
+.kpiLabel{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap:4px;
+
+  
+}
+
+.MuiTabs-scrollButtons {
+    border: 2px solid;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.tab {
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s ease;
+    border: 10px solid;
+}
+
+.activeTab {
+    border-bottom: 3px solid #1859B4;
+    /* Blue border for active tab */
+    font-weight: 600;
+    /* Optional: Bold font for active tab */
+}
+
+@media screen and (min-width: 1440px) {
+    .tabsContainer {
+        margin: 0px auto;
+        padding: 0px 0px 0px 20px;
+        max-width: 1440px;
+    }
+}
+.kpiCount {
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 12px;
+    color: $blackBlue;
+    display: block;
+    text-align: left;
+    line-height: 18px;
+    
+    // text-transform: capitalize;a
+}
+.kpiName  {
+    font-size: 14px;
+    color: $blackBlue;
+    // text-transform: lowercase;
+    line-height: 20px;
+    display: block;
+    text-align: left;
+    font-weight:400;
+
+}
+.orgCount{
+  font-family: $natoSansLight;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  margin-left: 3px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color:#051B46;
+  line-height: 10px;
+
+ 
+}
+.buildingOfficeIcon {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.verticalLine {
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background-color: #ccc;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+

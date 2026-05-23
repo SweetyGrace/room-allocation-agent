@@ -1,0 +1,575 @@
+@import "../../common/styles/variables.scss";
+
+.meetingContainer {
+  position: relative;
+
+  .formContainer {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    padding: 32px;
+    padding-right: 0px;
+    padding-bottom: 24px;
+    flex-direction: column;
+
+    .formRow,
+    .nameFormRow {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      .formRowContainer,
+      .formRowContainerRegistrations,
+      .formRowContainerRadio {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        div {
+          align-items: center;
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+.durationRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  .formRowContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: start;
+      justify-content: start !important;
+    }
+}
+
+.formWithoutButtons {
+  overflow: auto;
+  padding-bottom: 24px;
+}
+
+.formRowLimit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.formRowContainerRegistrations {
+  .registerdiv {
+    gap: 60px;
+  }
+}
+
+.limitDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  div {
+    align-items: center;
+    display: flex;
+    width: 630px;
+    justify-content: space-between;
+  }
+}
+
+.limitDivform {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.eachRange {
+}
+
+.eachRanged {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 630px;
+  align-items: start;
+}
+
+.formLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: $darkBlue;
+  margin: 0px 0px 5px 0px;
+  text-align: left;
+}
+
+.subHeading {
+  font-size: 18px;
+  font-weight: 600;
+  color: $darkBlue;
+  margin: 0px;
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.titleHeading {
+  font-size: 18px;
+  font-weight: 600;
+  color: $darkBlue;
+  margin: 0px;
+  text-align: left;
+  font-family: $natoSansBold;
+}
+
+.textAreaInput {
+  width: 100%;
+  height: 100px;
+  border-radius: 4px;
+  border: 1px solid rgba(231, 238, 243, 1);
+  padding: 10px;
+}
+
+.errorMsg {
+  font-size: 12px;
+  color: #e28619;
+  margin: 0px;
+  text-align: left;
+  width: 100%;
+}
+
+.errorField {
+  width: 100%;
+  height: 100px;
+  border-radius: 4px;
+  border: 1px solid #e28619;
+  padding: 10px;
+}
+
+.buttonContainer {
+  width: 150px;
+  font-size: 16px;
+  height: 40px;
+  margin-right: 32px;
+}
+
+.buttonText {
+  color: white !important;
+}
+
+.buttonContainerSecondary {
+  width: 150px;
+  font-size: 16px;
+  height: 40px;
+  background-color: #ffffff;
+  color: $darkBlue;
+  background-image: none !important;
+  border: none !important;
+}
+
+.buttonTextSecondary {
+  color: $blue !important;
+}
+
+.formRowButton {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.radioButton {
+  margin-right: 20px;
+}
+
+.formFields,
+.formFieldMeeting,
+.formFieldsRegistrations {
+  display: flex;
+  flex-direction: column;
+}
+
+.formFieldsRegistrations {
+  width: 370px;
+}
+
+.formFieldMeeting {
+  width: 317px;
+}
+
+.labelInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.labelText,
+.labelTextColored,
+.labelFont {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: $darkBlue;
+  text-align: left;
+  min-width: 100px;
+}
+
+.labelFont {
+  color: $darkBlue;
+  font-weight: 600;
+}
+
+.fieldBlock,
+.fieldfileBlock {
+  width: 100%;
+  display: flex;
+}
+.fieldfileBlock {
+  position: relative;
+}
+
+.inputFields,
+.errorFields {
+  width: 630px;
+  color: $darkBlue;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  height: 35px;
+  padding: 4px 10px;
+  font-size: 16px;
+
+  &:focus,
+  &:hover {
+    border: 1px solid #1859b4;
+    outline: none;
+  }
+}
+
+.errorFields {
+  border: 1px solid #e28619 !important;
+}
+
+.authenticationCardContent {
+  display: flex;
+  width: 150px !important;
+  gap: 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.authenticationCard {
+  display: flex;
+  height: 40px;
+  gap: 0px;
+  padding: 7px 12px;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px !important;
+  border-radius: 8px !important;
+  border: 1px solid #c9c9c9;
+
+  &:hover {
+    border: 1px solid #1859b4;
+    outline: none;
+  }
+
+ }
+
+.durationContainer {
+  width: 200px;
+
+  border-radius: 8px !important;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(95.12deg, #f0f0f0 -0.86%, #dcdcdc 104.51%) border-box;
+}
+
+.textField:focus-within,
+.textField:hover {
+  border-color: #1859b4;
+  /* Change border color on focus and hover */
+}
+
+.errorInput {
+  border-color: #e28619;
+}
+
+.subHeadingDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 630px;
+  margin-bottom: 16px;
+}
+
+.titleHeadingDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 630px;
+}
+
+.subHeadingcontext {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 12px;
+  color: $darkBlue;
+  margin: 0px;
+  text-align: left;
+  margin-top: 32px;
+}
+
+.formFieldsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.dateTime {
+  margin-top: 10px;
+  color: $darkBlue;
+  font-size: 14px;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.cardContainer {
+  width: 412px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #e0e0e0;
+  position: relative;
+  top: -10px;
+  margin-bottom: 96px;
+  background: linear-gradient(288.51deg, #f5fcff 12.38%, #ffffff 93.11%);
+  padding-bottom: 40px;
+}
+
+.floatRegistration {
+  width: 412px;
+  position: fixed;
+  right: 32px;
+  top: 149px;
+}
+
+.timer {
+  width: Hug (66px) px;
+  height: Hug (24px) px;
+  padding: 4px 8px 4px 8px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  background-color: #ddeefb;
+  margin-left: 73px;
+}
+
+.registrationsDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.minus {
+  height: 40px;
+  border-right: 1px solid #c9c9c9;
+  cursor: pointer;
+}
+
+.increment {
+  height: 40px;
+  border-left: 1px solid #c9c9c9;
+  cursor: pointer;
+}
+
+.enrolledText {
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  line-height: 12px;
+  color: $darkBlue;
+  width: 176px;
+  margin: 0px;
+  height: 35px;
+  border: none !important;
+  outline: none !important;
+}
+
+.enrolledText:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Ensure no outline on focus */
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.limitEach,
+.limitEachTimer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.limitEachTimer {
+  align-items: start;
+}
+
+.formRowContainerRadio {
+  gap: 24px !important;
+}
+
+.RegisterDateDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: start !important;
+}
+
+.divWithButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-end;
+  padding-right: 32px;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 112px);
+  background-color: white;
+}
+
+.titleDisplay {
+  text-align: start;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  color: $darkBlue;
+  width: 320px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.appTitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px;
+  height: 64px;
+  padding-left: 32px;
+}
+
+.separator {
+  width: 1px;
+  height: 24px;
+  background-color: #bebebe;
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+
+  .backArrow {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 40px;
+      height: 25px;
+      cursor: pointer;
+    }
+  }
+
+  .nonActive {
+    color: $grey;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .activeHome {
+    color: var(--Text-Text-Link, #1859b4);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .active {
+    color: $darkBlue;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.topShadow {
+  height: calc(100vh - 190px);
+  overflow-y: scroll;
+  box-shadow:
+    0 -4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.timers {
+  width: 630px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.nameFormRow {
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.preview {
+  display: flex;
+  color: #1859b4;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.uploadFormRow {
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+.uploadIcon {
+  position: absolute;
+  top: 17px;
+  left: 270px;
+  cursor: pointer;
+}

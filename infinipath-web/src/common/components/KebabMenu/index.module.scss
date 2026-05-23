@@ -1,0 +1,53 @@
+.menuContainer {
+    position: relative;
+}
+
+.menuDropdown {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    background: #ffffff;
+    border-radius: 2px;
+    border-top: 1px solid  #FFFFFF;
+    box-shadow: 0px 8px 16px 0px #00000024;
+    z-index: 1;
+    padding: 4px;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.menuButton{
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menuItemContainer{
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    &:hover {
+        background: #F4F8FB;
+    }
+}
+
+.deleteItem{
+    color:#FF7D41;
+}

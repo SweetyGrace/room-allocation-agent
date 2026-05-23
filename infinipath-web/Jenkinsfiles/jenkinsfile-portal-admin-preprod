@@ -1,0 +1,67 @@
+pipeline {
+    agent any
+    environment {
+        SONARQUBE_PATH = '/var/lib/jenkins/tools/sonar-scanner-4.2.0.1873-linux/bin/sonar-scanner -Dsonar.projectKey=Infini-Portal-Admin-PreProd -Dsonar.sources=./src'
+        // fd_secret_ignore
+        GOOGLE_CHAT_URL = "https://chat.googleapis.com/v1/spaces/AAAA6Wtz7Xg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UcaW1-lHiYQtM06nI_Ng6nxuBdpI44N6cYyrpuzeG4k"
+        S3_BUCKET_NAME = "portal-admin-preprod-frontendbucket"
+        CLOUDFRONT_DISTRIBUTION_ID = "E2JK3X22PWH5RA"
+        BRANCH_NAME = "portal-admin-preprod"
+        ENV_S3_BUCKET_PATH = "allenvironmentvariables/portal/frontend/admin-preprod.env"
+        ENVIRONMENT = "admin-preprod"
+        NODE_INSTALLATION = 'Infini-Portal'
+    }
+    stages {
+        stage('Setup Environment variables') {
+            steps {
+                script {
+                    sh 'aws s3 cp s3://${ENV_S3_BUCKET_PATH} ./.env'
+                }
+            }
+        }
+        stage('build') {
+            steps {
+                nodejs("${env.NODE_INSTALLATION}") {
+                    echo 'building'
+                    sh 'npm cache clean --force'
+                    sh 'npm i @babel/runtime --force'
+                    sh 'npm i react-lottie --force'
+                    sh 'npm install --force'
+                    script {
+                        echo "${ENVIRONMENT} Build"
+                        sh 'npm run build'
+                    }
+                }
+            }
+        }
+        stage('Deployment') {
+            steps {
+                script {
+                    echo "${ENVIRONMENT} deployment started"
+                    sh 'aws s3 cp ./build s3://${S3_BUCKET_NAME} --recursive'
+                    sh 'aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"'
+                    echo "${ENVIRONMENT} deployment Completed"
+                }
+            }
+        }
+    }
+    post {
+        success {
+            script {
+                googlechatnotification(
+                    message: "Project Name: ${JOB_NAME} Build ${BUILD_NUMBER} from Branch ${BRANCH_NAME} on Environment ${ENVIRONMENT} was successful.",
+                    url: "${GOOGLE_CHAT_URL}"
+                )
+            }
+        }
+        failure {
+            googlechatnotification(
+                message: "Project Name: ${JOB_NAME} Build ${BUILD_NUMBER} from Branch ${BRANCH_NAME} on Environment ${ENVIRONMENT} failed. Check output logs at ${RUN_DISPLAY_URL}",
+                url: "${GOOGLE_CHAT_URL}"
+            )
+        }
+        always {
+            cleanWs()
+        }
+    }
+}

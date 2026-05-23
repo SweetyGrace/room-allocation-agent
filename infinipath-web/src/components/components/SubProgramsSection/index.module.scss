@@ -1,0 +1,166 @@
+@import "../../../common/styles/variables.scss";
+.subProgramSection {
+  margin-top: 2rem;
+
+  .subProgramHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .subProgramTitle {
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $darkBlue;
+    }
+
+    .addSubProgramBtn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #1976d2;
+      border-radius: 8px;
+      background: none;
+      color: #1976d2;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #e3f2fd;
+      }
+
+      .addIcon {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .fieldGroup {
+    margin-bottom: 1.5rem;
+
+    .fieldLabel {
+      display: block;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: $darkBlue;
+      margin-bottom: 0.5rem;
+    }
+
+    .inputField {
+      width: 100%;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: $font-size-sm;
+      transition: all 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: #1976d2;
+        box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+      }
+
+      &.error {
+        border-color: #d32f2f;
+      }
+    }
+
+    .textareaField {
+      @extend .inputField;
+      height: auto;
+      min-height: 120px;
+      padding: 12px 16px;
+      resize: vertical;
+    }
+
+    .errorText {
+      color: #d32f2f;
+      font-size: $font-size-xs;
+      margin-top: 4px;
+      display: block;
+    }
+  }
+}
+
+// Container
+.formContainer {
+  background: #ffffff;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.subtitle {
+  text-align: start;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $footer-gray;
+  margin-bottom: 24px;
+  line-height: $line-height-lg;
+}
+
+.Detailstitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  line-height: 24px;
+  color: $darkBlue;
+  margin-bottom: 12px;
+  text-align: start;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.datePicker {
+  border: 1px solid #d9d9d9 !important; /* neutral gray */
+  border-radius: 4px !important;
+  display: flex;
+  padding-right: 8px;
+  .borderLine {
+    height: 34px;
+    border: 0.5px solid #d9d9d9 !important; /* neutral gray */
+    border-radius: 4px !important;
+    margin-right: 8px;
+  }
+}
+:global(.rs-picker-popup) {
+  z-index: 1500 !important;
+}
+:global(.rs-input-group-addon) {
+  display: none !important;
+}
+:global(.rs-picker-error > .rs-picker-input-group) {
+  border: none !important; /* neutral gray */
+  // border-color: #d9d9d9
+}
+:global(.rs-input-group) {
+  border: none !important; /* neutral gray */
+}
+
+.programsDashboardAddButton {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1859b4;
+  width: 178px !important;
+  height: 40px;
+  font-size: $font-size-md;
+  background-image: none !important;
+  background-color: none !important;
+  border: 1px solid #1859b4 !important;
+  padding: unset !important;
+}
+
+.subSessionHeading {
+  font-size: $font-size-sm-alt;
+  font-weight: $font-weight-semibold;
+  line-height: 24px;
+  color: $darkBlue;
+}

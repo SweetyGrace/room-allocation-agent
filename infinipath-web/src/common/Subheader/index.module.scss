@@ -1,0 +1,168 @@
+@import "../../common/styles/variables.scss";
+
+.container {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  position: sticky;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  z-index: 8; /* Ensure it is on top of other components */
+  border-bottom: 1px solid $lightGrey;
+  background-color: $white;
+}
+
+
+.appTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #051b46;
+}
+
+.title{
+  font-size: 18px;
+  font-weight: 600;
+  color: #051b46;
+  line-height: 32px;
+}
+
+.tabs {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  color: #051b46;
+  font-size: 16px;
+  font-weight: 400;
+  .tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 56px;
+    cursor: pointer;
+    padding-left: 4px;
+    padding-right: 4px;
+    @media (max-width: 780px) {
+      height: 50px;
+    }
+
+    .mySpaceIcon {
+      width: 28px;
+      height: 28px;
+
+      @media (max-width: 780px) {
+        width: 23px;
+        height: 23px;
+      }
+
+      @media (max-width: 440px) {
+        display: none;
+      }
+    }
+
+    .adminIcon {
+      width: 28px;
+      height: 28px;
+
+      @media (max-width: 780px) {
+        width: 17px;
+        height: 17px;
+      }
+
+      @media (max-width: 440px) {
+        display: none;
+      }
+    }
+  }
+
+  .separator {
+    width: 1px;
+    height: 24px;
+    background-color: #d9d9d9;
+
+    @media (max-width: 440px) {
+      display: none;
+    }
+  }
+
+  .activeTab {
+    border-bottom: 4px solid #1859B4;
+
+    @media (max-width: 440px) {
+      border-bottom: unset;
+    }
+  }
+}
+
+.separator {
+  width: 1px;
+  height: 24px;
+  background-color: #bebebe;
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  .backArrow {
+    display: flex;
+    align-items: center;
+    img {
+      width: 40px;
+      height: 25px;
+      cursor: pointer;
+    }
+  }
+  .nonActive {
+    color: $grey;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .active {
+    color: $darkBlue;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    padding: 16px 16px;
+    top: 50px;
+  }
+}
+
+.buttonCreateInfinipath {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1859b4;
+  width: 178px !important;
+  height: 40px;
+  font-size: 16px;
+  background-image: none !important;
+  background-color: none !important;
+  border: 1px solid #1859b4 !important;
+  padding: unset !important;
+}
+
+@media (max-height: 800px) {
+  .container {
+    background-color: #fcfeff;
+  }
+}
+
+.noBorder{
+  border: none;
+}
+
+.hideSubHeader{
+  display: none;
+}
+
+.containerBackgroundReq {
+  background-color: white;
+}

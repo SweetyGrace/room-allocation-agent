@@ -1,0 +1,977 @@
+@import "../../../common/styles/variables.scss";
+
+/* Container */
+.container {
+  margin: 0 auto;
+  height: calc(100vh - 150px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.programImageForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  color: $darkBlue;
+  margin-left: 22px;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-normal;
+}
+
+.programHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start; // Changed from center to flex-start
+  padding: 24px;
+  padding-bottom: 10px;
+  background: $bg-white-shade;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: 32px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  > div {
+    width: 50%;
+    margin-top: -8px;
+    margin-right: 50px;
+  }
+}
+
+.programHeaderText {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.programTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $secondaryDark;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin: 24px 0px 24px 32px;
+}
+
+.backButton {
+  background-color: $footer-gray;
+  color: $white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: $secondaryDark;
+}
+
+/* No Data */
+.noData {
+  text-align: center;
+  padding: 60px 20px;
+  font-weight: $font-weight-normal;
+}
+
+.noData h2 {
+  color: $footer-gray;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  width: 70%;
+  margin-bottom: 40px;
+}
+
+/* Section */
+.section {
+  padding: 30px;
+  background-color: $white;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-md;
+}
+
+.sectionHeader {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  margin: 0 0 8px 0;
+}
+
+.sectionDescription {
+  font-size: $font-size-md;
+  color: $footer-gray;
+  margin: 0;
+}
+
+/* Subsections */
+.subSectionsContainer {
+  margin-top: 32px;
+}
+
+.subSection {
+  padding: $spacing-lg;
+  background-color: $bg-white-shade;
+  border: 1px solid $border-grey;
+  border-radius: 6px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.subSectionHeader {
+  margin-bottom: 20px;
+}
+
+.subSectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $secondaryDark;
+  margin: 0;
+}
+
+/* Subsection wrapper for grid placement */
+.subSectionWrapper {
+  &.fullWidth {
+    grid-column: 1 / -1; // Span all columns in grid
+  }
+}
+
+/* Questions Grid */
+.questionsGrid {
+  display: grid;
+  gap: 24px;
+
+  &.twoColumn {
+    grid-template-columns: repeat(2, 1fr);
+
+    .questionContainer {
+      // Default: auto placement
+      grid-column: auto;
+      
+      &[data-question-type="draganddrop"] {
+        grid-column: 1 / -1;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &.oneColumn {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Ensure proper spacing between items
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 16px; // Add consistent bottom margin
+}
+
+/* Question Container */
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Labels */
+.label {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $secondaryDark;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required {
+  color: $darkBlue;
+  font-weight: $font-weight-semibold;
+}
+
+/* Input Fields */
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-md;
+  font-size: $font-size-md;
+  color: $darkBlue;
+  background-color: $white;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: $darkBlue;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.select {
+  cursor: pointer;
+}
+
+/* Radio Group */
+.radioGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  cursor: pointer;
+  font-size: $font-size-md;
+  color: $secondaryDark;
+}
+
+.radioInput {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.radioText {
+  user-select: none;
+}
+
+/* Checkbox Group */
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  cursor: pointer;
+  font-size: $font-size-md;
+  color: $secondaryDark;
+}
+
+.checkboxInput {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkboxText {
+  user-select: none;
+}
+
+/* File Input */
+.fileInput {
+  padding: $spacing-sm 12px;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-md;
+  font-size: $font-size-md;
+  color: $secondaryDark;
+  background-color: $white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.fileInput:focus {
+  outline: none;
+  border-color: $blue-thick;
+}
+
+/* Drag and Drop */
+.dragDropArea {
+  border: 2px dashed $border-grey;
+  border-radius: $border-radius-md;
+  padding: 20px;
+  text-align: center;
+  background-color: $bg-white-shade;
+  transition: border-color 0.2s ease;
+}
+
+.dragDropArea:hover {
+  border-color: $blue-thick;
+}
+
+.dragDropArea p {
+  margin: 0 0 12px 0;
+  color: $footer-gray;
+  font-size: $font-size-md;
+}
+
+/* Submit Container */
+.submitContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 30px 30px 0px 0px;
+  background-color: $white;
+  border-top: 1px solid #c8c8c8;
+}
+
+.cancelButton {
+  color: $blue;
+  cursor: pointer;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  background-color: unset;
+}
+
+.submitButton {
+  background-color: $blue-thick;
+  color: $white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+}
+
+.continueButton {
+  color: $white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+}
+
+.submitButton:hover {
+  background-color: $blue-thick;
+}
+
+/* Program Banner */
+.programBanner {
+  position: relative;
+  height: 16rem;
+  height: 406px;
+  width: 70%;
+  margin: auto;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 400px;
+  margin: auto;
+  opacity: 0.9;
+  border-radius: $border-radius-md;
+  object-fit: cover;
+}
+
+.heading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-normal;
+  color: $darkBlue;
+  margin: 0;
+  font-family: $natoSansBold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 32px;
+}
+
+/* NEW: Program Preference Section Styles */
+.programPreferenceSection {
+  margin-bottom: 40px;
+  padding: $spacing-lg;
+  background-color: $white;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-xs;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-left: 32px;
+}
+
+.preferenceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.preferenceTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $secondaryDark;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.infoIcon {
+  font-size: $font-size-md;
+  color: $footer-gray;
+  cursor: help;
+}
+
+.noPreferencesText {
+  font-size: $font-size-md;
+  color: #9ca3af;
+}
+
+.preferenceContainer {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.programList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.comfortableChoice {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: $border-radius-md;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.comfortableChoice:hover {
+  background-color: $slate-bg;
+  border-color: #cbd5e1;
+}
+
+.comfortableText {
+  font-size: $font-size-md;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.mahatriaName {
+  color: $mahatriaName;
+  font-weight: $font-weight-semibold;
+}
+
+.programSelection {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $secondaryDark;
+}
+
+.programCard {
+  background-color: $white;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-md;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.programCard:hover {
+  background-color: $bg-white-shade;
+  border-color: $border-grey;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.programInfo {
+  display: flex;
+  gap: 24px;
+}
+
+.programName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $secondaryDark;
+}
+
+.programDetails {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-md;
+  color: $footer-gray;
+}
+
+.duration {
+  font-weight: $font-weight-medium;
+}
+
+.separator {
+  color: $border-grey;
+}
+
+.dates {
+  color: $footer-gray;
+}
+
+.dragHandle {
+  color: #9ca3af;
+  font-size: $font-size-md;
+  cursor: grab;
+  padding: 4px;
+  user-select: none;
+}
+
+.dragHandle:hover {
+  color: $footer-gray;
+}
+
+.preferenceDropZone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #fafafa;
+  box-shadow: 0px 0px 6px 0px #00000033 inset;
+  border-radius: $border-radius-md;
+  min-height: 400px;
+  background-image: url("../../../assets//images/preferenceBg.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  padding: 32px 50px;
+}
+
+.dropZoneItem {
+  background-color: $white;
+  border: 2px dashed $border-grey;
+  border-radius: $border-radius-md;
+  padding: 20px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.dropZoneItem:hover {
+  border-color: #a3a3a3;
+  background-color: $bg-white-shade;
+}
+
+.disabledNotice {
+  margin-top: auto;
+  padding: 16px;
+  text-align: center;
+}
+
+.disabledNotice p {
+  font-size: $font-size-xs;
+  color: $footer-gray;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.resetButton {
+  background: none;
+  border: none;
+  color: $blue-thick;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.resetButton:hover {
+  color: $blue-thick;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: $font-size-xl;
+  }
+
+  .questionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .submitContainer {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+  }
+
+  .preferenceContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .programPreferenceSection {
+    padding: 16px;
+  }
+
+  .preferenceHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.calendarEffect {
+  position: absolute;
+  /* Add this */
+  top: -10px;
+  /* Add this */
+  left: 0;
+  /* Add this */
+  width: 100%;
+  /* Add this */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 2;
+  /* Make sure it's above the image */
+  pointer-events: none;
+  /* Optional: allows clicks to pass through */
+}
+
+.configureButton {
+  background-image: none !important;
+  border: 1px solid $blue;
+  height: 50px;
+  font-size: $font-size-md;
+  color: $blue;
+  margin-left: 30px;
+}
+
+.configureButtonText {
+  color: $blue;
+}
+
+/* Questions Grid - Updated for column layout */
+.questionsGrid {
+  display: grid;
+  gap: 20px;
+}
+
+/* One Column Layout */
+.oneColumn {
+  grid-template-columns: 1fr;
+}
+
+/* Two Column Layout */
+.twoColumn {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  /* Row gap 20px, Column gap 40px */
+}
+
+/* Layout Toggle Styles */
+.layoutToggle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.layoutLabel {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $secondaryDark;
+}
+
+.layoutButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.layoutButton {
+  width: 86;
+  height: 28;
+  gap: 3px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: $white;
+  border: 1px solid $border-grey;
+}
+
+.layoutButton.active {
+  background-color: $blue;
+  border-color: $blue;
+  color: $white;
+}
+
+/* Question Container - Updated for better alignment */
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.oneColumnQuestion {
+  width: 65%;
+}
+
+.twoColumnQuestion {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .twoColumn {
+    grid-template-columns: 1fr;
+    /* Force single column on mobile */
+  }
+
+  .layoutToggle {
+    margin-left: 16px;
+    padding: 12px 16px;
+  }
+
+  .layoutButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .layoutButton {
+    width: 100%;
+  }
+}
+
+.arrowIcon {
+  color: $footer-gray;
+  cursor: pointer;
+}
+
+.confirmText {
+  color: $white;
+}
+
+.confirmButton {
+  font-size: $font-size-md;
+}
+.cancelText {
+  color: $white;
+}
+
+.divWithButtons {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $white;
+  padding-right: $spacing-lg;
+  border-top: 1px solid $border-grey;
+}
+
+.formRowButton {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 70px;
+  margin-bottom: $spacing-lg;
+  padding-top: 15px;
+}
+
+.buttonContainerSecondary {
+  width: 120px;
+  font-size: $font-size-md;
+  height: 40px;
+  background-color: $white;
+  color: $darkBlue;
+  background-image: none !important;
+  border: none !important;
+}
+
+.buttonTextSecondary {
+  color: $blue !important;
+}
+
+.buttonTextPrimary {
+  color: $white;
+}
+
+.buttonContainerPrimary {
+  font-size: $font-size-md;
+}
+
+/* Multi Question Styles */
+.multiQuestionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.subQuestionField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.subQuestionLabel {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $secondaryDark;
+  margin-bottom: $spacing-sm;
+}
+
+.charCount {
+  font-size: 13px;
+  color: $footer-gray;
+  text-align: right;
+  margin-top: -4px;
+  font-style: italic;
+}
+
+/* Slider Styles */
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(to right, $blue-thick, $blue-thick);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $blue-thick;
+    cursor: pointer;
+    border: 2px solid $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $blue-thick;
+    cursor: pointer;
+    border: 2px solid $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: $border-grey;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: $border-grey;
+  }
+}
+
+.sliderValue {
+  min-width: 50px;
+  text-align: center;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $secondaryDark;
+  padding: 6px 12px;
+  background-color: $bg-white-shade;
+  border-radius: $border-radius-md;
+  border: 1px solid $border-grey;
+}

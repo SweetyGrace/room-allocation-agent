@@ -1,0 +1,125 @@
+@import "../../common/components/EmailVerifyComponent/index.module.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 40px;
+  padding-bottom: 0px;
+  position: relative;
+  height: calc(100vh - 200px);
+}
+
+.joinOthersCard {
+  gap: 40px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 37.93%, #fafdff 100%);
+  border: 1px solid #ededed;
+  box-shadow: 4px 4px 60px 0px #114b7426;
+  background-image: url("../../assets/images/add-seeker-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 22px;
+  height: 100%;
+  width: 100%;
+}
+
+.familyTitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  color: $darkBlue;
+}
+
+.mainHeading {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: left;
+  color: $darkBlue;
+  // font-family: $natoSansBold;
+}
+
+.cardsWrapper {
+  display: flex;
+  gap: 16px;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  min-height: 200px;
+  max-height: calc(100vh - 500px);
+  width: 100%;
+}
+
+.seekerCardStyles {
+  width: 200px !important;
+  height: 224px !important;
+}
+
+.addNewSeekerCard {
+  width: 200px !important;
+  height: 224px !important;
+  margin-top: unset !important;
+}
+
+.cardsWithButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.floatButton {
+  position: relative;
+}
+
+.buttonText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: $white;
+  width: 155px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 18px;
+}
+
+.markSeekerText {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: $darkBlue;
+  margin-top: 17px;
+  // font-family: $natoSansBold;
+}
+
+.headingText {
+  font-weight: 400px;
+  font-size: 16px;
+  line-height: 26px;
+  color: $darkBlue;
+  margin-top: 17px;
+}
+.textInfo{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.infodiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.infoText{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $textGrey;
+
+
+}

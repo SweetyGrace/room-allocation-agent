@@ -1,0 +1,18 @@
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.radioOptions{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}

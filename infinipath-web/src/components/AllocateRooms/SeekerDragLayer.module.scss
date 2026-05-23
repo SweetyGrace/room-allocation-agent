@@ -1,0 +1,12 @@
+@import "../../common/styles/variables.scss";
+
+.dragPreviewCard {
+  background: $secondaryBlue;
+  border: 1px solid $pale-blue;
+  box-shadow: $box-shadow;
+  color: $white;
+  border-radius: $border-radius-sm;
+  box-sizing: border-box;
+  opacity: 0.9;
+  pointer-events: none;
+}

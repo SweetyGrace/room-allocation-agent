@@ -1,0 +1,72 @@
+@import "../../../../../common/styles/variables.scss";
+.questionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 20px;
+}
+
+.questionsHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #000000;
+}
+
+.showAllBtn {
+  background: none;
+  border: none;
+  color: $blue;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.showAllBtn:hover {
+  text-decoration: underline;
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.questionItem {
+  display: flex;
+    gap:4px;
+}
+
+.questionNumber {
+  font-weight: 400;
+  color: $darkBlue;
+  min-width: 20px;
+    text-align: right;
+}
+
+.questionContent {
+  flex: 1;
+  width:100%;
+}
+
+.question {
+  font-weight: 400;
+  font-size: 14px;
+  color:  $darkBlue;
+  margin-bottom: 4px;
+}
+
+.answer {
+  color: $darkBlue;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+.caretIcon {
+  cursor: pointer;
+}
+.answerIndent {
+  padding-top: 2px;
+}
+

@@ -1,0 +1,25 @@
+@import "../../../../../common/styles/variables.scss";
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+.label {
+    color: $darkBlue;
+    font-size: 16px;
+}
+
+.input{
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $grey;
+    color: $darkBlue;
+    border-radius: 5px;
+}

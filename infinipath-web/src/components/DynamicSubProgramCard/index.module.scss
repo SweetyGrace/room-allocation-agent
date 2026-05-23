@@ -1,0 +1,76 @@
+@import "../../styles.scss";
+@import "../../common/styles/variables.scss";
+
+.subProgramCard {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  border: 1px solid $border-gray;
+  box-shadow: $box-shadow-card;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: $box-shadow-card-hover;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-md;
+  border-bottom: 2px solid $border-gray;
+}
+
+.sessionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  margin: 0;
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-sm;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: $error-hover-bg;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.fieldRow {
+  display: flex;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+}

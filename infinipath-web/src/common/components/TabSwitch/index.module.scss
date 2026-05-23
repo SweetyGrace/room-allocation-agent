@@ -1,0 +1,25 @@
+.tabSwitchContainer {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .tab {
+    padding: 4px 16px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #051B46;
+    line-height: 24px;
+  }
+  
+  .activeTab {
+    background: #E9F2FF;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid #1e5dbd;
+    color: #1859B4;
+  }
+  

@@ -1,0 +1,49 @@
+@import '../../../../common/styles/common.scss';
+
+.sessionsWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-image: url('../../../../assets/images/mobile-bless-bg.svg');
+    background-position: left center; // Add this line to align image to the left
+    background-repeat: no-repeat;
+    
+    .sessionsHeading {
+        font-size: 15px;
+        color: #051B46;
+    }
+
+    .sessionButtons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .sessionTitle {
+            padding: 4px 8px;
+            width: auto;
+            text-align: center;
+            height: 40px;
+            background-color: #EEEEEE;
+            color: #051B46;
+            border-radius: 22px;
+        }
+
+        .selected {
+            background: #0760cd;
+            color: #fff;
+            border: 1px solid #0760cd;
+        }
+    }
+
+    .confirmButton {
+        align-self: center;
+        width: fit-content;
+        margin-top: 12px;
+        padding: 7px 24px;
+        color: white;
+        height: 40px;
+        font-size: 12px;
+    }
+}

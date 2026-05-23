@@ -1,0 +1,189 @@
+// TimelineActivity.scss
+.timelineContainer {
+  max-width: 48rem;
+  margin: 0; // Remove auto centering, aligns to left
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.timelineContent {
+  padding: 1.5rem;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.timelineItemLine {
+  position: absolute;
+  left: 8px; // Adjust based on your icon size and alignment
+  top: 30px;
+  height: calc(100% - 30px);
+  border-left: 1.2px dashed #c4c4c4;
+  margin-left: 3px;
+  padding: 20px;
+}
+
+.timelineItemContent {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+  padding-bottom: 5px;
+}
+
+.timelineItemIconWrapper {
+  position: relative;
+  z-index: 1; // Ensure icon stays above the line
+  flex-shrink: 0;
+}
+
+.timelineItemIcon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timelineItemCheck {
+  width: 1rem;
+  height: 1rem;
+  color: #ffffff;
+}
+
+.timelineItemInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.timelineItemTimestamp {
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+.timelineItemTitle {
+  font-size: 0.875rem;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.timelineItemTitleBold {
+  font-weight: 400;
+}
+
+.timelineItemTitleNormal {
+  font-weight: 400;
+}
+
+.activityDetails {
+  margin-left: 40px;
+}
+
+.activityDetailsContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.activityDetailsIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.125rem;
+}
+
+.activityDetailsDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #9ca3af;
+  border-radius: 50%;
+}
+
+.activityDetailsText {
+  flex: 1;
+}
+
+.activitySimpleDetails {
+  margin-left: 40px;
+  color: #888888;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap:8px;
+}
+
+.activityFile {
+  margin-left: 40px;
+  margin-top: 0.75rem;
+}
+
+.activityFileContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+.activityFileIcon {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fef2f2;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activityFileIconSvg {
+  width: 1rem;
+  height: 1rem;
+  color: #dc2626;
+}
+
+.activityFileInfo {
+  flex: 1;
+}
+
+.activityFileName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+.activityFileSize {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .timelineContent {
+    padding: 1rem;
+  }
+
+  .timelineItemContent {
+    gap: 0.75rem;
+  }
+
+  .activityDetails,
+  .activitySimpleDetails,
+  .activityFile {
+    margin-left: 2.5rem;
+  }
+}

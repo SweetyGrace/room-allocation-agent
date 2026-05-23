@@ -1,0 +1,78 @@
+@import "../../common/styles/variables.scss";
+
+.seekerAnalytics {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+}
+
+.subContainer3 {
+  display: flex;
+  gap: 20px;
+}
+
+.box1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.meetingsGroups {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.kpiTitle {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $darkBlue;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #1859b4;
+  font-size: 14px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1859b4;
+  padding: 4px;
+  display: flex;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  color: #1859b4 !important;
+}
+.breadcrumbSessionItem {
+  cursor: pointer;
+}
+.breadcrumbSessionType {
+  color: #000;
+}
+
+.breadcrumbText{
+  display: flex;
+  align-items: center;
+  color: #051B46;
+  cursor: default;
+}
+.loaderContainer{
+  display: flex;
+  z-index: 2;
+  background-color: white;
+}

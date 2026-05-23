@@ -1,0 +1,19 @@
+@import "../../../common/styles/variables.scss";
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: $natoSansRegular;
+  color: $darkBlue;
+  width: 200px;
+
+}
+
+.checkboxText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: $darkBlue;
+  font-family: $natoSansRegular;
+}

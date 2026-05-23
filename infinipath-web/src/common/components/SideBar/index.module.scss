@@ -1,0 +1,103 @@
+@import "../../../common/styles/variables.scss";
+
+.sidebar {
+  width: 80px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  gap: 14px;
+  scroll-behavior: smooth;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.mahatriaText {
+  color: #d9251d;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+}
+
+.choiceText {
+  line-height: 12px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.sidebarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative; // Add this for pseudo-element positioning
+
+  .sidebarLabel {
+    font-size: 12px;
+    color: #707070;
+    font-weight: 400;
+    text-align: center;
+    width: 66px;
+  }
+
+  .sidebarIcon {
+  }
+
+  &:hover {
+    background: #f2f4fb;
+    border-radius: 8px;
+  }
+
+  &.active {
+    background: #f2f4fb;
+    border-radius: 8px;
+    // Remove the border-bottom from here
+
+    // Add pseudo-element for custom border
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%; // Adjust this to control border width (80% of container)
+      height: 2px;
+      background-color: $blue;
+      border-radius: 0; // Ensures no radius on the border
+    }
+
+    .sidebarLabel {
+      font-weight: 500;
+    }
+
+    .sidebarCount {
+      color: #707070;
+      font-weight: 500;
+    }
+  }
+}
+
+.sidebarCount {
+  font-size: 14px;
+  font-weight: 500;
+  color: #707070;
+}
+.preferenceLabel{
+  font-size: $font-size-xs;
+  color: $color-grey;
+  font-weight:$font-weight-semibold;
+  margin-bottom: -8px;
+}
+.sidebarDivider{
+  border-bottom: 1px solid $color-progress-bg-allocated;
+    width: 100%;
+    margin-top:-11px;
+}

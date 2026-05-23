@@ -1,0 +1,202 @@
+@import "../../../common/styles/variables.scss";
+
+.verifyContent {
+  background: white;
+  margin-top: 88px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.labelInput {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+}
+
+.labelText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  color: $darkBlue;
+  margin-bottom: 10px;
+}
+
+.inputFields,
+.errorFields {
+  width: 100%;
+  color: $darkBlue;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  height: 35px;
+  padding: 4px 10px;
+  font-size: 16px;
+  &:focus,
+  &:hover {
+    border: 1px solid #007bff;
+    outline: none;
+  }
+}
+
+.errorFields {
+  border: 1px solid #e28619;
+  &:focus,
+  &:hover {
+    border: 1px solid #007bff;
+    outline: none;
+  }
+}
+
+.fieldBlock {
+  width: 30%;
+}
+
+.buttonText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: $white;
+  width: 150px;
+  height: 50px;
+}
+
+.buttonContainer {
+  width: 180px;
+  height: 40px;
+}
+
+.disabledButton {
+  pointer-events: none;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  color: $darkBlue;
+}
+
+:global {
+  .react-tel-input .selected-flag {
+    padding: 5px;
+    padding-left: 17px !important;
+    border: 1px solid #ccc;
+    border-right: unset !important;
+    border-left: unset !important;
+    border-top: unset !important;
+    border-bottom: unset !important;
+    background: white !important;
+    border-radius: 8px 0px 0px 8px !important;
+    width: 50px !important;
+  }
+
+  .react-tel-input .form-control {
+    font-size: 16px;
+    height: 50px !important;
+    width: 500px !important;
+    border-radius: 12px !important;
+    padding-left: 65px !important;
+    color: $darkBlue !important;
+  }
+
+  .react-tel-input .selected-flag .iti__flag {
+    width: 60px;
+    height: 60px;
+  }
+
+  .react-tel-input .selected-flag .arrow {
+    position: relative;
+    top: 49%;
+    margin-top: -3px;
+    margin-left: 2px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 7px solid #555;
+  }
+
+  .react-tel-input .selected-flag .arrow.up {
+    border-top: unset;
+    border-bottom: 7px solid #555;
+  }
+
+  .react-tel-input .country-list {
+    width: 250px;
+    text-align: left;
+    max-height: 170px;
+  }
+
+  .react-tel-input .country-list .search-box {
+    width: 210px;
+    margin-left: 0px;
+  }
+
+  .css-wkv7oa-MuiPaper-root-MuiDialog-paper {
+    max-width: unset !important;
+    width: 100% !important;
+    margin: 0px !important;
+    max-height: calc(100% - 5px) !important;
+  }
+
+  .css-ks0ey5-MuiTypography-root-MuiDialogTitle-root {
+    padding: 40px 60px 0px 60px !important;
+  }
+
+  .css-1kxd7on-MuiDialogContent-root {
+    padding: 20px 60px 40px 60px !important;
+    height: calc(100% - 10%) !important;
+    overflow-y: hidden !important;
+  }
+
+  .react-tel-input .flag-dropdown {
+    border-radius: 8px 0px 0px 8px !important;
+  }
+}
+
+.error {
+  font-style: italic;
+  text-align: left;
+  width: 500px;
+  font-size: 14px;
+  color: $errorText;
+  padding-top: 5px;
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 40px 12px;
+  padding-top: 0px;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 43.58px;
+  color: $darkBlue;
+  margin-left: 15px;
+}
+
+.phoneText {
+  font-size: 14px;
+  color: $lightGrey2;
+  width: 150px;
+  height: 50px;
+}

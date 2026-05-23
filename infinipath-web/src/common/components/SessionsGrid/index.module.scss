@@ -1,0 +1,376 @@
+@import "../../../common/styles/variables.scss";
+
+.sessionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  overflow: auto;
+  scrollbar-width: none;
+  transform: translateZ(0);
+  will-change: transform;
+
+}
+
+.sessionCard {
+  height: 22%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+
+  &.hasUser {
+    // Prevent drag over effects
+    &.dragOver {
+      background: none;
+      border-color: #d1d5db;
+    }
+  }
+}
+
+.sessionCard.dragOver {
+  border-color: #2196f3;
+  background-color: #e3f2fd;
+}
+
+.sessionCard {
+  // border-width: 2px;
+  // border-style: dashed;
+  // border-color: #d9d9d9;
+  border-radius: 8px;
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &.dragOver {
+    background: linear-gradient(
+      140.95deg,
+      rgba(110, 169, 225, 0.15) 17.85%,
+      rgba(48, 104, 188, 0.15) 70.24%
+    );
+
+    .sessionName {
+      color: #1859b4;
+      font-weight: 600;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+
+    .progressBarContainer {
+      background: #f1f1f1;
+      width: 100%;
+    }
+
+    .sessionCount {
+      color: #1859b4;
+      font-weight: 600;
+    }
+
+    // Removed transform: scale(1.02);
+  }
+
+  &.dragAvailable {
+    background: rgba(160, 174, 192, 0.1);
+    border: 2px dashed #a0aec0;
+  }
+}
+
+.sessionUsers {
+  flex: 1;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.assignedUser,
+.assignedUserReject {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 8px;
+  padding-bottom: unset;
+  display: flex;
+  font-size: 12px;
+  height: 122px;
+  position: relative;
+
+  .crossBg {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+.assignedUser {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.crossBgnew {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 18px;
+  height: 18px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fullnameStyles {
+  font-size: 14px;
+  font-weight: 400;
+  color: #051b46;
+  width: 126px;
+}
+.fullnameEllipsis {
+  max-width: 120px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.buttonContainerbless {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 8px;
+  margin-top: 8px;
+  padding-bottom: 20px;
+}
+
+.confirmButton {
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 13px;
+}
+
+.cancelText {
+  color: $white;
+}
+
+.sessionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &.dragOver {
+    // Only show drag over effects when session is empty
+    .sessionCard:not(.hasUser) & {
+      background-color: rgba(24, 89, 180, 0.1);
+    }
+  }
+}
+
+.sessionInfo {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.sessionName, .sessionNameGrey, .sessionNameSwapDemand {
+  font-size: $font-size-md;
+  font-weight: $font-weight-normal;
+  color: $darkBlue;
+  margin: 0;
+}
+.sessionNameGrey{
+  color: $disabledGray;
+  line-height: 30px;
+}
+.sessionNameSwapDemand{
+  color: $darkBlue;
+  line-height: 30px;
+}
+.SwapDemandText{
+  color:$darkBlue;
+  font-size:$font-size-xs;
+}
+.disabledSwapDemandText{
+  font-size:$font-size-xs;
+  color:$disabledGray;
+  font-weight:$font-weight-normal;
+  margin-top:0;
+  
+}
+.sessionCount {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  transition: all 0.3s ease;
+
+  &.dragOver {
+    color: #1859b4;
+    font-weight: 600;
+  }
+}
+
+.totalSeekers {
+  color: #8a8a8a;
+  font-weight: 400;
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 2px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+
+  &.dragOver {
+    background: #f1f1f1;
+  }
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(140.95deg, #6ea9e1 17.85%, #3068bc 70.24%);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+.hdbCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 10px;
+}
+
+.hdbLabel {
+  font-weight: 400;
+  font-size: 11px;
+  color: #051b46;
+}
+.swapAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.swapText {
+  font-size: 11px;
+  color: #051b46;
+  margin-bottom: 8px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.buttonText {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blessText {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatarWithText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.selectSeekerText {
+  color: #051b46;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  border-radius: 6px;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  right: -15px;
+  transform: translateX(-50%);
+}
+.roundImageBg {
+  width: 50.168px;
+  width: 50.168px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  opacity: 0.6;
+  overflow: hidden;
+}
+.FlippedCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.verticalLine {
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background: #ccc;
+  margin: 0 8px;
+}
+.organization{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressBarNormal{
+  width:90%;
+  background: $color-progress-bar;
+  height:2px;
+  border-radius: 4px 0 0 4px;
+}
+
+.progressBarDivider{
+  width:1%;
+  background: $bg-shadow-grey;
+  height:6px;
+}
+
+.progressBarWarning{
+  width:9%;
+  background: $linear-orange;
+  height:2px;
+  border-radius: 0 4px 4px 0;
+}
+
+.progressBarContainerWarn{
+  display:flex;
+  align-items: center;
+  width: 100%;
+}
+
+.peopleCount{
+  display: flex;
+  align-items: center;
+  gap:4px;
+}

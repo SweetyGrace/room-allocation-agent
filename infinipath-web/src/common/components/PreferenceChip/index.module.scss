@@ -1,0 +1,60 @@
+@import '../../../common/styles/variables.scss';
+.preferenceChip {
+  background: $bg-light-gray;
+  color: $blackBlue;
+  border-radius: 20px;
+  padding: 2px 6px;
+  font-family: "Noto Sans";
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.preferenceChip.selected {
+  border: 1px solid #88baff;
+  background: $secondaryBlue;
+}
+
+.allocatedChip {
+  background-color: $pale-blue;
+  color: $linkColor;
+  border: 1px solid #90caf9;
+}
+.preferenceChip {
+  padding: 6px 12px;
+  border-radius: 16px;
+  background-color: $light-white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin: 4px;
+  
+  &:hover:not(.disabledChip) {
+    background-color: #e0e0e0;
+  }
+}
+
+.allocatedChip {
+  background-color: #e8f5e9;
+  border: 1px solid #4caf50;
+}
+
+.disabledChip {
+  background-color: $bg-light-gray;
+  color: #999;
+  border: 1px dashed #ccc;
+  cursor: not-allowed;
+  
+  &:hover {
+    background-color: $bg-light-gray;
+    cursor: not-allowed;
+  }
+}
+.seekerOverlay {
+  cursor: not-allowed !important;
+  &:hover {
+    background-color: $bg-light-gray;
+    cursor: not-allowed !important;
+  }
+}

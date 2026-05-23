@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+.clearButton{
+    border: 1px solid $blue;
+    border-radius: 20px;
+    padding: 5px 22px;
+    color: $blue;
+    font-size: $font-size-md;
+    cursor: pointer;
+}

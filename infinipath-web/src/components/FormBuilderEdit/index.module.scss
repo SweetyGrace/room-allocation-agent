@@ -1,0 +1,1358 @@
+@import "../../common/styles/variables.scss";
+
+.divWithButtons {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $color-white;
+  padding-right: $spacing-lg;
+  border-top: 1px solid $thumbnailHover;
+}
+
+.formRowButton {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 70px;
+  margin-bottom: $spacing-lg;
+  padding-top: $font-size-sm-alt;
+}
+
+.buttonContainer,
+.previewButtonContainer {
+  width: 150px;
+  font-size: $font-size-md;
+  height: 40px;
+  margin-right: 32px;
+}
+
+.buttonContainer {
+  position: absolute;
+  right: 0px;
+  bottom: 20px;
+}
+
+.previewButtonContainer {
+  width: 180px;
+}
+
+.buttonText {
+  color: $color-white !important;
+}
+
+.buttonContainerSecondary {
+  width: 120px;
+  font-size: $font-size-md;
+  height: 40px;
+  background-color: $color-white;
+  color: $darkBlue;
+  background-image: none !important;
+  border: none !important;
+}
+
+.buttonTextSecondary {
+  color: $blue !important;
+}
+
+.buttonTextPrimary {
+  color: $white;
+}
+
+.cancelButton {
+  background-image: none !important;
+  border: 1px solid $blue;
+  height: 50px;
+  width: 48%;
+  font-size: $font-size-md;
+}
+
+.buttonContainerPrimary {
+  font-size: $font-size-md;
+}
+
+.programHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start; // Changed from center to flex-start
+  padding: $spacing-lg;
+  padding-bottom: 10px;
+  background: $bg-white-shade;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-title;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  > div {
+    width: 50%;
+    margin-top: -8px;
+    margin-right: 50px;
+  }
+}
+
+.programHeaderText {
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.addFieldBtn {
+  width: 98px;
+  height: 40px;
+  gap: 31px;
+  padding-right: $spacing-lg;
+  padding-left: $spacing-lg;
+  border-radius: $border-radius-rounded;
+  border-width: 1px;
+  border: 1px solid $blue;
+  background: transparent;
+  cursor: pointer;
+}
+
+.addFieldBtnText {
+  width: 50px;
+  height: 26px;
+  font-family: SF Pro Text;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-xs;
+  line-height: $line-height-button;
+  text-align: center;
+  letter-spacing: 0%;
+  color: $blue;
+}
+
+.deleteIcon {
+  width: $font-size-xl;
+  height: $font-size-xl;
+  display: inline-block;
+}
+
+.programsDashboardAddButton {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: $blue;
+  height: 40px;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-button;
+  background-image: none !important;
+  background-color: none !important;
+  border: 1px solid $blue !important;
+  padding: 7px $spacing-lg 7px $spacing-lg !important;
+}
+
+.addSectionContainer {
+  height: 60px;
+  gap: $spacing-sm;
+  border-radius: $border-radius-md;
+  border-width: 1px;
+  padding: $spacing-md;
+  color: $bg-very-light-blue;
+  border: 1px solid $border-card-gray;
+  box-shadow: 2px 2px 4px 0px $shadow-medium;
+  margin: 0 auto $spacing-lg auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 71%;
+}
+
+.addSectionBtn {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.addSectionPlus {
+  width: $font-size-xl;
+  height: $font-size-xl;
+  // display: inline-flex;
+  // align-items: center;
+  // justify-content: center;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-normal;
+  color: $blue;
+  margin-bottom: 10px;
+}
+
+.addSectionText {
+  width: 76px;
+  height: 28px;
+  font-family: "Noto Sans", Arial, sans-serif;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-sm;
+  line-height: $line-height-xl;
+  letter-spacing: 0;
+  color: $darkBlue;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.edit-icon {
+  color: $darkBlue;
+  margin-top: 0px;
+  margin-right: 0px;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+}
+.layoutToggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 71%;
+  gap: $spacing-md;
+  margin-bottom: 10px;
+}
+
+.layoutLabel {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $secondaryDark;
+}
+
+.layoutButtons {
+  display: flex;
+  align-items: start;
+  gap: $spacing-sm;
+}
+
+.layoutButton {
+  width: 86;
+  height: 28;
+  gap: $border-radius-xs-alt;
+  padding: 6px 14px;
+  border-radius: $border-radius-pill;
+  background: $color-white;
+  border: 1px solid $border-grey;
+}
+
+.layoutButton.active {
+  background-color: $blue;
+  border-color: $blue;
+  color: $color-white;
+}
+
+.form-group .dependsOnSelect__control {
+  border-color: $border-grey;
+}
+
+.form-group .dependsOnSelect__control:hover {
+  border-color: $darkBlue;
+}
+
+.form-group .dependsOnSelect__control--is-focused {
+  border-color: $darkBlue;
+  box-shadow: none;
+}
+
+.sectionFooter {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  height: $font-size-xl;
+  gap: 20px;
+}
+.sectionFooterLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.toggle-input {
+  width: 32px;
+  height: $spacing-md;
+}
+.sectionFooterDivider {
+  display: flex;
+  align-items: center;
+  width: 1px;
+  height: $spacing-md;
+  background-color: $lightGrey;
+}
+.sectionDivider {
+  border: 1px solid $border-card-gray;
+}
+
+.formLaunchDateContainer {
+  display: flex;
+  gap: $spacing-md;
+  width: 100%;
+}
+
+.formLaunchDate {
+  flex: 1;
+  min-width: 0;
+
+  input,
+  .form-select {
+    width: 100%;
+  }
+}
+
+.toggleSwitch {
+  width: 32px;
+  height: $spacing-md;
+  background-color: $border-grey;
+  border-radius: $border-radius-xs;
+  position: relative;
+  transition: background-color 0.2s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: $border-radius-xs;
+    height: $border-radius-xs;
+    background-color: $color-white;
+    border: 1px solid $border-grey;
+    border-radius: $border-radius-circle;
+    transition: transform 0.2s;
+  }
+
+  :global(.toggle-input:checked) + & {
+    background-color: $blue;
+
+    &:after {
+      transform: translateX(10px);
+      border-color: $color-white;
+      margin-left: $border-radius-sm-alt;
+    }
+  }
+}
+
+.section-title-input {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  margin: 0;
+
+  &:focus {
+    background-color: $bg-white-shade;
+  }
+
+  & span {
+    display: inline;
+  }
+}
+
+// Grid and layout utilities
+.fullWidthGridItem {
+  grid-column: 1 / -1;
+}
+
+.hiddenElement {
+  display: none;
+}
+
+.autoHeightTextarea {
+  height: 60px;
+  resize: vertical;
+}
+
+// Subsection styles
+.subsectionContainer {
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  background-color: $bg-white-shade;
+  border: 1px solid $border-grey;
+}
+
+.subsectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $border-radius-xs;
+}
+
+.subsectionTitle {
+  margin: 0;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+}
+
+.subsectionActions {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: center;
+}
+
+.subsectionButton {
+  padding: $spacing-xs $border-radius-xs;
+  border-radius: $border-radius-sm-alt;
+  border: 1px solid $border-gray;
+  background-color: $white;
+  color: $darkBlue;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $bg-light-gray;
+  }
+}
+
+.iconButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-sm;
+  border: 1px solid $border-gray;
+  background-color: $white;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $bg-light-gray;
+  }
+}
+
+.deleteIconButton {
+  composes: iconButton;
+  color: $error;
+
+  &:hover {
+    background-color: $error-light;
+  }
+}
+
+// Question list item styles
+.questionListItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.questionTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+  margin: 0;
+}
+
+.questionMeta {
+  font-size: $font-size-xs;
+  color: $footer-gray;
+  margin: 0;
+}
+
+// Multi-question styles
+.multiQuestionContainer {
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  border-radius: $border-radius-md;
+  background-color: $bg-white-shade;
+  border: 1px solid $border-grey;
+}
+
+.multiQuestionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $border-radius-xs;
+}
+
+.multiQuestionTitle {
+  margin: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-dark;
+}
+
+.multiQuestionField {
+  margin-bottom: $spacing-md;
+}
+
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+  align-items: start;
+}
+
+.formGroupNoMargin {
+  margin-bottom: 0;
+}
+
+// Section title editable
+.sectionTitleEditable {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  position: relative;
+  min-width: 0;
+}
+
+.sectionToggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  display: flex;
+  align-items: center;
+  color: $footer-gray;
+
+  &:hover {
+    color: $darkBlue;
+  }
+}
+
+.sectionTitleInput {
+  min-width: 50px;
+}
+
+// Arrow buttons for reordering
+.arrowButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.arrowTriangle {
+  width: 0;
+  height: 0;
+  border-left: $spacing-sm solid transparent;
+  border-right: $spacing-sm solid transparent;
+  border-radius: $border-radius-xs-alt;
+}
+
+.arrowTriangleUp {
+  composes: arrowTriangle;
+  border-bottom-width: $border-radius-xs;
+  border-bottom-style: solid;
+}
+
+.arrowTriangleDown {
+  composes: arrowTriangle;
+  border-top-width: $border-radius-xs;
+  border-top-style: solid;
+}
+
+.arrowTriangleEnabled {
+  border-color: $color-dark;
+}
+
+.arrowTriangleDisabled {
+  border-color: $border-gray;
+}
+
+// Delete button for subsections
+.deleteSubsectionButton {
+  background-color: $error;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs $spacing-sm;
+  cursor: pointer;
+  font-size: $font-size-xs;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken($error, 10%);
+  }
+}
+
+// Add condition button
+.addConditionButton {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-xs-alt;
+  display: flex;
+  align-items: center;
+  gap: $border-radius-sm-alt;
+  background-color: $blue-light-bg;
+  color: $blue-darker;
+  border: 1px solid $blue-light-border;
+  border-radius: $border-radius-sm-alt;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $blue-light-border;
+  }
+}
+
+.addConditionButtonIcon {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+}
+
+// Condition container
+.conditionContainer {
+  padding: $spacing-md;
+  background-color: $bg-white-shade;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-md;
+  border: 1px solid $border-grey;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.conditionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $border-radius-xs;
+}
+
+.conditionTitle {
+  margin: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-dark;
+}
+
+.conditionRemoveButton {
+  padding: $spacing-xs $border-radius-xs;
+  font-size: $font-size-xs;
+  background-color: $white;
+  color: $error;
+  border: 1px solid $error-border-light;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $error-bg-light;
+  }
+}
+
+// Field action buttons column
+.fieldActionsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+// Modal styles
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $modal-overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modalTitle {
+  margin-top: 0;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+}
+
+.modalFormGroup {
+  margin-bottom: $spacing-md;
+}
+
+.modalLabel {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
+  color: $color-dark;
+}
+
+.modalInput {
+  width: 100%;
+  padding: $spacing-sm;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+
+  &:focus {
+    outline: none;
+    border-color: $blue;
+  }
+}
+
+.modalActions {
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: flex-end;
+}
+
+.modalCancelButton {
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  background-color: $white;
+  color: $color-dark;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $bg-light-gray;
+  }
+}
+
+.modalSubmitButton {
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius-sm;
+  color: $white;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.modalSubmitButtonEnabled {
+  background-color: $success-green;
+
+  &:hover {
+    background-color: darken($success-green, 10%);
+  }
+}
+
+.modalSubmitButtonDisabled {
+  background-color: $border-gray;
+}
+
+// Empty state
+.emptyState {
+  padding: $spacing-md;
+  text-align: center;
+  color: $footer-gray;
+  font-size: $font-size-sm;
+}
+
+// Flex containers
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.flexRowSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $border-radius-xs;
+}
+
+.flexRowEnd {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.marginRight12 {
+  margin-right: $border-radius-xs;
+}
+
+// Delete icon size
+.deleteIconSize {
+  width: $spacing-md;
+  height: $spacing-md;
+}
+
+// Button padding
+.smallButtonPadding {
+  padding: $border-radius-sm-alt $border-radius-xs;
+}
+
+// Additional utility classes using variables
+.sectionTitleEditableWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  position: relative;
+  min-width: 0;
+}
+
+.collapseToggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  display: flex;
+  align-items: center;
+  color: $footer-gray;
+
+  &:hover {
+    color: $darkBlue;
+  }
+}
+
+.sectionTitleInputDynamic {
+  min-width: 50px;
+}
+
+// Arrow buttons
+.arrowBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.arrowUp,
+.arrowDown {
+  width: 0;
+  height: 0;
+  border-left: $spacing-sm solid transparent;
+  border-right: $spacing-sm solid transparent;
+  border-radius: $border-radius-xs-alt;
+}
+
+.arrowUpEnabled {
+  border-bottom: $border-radius-xs solid $color-dark;
+}
+
+.arrowUpDisabled {
+  border-bottom: $border-radius-xs solid $border-grey;
+}
+
+.arrowDownEnabled {
+  border-top: $border-radius-xs solid $color-dark;
+}
+
+.arrowDownDisabled {
+  border-top: $border-radius-xs solid $border-grey;
+}
+
+// Delete subsection button (red)
+.btnDeleteSubsection {
+  background-color: $error-red;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs $spacing-sm;
+  cursor: pointer;
+  font-size: $font-size-xs;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken($error-red, 10%);
+  }
+}
+
+// Condition container
+.conditionBox {
+  padding: $spacing-md;
+  background-color: $bg-white-shade;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-md;
+  border: 1px solid $border-light-gray;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.conditionHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xs;
+}
+
+.conditionHeading {
+  margin: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-dark;
+}
+
+.btnRemoveCondition {
+  padding: $spacing-xs $spacing-xs;
+  font-size: $font-size-xs;
+  background-color: $white;
+  color: $error-dark-red;
+  border: 1px solid $error-border-light;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $error-bg-light;
+  }
+}
+
+// Add button (blue)
+.btnAddCondition {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-xs-alt;
+  display: flex;
+  align-items: center;
+  gap: $border-radius-sm-alt;
+  background-color: $blue-light-bg;
+  color: $blue-darker;
+  border: 1px solid $blue-light-border;
+  border-radius: $border-radius-sm-alt;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $blue-light-border;
+  }
+}
+
+.btnAddConditionIcon {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+}
+
+// Multi-question field container
+.multiQuestionFieldHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xs;
+}
+
+.multiQuestionFieldLabel {
+  margin-bottom: 0;
+  font-size: $font-size-sm-alt;
+  font-weight: $font-weight-semibold;
+}
+
+.multiQuestionSubFieldBox {
+  border: 2px solid $border-grey;
+  border-radius: $border-radius-md;
+  padding: 20px;
+  margin-bottom: $spacing-md;
+  background-color: $white;
+}
+
+.multiQuestionSubFieldHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.multiQuestionSubFieldTitle {
+  margin: 0;
+  font-size: $font-size-sm-alt;
+  font-weight: $font-weight-semibold;
+  color: $gray-very-dark;
+}
+
+// Move out button
+.btnMoveOut {
+  padding: $border-radius-sm-alt $spacing-xs;
+  margin-right: $spacing-xs;
+  border-radius: $border-radius-sm;
+  border: 1px solid $border-grey;
+  font-size: $font-size-xs;
+  cursor: pointer;
+  background-color: $white;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $bg-light-gray;
+  }
+}
+
+// Empty state message
+.emptyStateMessage {
+  padding: $spacing-md;
+  text-align: center;
+  color: $footer-gray;
+  font-size: $font-size-sm;
+}
+
+// Move to subsection dropdown
+.moveToSubsectionDropdown {
+  padding: $border-radius-sm-alt $spacing-sm;
+  border-radius: $border-radius-sm;
+  border: 1px solid $border-grey;
+  font-size: $font-size-xs;
+  cursor: pointer;
+  background-color: $white;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $blue;
+  }
+}
+
+// Form Builder Styles (converted from inline styles to CSS modules)
+.formBuilder {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  margin: 0 auto;
+  align-items: center;
+  padding: $spacing-lg;
+  background-color: $color-white;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding-bottom: 75px;
+  gap: 40px;
+}
+
+.programBanner {
+  width: 71%;
+  height: 375px;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.section {
+  width: 71%;
+  margin-bottom: 32px;
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  border: 1px solid $thumbnailHover;
+  box-shadow: 0 1px 3px 0 $shadow-light;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg;
+  gap: 20px;
+  border-bottom: 1px solid $thumbnailHover;
+}
+
+.sectionTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: $border-radius-xs;
+}
+
+.sectionTitleInput {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  border: none;
+  background: transparent;
+  outline: none;
+  width: auto;
+  padding: 0;
+  margin: 0;
+
+  &:focus {
+    background-color: $bg-white-shade;
+  }
+}
+
+.sectionContent {
+  padding: $spacing-lg;
+}
+
+.field {
+  border: $spacing-sm solid $bg-field-light;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  border-width: $spacing-sm;
+  background-color: $color-white;
+  margin-bottom: $spacing-lg;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.fieldHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.fieldTitleGroup {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: $border-radius-xs;
+}
+
+.fieldLabelInput {
+  font-weight: $font-weight-medium;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+
+  &:focus {
+    background-color: $color-white;
+  }
+}
+
+.requiredIndicator {
+  color: $error-red;
+}
+
+.requiredText {
+  font-size: $font-size-sm;
+  color: $gray-dark-text;
+}
+
+.toggleContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggleInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+
+  &:checked + .toggleSwitch {
+    background-color: $blue;
+    width: 32px;
+    height: $spacing-md;
+
+    &::after {
+      transform: translateX(10px);
+      border-color: $color-white;
+      width: $border-radius-xs;
+      height: $border-radius-xs;
+      margin-left: $border-radius-sm-alt;
+    }
+  }
+}
+
+.toggleSwitch {
+  width: 32px;
+  height: $spacing-md;
+  background-color: $border-grey;
+  border-radius: $border-radius-xs;
+  position: relative;
+  transition: background-color 0.2s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: $border-radius-xs;
+    height: $border-radius-xs;
+    background-color: $color-white;
+    border: 1px solid $border-grey;
+    border-radius: $border-radius-circle;
+    transition: transform 0.2s;
+  }
+}
+
+.deleteBtn {
+  padding: $spacing-sm;
+  color: $gray-medium;
+  background: none;
+  border: none;
+  border-radius: $border-radius-sm-alt;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $error-red;
+    background-color: $error-hover-bg;
+  }
+}
+
+.fieldConfig {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-lg;
+}
+
+.formGroup {
+  margin-bottom: $spacing-md;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formLabel {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $secondaryDark;
+  margin-bottom: $spacing-sm;
+}
+
+.formInput {
+  width: 100%;
+  padding: $spacing-sm $border-radius-xs;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-sm-alt;
+  font-size: $font-size-sm;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $blue-focus;
+    box-shadow: 0 0 0 3px $blue-focus-shadow;
+  }
+}
+
+.formSelect {
+  width: 100%;
+  padding: $spacing-sm $border-radius-xs;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-sm-alt;
+  font-size: $font-size-sm;
+  background-color: $color-white;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $blue-focus;
+    box-shadow: 0 0 0 3px $blue-focus-shadow;
+  }
+}
+
+.formTextarea {
+  width: 100%;
+  padding: $spacing-sm $border-radius-xs;
+  border: 1px solid $border-grey;
+  border-radius: $border-radius-sm-alt;
+  font-size: $font-size-sm;
+  resize: none;
+  height: $line-height-textarea;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $blue-focus;
+    box-shadow: 0 0 0 3px $blue-focus-shadow;
+  }
+}
+
+.gripIcon {
+  color: $gray-medium;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+}
+
+.actionsContainer {
+  margin-top: $spacing-lg;
+  text-align: right;
+  padding: 0 $spacing-lg;
+}
+
+.saveBtn {
+  padding: $border-radius-xs $spacing-lg;
+  background-color: $success-green;
+  color: $color-white;
+  border: none;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $success-green-hover;
+  }
+}
+
+.sectionTitleEditable {
+  &:hover .editIcon,
+  .sectionTitleInput:focus + .editIcon {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .editIcon {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+}
+
+.editIcon {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.validationHint {
+  font-size: $font-size-xs;
+  color: $footer-gray;
+  margin-top: $spacing-xs;
+  font-style: italic;
+}
+
+.validationError {
+  font-size: $font-size-xs;
+  color: $error-red;
+  margin-top: $spacing-xs;
+}

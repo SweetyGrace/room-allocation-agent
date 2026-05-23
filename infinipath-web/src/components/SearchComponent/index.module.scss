@@ -1,0 +1,21 @@
+.imagesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.seekerImage {
+  margin-right: 10px;
+}
+
+.seekerDetails {
+  display: flex;
+  flex-direction: column;
+}
+.seekerRow {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  border: 1px solid #ccc; /* Add border */
+  padding: 10px; /* Add padding for better appearance */
+  cursor: pointer;
+}

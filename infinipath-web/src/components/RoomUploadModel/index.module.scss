@@ -1,0 +1,97 @@
+@import "../../common/styles/variables.scss";
+
+.container {
+  width: 440px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttontextContainer2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.tryagainModal1 {
+  max-width: 50%;
+  width: 500px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 5px;
+  @media (max-width: 999px) {
+    max-width: 90%;
+  }
+}
+.closeGSTINPopupMain {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.closeGSTINPopup {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.imageText {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  margin-left: -11px;
+}
+.tryagainContent1 {
+  line-height: 26px;
+  max-width: 101%;
+  color: $blackBlue;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: start;
+  margin-bottom: 20px;
+  width: 101%;
+}
+.tryagainButtonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.popUpLine {
+  width: 100%;
+  height: 1px;
+  border: 1px solid #d9d9d9;
+}
+.tryagainButtonContainer1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.buttonContainer,
+.buttonContainer1 {
+  height: 26px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 26px;
+}
+.uploadText {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  color: black;
+}
+.buttonContainer1 {
+  color: #1859b4;
+}
+.buttonContainer {
+  color: #1859b4;
+}
+.buttonCancel {
+  background-image: none !important;
+  color: #1859b4;
+}

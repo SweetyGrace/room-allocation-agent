@@ -1,0 +1,305 @@
+.chartContainer {
+  width: 100%;
+  margin: 0 auto;
+  height: 50%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chartWrapper {
+  height: 450px; // Increased height to accommodate labels
+  position: relative;
+  padding-bottom: 30px; // Reduced padding
+}
+
+.lineChartContainer {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 50%;
+  font-size: 16px;
+  .chartWrapper {
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+.chartInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  // @media (max-width: 1024px) {
+  //   flex-direction: column;
+  //   align-items: center;
+  // }
+}
+
+.chartTitle {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 600;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.toggleVideo {
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  align-items: center;
+  color: #1859b4;
+
+  img {
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0px 5px;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 10px 0;
+  }
+}
+
+.title {
+  font-size: 16px;
+  text-align: left;
+  align-items: center;
+  width: 100%;
+  color: rgb(143, 141, 141);
+  margin-bottom: 20px;
+  padding-left: 10px; // Add padding to the left for alignment
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.counts {
+  display: flex;
+  flex-direction: row;
+  // gap: 10px;
+  align-items: center;
+  height: 50px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 45%;
+  }
+  @media (max-width: 760px) {
+    padding: 10px;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    flex-direction: column;
+  }
+}
+
+.countItems {
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 10px;
+  font-size: 14px;
+  gap: 6px;
+  cursor: pointer;
+
+  @media (max-width: 1024px) {
+    min-width: 100px;
+  }
+
+  @media (max-width: 480px) {
+    min-width: 80px;
+  }
+}
+
+.lineChartDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+.lineChartDetailsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.lineChart {
+  position: relative;
+  height: 300px;
+  width: 90%;
+  margin-left: 50px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 300px;
+  }
+
+  @media (max-width: 480px) {
+    height: 200px;
+  }
+}
+
+.linehorizontalline {
+  width: 100%;
+  height: 1px;
+  background-color: #dfe8ef;
+}
+
+.verticalLine {
+  width: 1px;
+  height: 30px;
+  background-color: #a6a5a5;
+  box-shadow: 4px rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 1px;
+    text-align: center;
+  }
+}
+.countLabel {
+  font-size: 24px;
+}
+.countLabelRegistered {
+  font-size: 20px;
+}
+.countLabelRegister {
+  font-size: 14px;
+}
+.labelTextlRegistered {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding-bottom: 2px;
+}
+.chartButton {
+  width: 200px;
+  background-color: transparent;
+  font-size: 14px;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    width: 120px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100px;
+    font-size: 10px;
+  }
+}
+.chartButton.selected {
+  background: linear-gradient(
+    90deg,
+    rgba(44, 119, 225, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-left: 4px solid #1859b4;
+}
+
+.noDataDetails {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+}
+.noData {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+}
+
+.customLegend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.colorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.attendanceLine,
+.registrationLine {
+  width: 3px;
+  height: 50px;
+  border-radius: 100px;
+  transform: rotate(-90deg);
+  display: inline-block;
+}
+
+.attendanceLine {
+  background: linear-gradient(179.99deg, #eaebff 0%, #2f73f1 102.34%);
+}
+
+.registrationLine {
+  background: linear-gradient(360deg, #65c466 0%, #f3f3f3 100%);
+}

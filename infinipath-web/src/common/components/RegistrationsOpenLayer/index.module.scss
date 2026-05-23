@@ -1,0 +1,24 @@
+@import "../../../common/styles/variables.scss";
+
+.regOpen ,.diffRegStyles, .diffStyleWidth{
+    width: 100%;
+    padding: 8px 16px 16px 16px;
+    gap: 10px;
+    font-size: 14px;
+    background: linear-gradient(180.52deg, #eaf2ff 2.92%, #a5caff 99.55%);
+    border-radius: 12px 12px 0px 0px;
+    text-align: left;
+  }
+
+  .diffRegStyles{
+    width:400px;
+    background: linear-gradient(180.52deg, #EAF2FF 2.92%, #FFFFFF 99.55%);
+  }
+
+  .regOpenText {
+    font-size: 14px;
+    font-weight: 600px;
+    line-height: 22px;
+    color: $darkBlue;
+    font-family: "NatoSans-Regular", sans-serif;
+  }

@@ -1,0 +1,275 @@
+{
+  "programDetails": {
+    "editable": {
+      "registrationEndDate": {
+        "allowed": true,
+        "description": "Registration end date is always editable for published programs"
+      },
+      "registrationEndTime": {
+        "allowed": true,
+        "description": "Registration end time is always editable for published programs"
+      },
+      "registrationStartDate": {
+        "allowed": true,
+        "condition": "notPassed",
+        "description": "Registration start date editable only if not passed"
+      },
+      "registrationStartTime": {
+        "allowed": true,
+        "condition": "notPassed",
+        "description": "Registration start time editable only if not passed"
+      },
+      "seatLimit": {
+        "allowed": true,
+        "condition": "increaseOnly",
+        "description": "Seat limit can only be increased, not decreased"
+      }
+    },
+    "readonly": {
+      "programName": {
+        "allowed": false,
+        "description": "Program name cannot be changed after publishing"
+      },
+      "programCode": {
+        "allowed": false,
+        "description": "Program code cannot be changed after publishing"
+      },
+      "description": {
+        "allowed": false,
+        "description": "Program description cannot be changed after publishing"
+      },
+      "modeOfProgram": {
+        "allowed": false,
+        "description": "Mode of program (online/offline/hybrid) cannot be changed after publishing"
+      },
+      "isResendential": {
+        "allowed": false,
+        "description": "Residential status cannot be changed after publishing"
+      },
+      "venueAddress": {
+        "allowed": false,
+        "description": "Venue address cannot be changed after publishing"
+      },
+      "totalBedCount": {
+        "allowed": false,
+        "description": "Total bed count cannot be changed after publishing"
+      },
+      "hasSeatLimit": {
+        "allowed": false,
+        "description": "Whether program has seat limit cannot be changed after publishing"
+      },
+      "hasWaitlist": {
+        "allowed": false,
+        "description": "Waitlist configuration cannot be changed after publishing"
+      },
+      "waitlistTriggerCount": {
+        "allowed": false,
+        "description": "Waitlist trigger count cannot be changed after publishing"
+      },
+      "startDate": {
+        "allowed": false,
+        "description": "Program start date cannot be changed (auto-calculated from sub-programs)"
+      },
+      "endDate": {
+        "allowed": false,
+        "description": "Program end date cannot be changed (auto-calculated from sub-programs)"
+      },
+      "approvalRequired": {
+        "allowed": false,
+        "description": "Approval requirement cannot be changed after publishing"
+      },
+      "hdbFee": {
+        "allowed": false,
+        "description": "HDB fee cannot be changed after publishing"
+      },
+      "msdFee": {
+        "allowed": false,
+        "description": "MSD fee cannot be changed after publishing"
+      },
+      "currency": {
+        "allowed": false,
+        "description": "Currency cannot be changed after publishing"
+      },
+      "childMinAge": {
+        "allowed": false,
+        "description": "Child minimum age cannot be changed after publishing"
+      },
+      "elderMaxAge": {
+        "allowed": false,
+        "description": "Elder maximum age cannot be changed after publishing"
+      },
+      "helpLineNumber": {
+        "allowed": false,
+        "description": "Helpline number cannot be changed after publishing"
+      },
+      "emailSenderName": {
+        "allowed": false,
+        "description": "Email sender name cannot be changed after publishing"
+      },
+      "emailSenderAddress": {
+        "allowed": false,
+        "description": "Email sender address cannot be changed after publishing"
+      },
+      "emailBccName": {
+        "allowed": false,
+        "description": "BCC name cannot be changed after publishing"
+      },
+      "emailBccAddress": {
+        "allowed": false,
+        "description": "BCC email address cannot be changed after publishing"
+      },
+      "venueNameInEmail": {
+        "allowed": false,
+        "description": "Venue name in email cannot be changed after publishing"
+      },
+      "tdsLimit": {
+        "allowed": false,
+        "description": "TDS limit cannot be changed after publishing"
+      },
+      "cgstLimit": {
+        "allowed": false,
+        "description": "CGST limit cannot be changed after publishing"
+      },
+      "sgstLimit": {
+        "allowed": false,
+        "description": "SGST limit cannot be changed after publishing"
+      },
+      "igstLimit": {
+        "allowed": false,
+        "description": "IGST limit cannot be changed after publishing"
+      },
+      "tdsApplicableTo": {
+        "allowed": false,
+        "description": "TDS applicability cannot be changed after publishing"
+      },
+      "nameInInvoice": {
+        "allowed": false,
+        "description": "Name in invoice cannot be changed after publishing"
+      },
+      "address": {
+        "allowed": false,
+        "description": "Invoice address cannot be changed after publishing"
+      },
+      "pan": {
+        "allowed": false,
+        "description": "PAN cannot be changed after publishing"
+      },
+      "gstin": {
+        "allowed": false,
+        "description": "GSTIN cannot be changed after publishing"
+      },
+      "cin": {
+        "allowed": false,
+        "description": "CIN cannot be changed after publishing"
+      }
+    }
+  },
+  "subPrograms": {
+    "editable": {
+      "addNewSession": {
+        "allowed": true,
+        "description": "New sessions can be added to published programs"
+      }
+    },
+    "readonly": {
+      "title": {
+        "allowed": false,
+        "description": "Session title cannot be changed after publishing"
+      },
+      "description": {
+        "allowed": false,
+        "description": "Session description cannot be changed after publishing"
+      },
+      "modeOfProgram": {
+        "allowed": false,
+        "description": "Session mode cannot be changed after publishing"
+      },
+      "isResendential": {
+        "allowed": false,
+        "description": "Session residential status cannot be changed after publishing"
+      },
+      "venueAddress": {
+        "allowed": false,
+        "description": "Session venue cannot be changed after publishing"
+      },
+      "programFee": {
+        "allowed": false,
+        "description": "Session fee cannot be changed after publishing"
+      },
+      "programStartDate": {
+        "allowed": false,
+        "description": "Session start date cannot be changed after publishing"
+      },
+      "programStartTime": {
+        "allowed": false,
+        "description": "Session start time cannot be changed after publishing"
+      },
+      "programEndDate": {
+        "allowed": false,
+        "description": "Session end date cannot be changed after publishing"
+      },
+      "programEndTime": {
+        "allowed": false,
+        "description": "Session end time cannot be changed after publishing"
+      },
+      "checkInStartDate": {
+        "allowed": false,
+        "description": "Check-in start date cannot be changed after publishing"
+      },
+      "checkInStartTime": {
+        "allowed": false,
+        "description": "Check-in start time cannot be changed after publishing"
+      },
+      "checkInEndDate": {
+        "allowed": false,
+        "description": "Check-in end date cannot be changed after publishing"
+      },
+      "checkInEndTime": {
+        "allowed": false,
+        "description": "Check-in end time cannot be changed after publishing"
+      },
+      "checkOutStartDate": {
+        "allowed": false,
+        "description": "Check-out start date cannot be changed after publishing"
+      },
+      "checkOutStartTime": {
+        "allowed": false,
+        "description": "Check-out start time cannot be changed after publishing"
+      },
+      "checkOutEndDate": {
+        "allowed": false,
+        "description": "Check-out end date cannot be changed after publishing"
+      },
+      "checkOutEndTime": {
+        "allowed": false,
+        "description": "Check-out end time cannot be changed after publishing"
+      }
+    }
+  },
+  "actions": {
+    "editable": {
+      "editButton": {
+        "allowed": true,
+        "description": "Edit button visible for all programs"
+      }
+    },
+    "readonly": {
+      "deleteButton": {
+        "allowed": false,
+        "condition": "publishedOnly",
+        "description": "Delete button hidden for published programs, visible for drafts"
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07",
+    "description": "Field-level permissions for published programs. This configuration determines which fields can be edited after a program is published.",
+    "notes": [
+      "Fields marked as 'editable' can be modified even after program is published",
+      "Fields marked as 'readonly' are disabled when program status is 'published'",
+      "Conditions apply additional business logic (e.g., 'notPassed' for date validation)",
+      "This configuration can be used by both frontend and backend for consistent validation"
+    ]
+  }
+}

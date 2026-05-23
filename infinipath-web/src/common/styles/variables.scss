@@ -1,0 +1,188 @@
+@import "./font.scss";
+$secondaryGrey: #70707080;
+$darkBlue: #051b46;
+$natoSansRegular: "NatoSans-Regular";
+$blackBlue: #051b46;
+$secondaryDark: #374151;
+$mahatriaName: #d9251d;
+$textGrey: #888888;
+$tableBorder: #e7eef3;
+$lineSeparator: #a5a5a5;
+$anchorTag: #1859b4;
+$greyColor: #7f7f7f;
+$white: #fff;
+$grey: #8a8a8a;
+$mediumGrey: #999999;
+$lightGrey: #d9d9d9;
+$lightBlue: #f3f9ff;
+$secondaryGrey: #a6a6a6;
+$border-card-gray: #d5d7da;
+$lightBlack: #051b46;
+$blue: #1859b4;
+$thumbnail-bg: #f3f4f6;
+$slate-bg: #f1f5f9;
+$hoverEye-bg: #051b4666;
+$errorText: #ff6941;
+$lightGrey2: #666666;
+$primaryGreen: #65c466;
+$secondaryBlue: #f4f8fb;
+$secondaryRed: #f57314;
+$secondaryGrey: #a6a6a6;
+$linkColor: #1976d2;
+$pdfModel-bg: #000000cc;
+$close-button: #051b46e6;
+$thumbnailHover: #e5e7eb;
+$error: #e28619;
+$natoSansBold: "NotoSans-Bold";
+$natoSansLight: "NotoSans-Light";
+$disabledGray: #aeaeae;
+$red: #fbaeae;
+$mediumGray: #9a9a9a;
+$borderGrayColor: #ccc;
+// Colors
+$footer-gray: #6b7280;
+$color-primary: #051b46;
+$color-white: #ffffff;
+$color-transparent: transparent;
+$bg-white-shade: #f9fafb;
+$border-gray: #ddd;
+$light-gray: rgb(215, 215, 215);
+$pale-blue: #e3f2fd;
+$male-hdb-bg: #d3e9ff;
+$female-hdb-bg: #ead0ff;
+$light-white: #f0f0f0;
+$bg-light-gray: #f5f5f5;
+$thick-gray: #b0b0b0;
+$bg-secondary-gray: #f9f9f9;
+$bg-secondary-white: #e7e7e7;
+$border-grey: #d1d5db;
+$shadow-black: #1018280d;
+$black-shade: #212121;
+$bg-shadow-grey: #595959;
+$blue-secondary:  #0760CD;
+$border-orange:#FDAB85;
+$dark-orange:#FF7D41;
+$blue-thick: #2563eb;
+$blue-light-shadow:rgba(37, 99, 235, 0.1);
+$blue-thick-shadow: rgba(10, 13, 18, 0.05);
+$black-border-shadow: rgba(0, 0, 0, 0.2509803922);
+$blue-light-border: #4285f4;
+
+// Banner Placeholder Colors
+$banner-placeholder-gradient-start: #f5f7fa;
+$banner-placeholder-gradient-end: #c3cfe2;
+$banner-placeholder-text: #999999;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Box Shadows
+$box-shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-card: 0 2px 4px rgba(0, 0, 0, 0.05);
+$box-shadow-card-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
+$box-shadow-dialog: 0 10px 40px rgba(0, 0, 0, 0.2);
+$box-shadow-focus-blue: 0 0 0 3px rgba(0, 123, 255, 0.1);
+$box-shadow-focus-error: 0 0 0 3px rgba(220, 53, 69, 0.1);
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-xs: 12px;
+$border-radius-lg: 16px;
+
+// Font Sizes
+$font-size-xs: 12px;
+$font-size-xs-alt: 13px;
+$font-size-sm: 14px;
+$font-size-sm-alt: 15px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+
+$line-height-sm: 16px;
+$line-height-md: 19px;
+$line-height-lg: 22px;
+$line-height-xl: 28px;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$color-dark: #222;
+$priority1Bg: #052c46;
+$priorityBorder1: #052c46;
+$priority2Bg: #1e5aa8;
+$priorityBorder2: #1e5aa8;
+$priority3Bg: #6fb1e0;
+$priorityBorder3: #6fb1e0;
+$priority4Bg: #1c7c84;
+$priorityBorder4: #1c7c84;
+$priority5Bg: #47d6cb;
+$priorityBorder5: #47d6cb;
+$border-light-gray: #e0e0e0;
+$border-gray-light: #c1c4c5;
+$text-grey-medium: #7F7F7F;
+$color-dark-grey: #333;
+$color-medium-grey: #999;
+
+$color-bg-allocated: #f2f2f2;
+$hover-blue: #eef6fe;
+$color-shadow: #00000029;
+$color-progress-bg: #d2deec;
+$color-progress-bg-allocated: #d9d9d9;
+$color-progress-bar-allocated: #8a8a8a;
+$color-progress-bar: linear-gradient(140.95deg, #6ea9e1 17.85%, #3068bc 70.24%);
+$box-shadow: 0px 1px 4.5px 0px #00000029;
+$font-size-session-name: 14px;
+$font-size-session-count: 12px;
+$border-radius: 8px;
+$color-grey: #707070;
+$linear-orange: linear-gradient(140.95deg, #fdc1a6 17.85%, #ff7d41 70.24%);
+// Input and form control colors
+$input-border: #ccc;
+$input-background: #f9f9f9;
+$input-text: #555;
+$warning-orange: #ff9800;
+
+$disable-background-color : #F6F6F6;
+
+// Form Builder specific colors
+$border-light-blue: #e5e7eb;
+$bg-very-light-blue: #fafbff;
+$bg-field-light: #F9FAFF;
+$shadow-medium: #0a0d120d;
+$error-light: #fee;
+$error-red: #ef4444;
+$error-dark-red: #d32f2f;
+$error-border-light: #ffcdd2;
+$error-bg-light: #ffebee;
+$error-hover-bg: #fef2f2;
+$success-green: #10b981;
+$success-green-hover: #059669;
+$blue-light-bg: #e8f0fe;
+$blue-darker: #1967d2;
+$blue-light-border: #d2e3fc;
+$blue-focus: #3b82f6;
+$gray-dark-text: #4D5154;
+$gray-medium: #9ca3af;
+$gray-very-dark: #1f2937;
+$modal-overlay: rgba(0, 0, 0, 0.5);
+$shadow-light: rgba(0, 0, 0, 0.1);
+$blue-focus-shadow: rgba(59, 130, 246, 0.1);
+$code-available-color: #2e7d32;
+
+// Additional Border Radius
+$border-radius-xs-alt: 3px;
+$border-radius-sm-alt: 6px;
+$border-radius-rounded: 99px;
+$border-radius-pill: 9999px;
+$border-radius-circle: 50%;
+
+// Additional Line Heights
+$line-height-button: 26px;
+$line-height-title: 32px;
+$line-height-textarea: 80px;

@@ -1,0 +1,211 @@
+@import "../../common/styles/variables.scss";
+
+.userStatusContainer {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: hidden;
+  background-image: url("../../assets/images/admin-home-768-4.webp");
+
+  .animationBannerContainer {
+    height: calc(100vh - 70px);
+    width: 55vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.2);
+    flex-direction: column;
+
+    .titleImage {
+      width: 100%;
+      position: relative;
+      top: -125px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0px;
+
+      .logoText {
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        color: $darkBlue;
+        margin-top: -5px;
+
+        .mahatriaText {
+          color: $mahatriaName;
+        }
+      }
+    }
+  }
+
+  .contentContainer {
+    position: absolute;
+    right: 8%;
+    top: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 999;
+  }
+}
+
+.buttonClass {
+  color: #f2f2f2;
+  min-width: 180px;
+  height: 50px;
+  font-family: "Noto Sans", serif;
+  font-size: 16px;
+}
+
+.buttonClassVideo {
+  color: #f2f2f2;
+  width: 180px;
+  height: 50px;
+  font-family: "Noto Sans", serif;
+  font-size: 16px;
+}
+
+.additionalClass1 {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #0e3c81 !important;
+  border: 1px solid #0e3c81 !important;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.text {
+  font-size: 16px;
+  font-family: "Noto Sans", serif;
+  color: #051b46;
+  font-weight: 400;
+}
+
+.date {
+  color: $darkBlue;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.mahatriaText {
+  color: #f57314;
+}
+
+.messageWithCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.text3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  color: $blue;
+  cursor: pointer;
+}
+
+.cardContent {
+  width: 614px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.cardsDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.titleStyle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: $darkBlue;
+}
+
+.MeetingCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.sessionsText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #1859b4;
+}
+
+.sessionsDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-height: 768px) {
+  .userStatusContainer{
+    background-image: url("../../assets/images/admin-home-680-4.webp");
+  }
+}
+
+.customSubheaderContainer{
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  position: fixed; /* or absolute */
+  top: 70px;
+  left: 0;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  color: #051b46;
+}
+
+.refreshText{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: $blue;
+  justify-content: center;
+  bottom: -10%;
+  position: absolute;
+  width: 614px;
+}

@@ -1,0 +1,80 @@
+@import "../../styles/variables.scss";
+
+.barLines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #D5D7DA;
+    box-shadow: 2px 2px 4px 0px #0A0D120D;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.chartContainer {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #dfe8ef;
+    padding: 24px 24px 24px 24px;
+}
+
+.barWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 16px;
+    cursor: pointer;
+}
+.barContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+.barBackground {
+    width: 100%;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    background-color: #2F73F1;
+    transition: width 0.3s ease;
+}
+
+.label {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $darkBlue;
+    width: 60px;
+    cursor: pointer;
+}
+
+.title {
+    padding: 10px 24px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    color: $darkBlue;
+}
+.noData{
+    color: $darkBlue;
+}
+.labelDisabled{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $darkBlue;
+    width: 60px;
+    cursor: default;
+}

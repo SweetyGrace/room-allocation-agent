@@ -1,0 +1,334 @@
+@import "../../styles/variables.scss";
+
+.cardContainerclosed,
+.cardContainer,
+.cardContainerNotOpened {
+  width: 412px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #e0e0e0;
+  position: absolute;
+  top: 345px;
+  margin-bottom: 96px;
+}
+.cardContainer{
+  top: 323px;
+}
+.cardContainerclosed {
+  top: 327px;
+}
+.cardContainerNotOpened {
+  top: 384px;
+}
+
+.iconContainer,
+.iconContainerClosed,
+.iconContainerNotOpened {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: -19px;
+  left: 20px;
+  right: 20px;
+}
+.iconContainerClosed {
+  top: -22px;
+}
+.iconContainerNotOpened {
+  top: -80px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+h3 {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.dateTime {
+  margin-top: 10px;
+  color: $blackBlue;
+  font-size: 14px;
+}
+
+.duration {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.buttons {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+.buttonsClosed {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.btnNonVideo,
+.btnVideo {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnNonVideo {
+  background: linear-gradient(135deg, #5b9fff, #2d73f5);
+  color: white;
+}
+
+.btnVideo {
+  background: linear-gradient(135deg, #2d73f5, #5b9fff);
+  color: white;
+}
+
+.btnNonVideo:hover,
+.btnVideo:hover {
+  opacity: 0.9;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.timer {
+  width: Hug (66px) px;
+  height: Hug (24px) px;
+  padding: 4px 8px 4px 8px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  background-color: #ddeefb;
+  margin-left: 73px;
+}
+
+.buttonContainer {
+  border-radius: 99px;
+  width: 178px !important;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  height: 50px;
+  padding: 0px !important;
+}
+
+.text3 {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  color: $blue;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.buttonUnregister {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1859b4;
+  width: 178px !important;
+  height: 50px;
+  font-size: 16px;
+  background-image: none !important;
+  background-color: none !important;
+  border: 1px solid #1859b4 !important;
+  padding: unset !important;
+}
+.sessionTitle{
+  text-align: left;
+}
+.textButtonsContainer{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  p{
+    text-align: left;
+    font-family: "Noto Sans", sans-serif;
+    color: #051b46;
+    font-size: 16px;
+  }
+}
+
+.buttonsOpened {
+  // margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.textButtonsContainerOnRegistrationFirst{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  div{
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    img{
+      margin-bottom: 10px;
+    }
+    .noVideoIcon{
+      margin-bottom: 0;
+    }
+    p{
+      font-family: "NatoSans-Regular", sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #888888;
+      font-style: italic;
+    }
+  }
+}
+
+.errorExhaust{
+  color: #F57314;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the modal vertically */
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  padding: 24px;
+}
+
+
+.modalContent {
+  background: white;
+  width: 500px; /* Fixed width */
+  // max-height: 100%; /* Optional: Adjust if needed */
+  height: 620px;
+  border-radius: 8px;
+  padding: 20px; /* Padding for content */
+  animation: slideUp 0.5s ease;
+  overflow-y: auto; /* Scroll if content overflows */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
+  margin: 0px 20px;
+}
+
+.closeButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeButton {
+  display: flex;
+  justify-content: end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+
+.confirmText {
+  color: $white;
+}
+
+
+.confirmButton {
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.checkbox{
+margin-top: 30px;
+}
+
+.cancelButtonContainer{
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.acceptError{
+  height: 27px;
+}
+
+.errorMsg {
+  font-size: 12px;
+  color: #e28619;
+  margin: 0px;
+  text-align: left;
+  width: 100%;
+}
+
+.errorDummyDiv{
+  height: 27px;
+}
+
+.termsAndConditionsHeading{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: left;
+  color: $blackBlue;
+  font-family: $natoSansBold;
+}
+
+.joinInfoDiv{
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  .noVideoIcon{
+    margin-bottom: 0;
+  }
+  p{
+    font-family: "NatoSans-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+  }
+}

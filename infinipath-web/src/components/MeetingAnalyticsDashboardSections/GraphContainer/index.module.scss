@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 20px 0 20px;
+}
+
+.subContainer, .subContainer1, .subContainer2, .subContainer3 {
+    display: flex;
+    margin: 10px;
+    gap: 20px;
+}
+.subContainer1 {
+    height: 300px;
+}
+
+.box1, .box2, .box4, .box5, .box6, .box7 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1, .box2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box3 {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 10px;
+}
+
+.insideCircle {
+    width: 153px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 212px;
+    gap: 28.92px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.barChartWrapper {
+    margin-top: 20px;
+    width: 100%;
+}
+@media (max-width: 1024px) {
+    .subContainer, .subContainer1, .subContainer2, .subContainer3 {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .subContainer, .subContainer1, .subContainer2, .subContainer3 {
+        flex-direction: column;
+    }
+
+    .box1, .box2, .box4, .box5, .box6, .box7 {
+        width: 100%;
+    }
+}

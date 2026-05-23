@@ -1,0 +1,179 @@
+
+@import '../../styles/variables.scss';
+@import '../../styles/common.scss';
+.uploadContainer {
+  padding: 0 2rem 2rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #002952;
+}
+.uploadHeading {
+  color: #051B46;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.imageContainer {
+  margin-top: 8px;
+}
+.imageContainer:hover {
+  position: relative;
+  cursor: pointer;
+
+  .hoverEyePreview {
+    display: block;
+    position: absolute;
+    align-self: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(5, 27, 70, 0.4); 
+    background-image: url("../../../assets/images/eye-preview.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px; 
+  }
+}
+.hoverEyePreview {
+  display: none;
+}
+.uploadSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.uploadBox {
+  flex: 1;
+}
+.uploadLabel {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0;
+  text-align: left;
+}
+.dropArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #0070cc;
+  padding: 2rem;
+  height: 150px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  transition: border-color 0.3s ease;
+}
+.fileTypes {
+  color: #051B46;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 0.5rem;
+}
+.uploadLink {
+  color: #1859B4;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.uploadedPreview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+
+.thumbnailLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: $thumbnail-bg;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: $thumbnailHover;
+    transform: scale(1.05);
+  }
+}
+
+.fileName {
+  color: #051B46;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin-left: 0;
+}
+.dragDropLabel {
+  color: #051B46;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+.uploadDivider {
+  width: calc(100% - 64px);
+  height: 1px;
+  background: #D9D9D9;
+  margin: 5px 32px 35px 32px;
+}
+.reuploadLabel {
+  color: #0760CD;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  cursor: pointer;
+  text-align: left;
+  display: block;
+}
+
+.required {
+  color: var(--red-error);
+  margin-left: 0.25rem;
+}
+
+.optional {
+ color: $darkBlue;
+    font-size: $font-size-xs;
+    font-style: italic;
+    font-weight: $font-weight-normal;
+    margin-left: 4px;
+}
+.fieldInputError {
+  border-color: var(--orange-warning) !important;
+}

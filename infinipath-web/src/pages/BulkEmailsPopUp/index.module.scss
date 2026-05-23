@@ -1,0 +1,361 @@
+@import '../../common/styles/variables.scss';
+
+.checkboxCellWrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dialogContainer {
+    :global(.MuiDialog-paper) {
+        min-width: 64% !important;
+        min-height: 73%;
+        max-height: 650px;
+        border-radius: 12px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px 30px 20px 30px;
+        background-image: url('../../assets/images/bulk-mail-bg.png');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: cover;
+    }
+}
+
+.customDialogContent {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 24px;
+    width: 100%;
+    position: relative;
+    -ms-overflow-style: none;
+    margin: 0 !important;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.loaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 200px; // Adjust this value based on your needs
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.horizontalLine {
+    width: 80%;
+    height: 1px;
+    background-color: $border-light-gray;
+}
+
+.previewDialogFooter {
+    background-color: $color-white;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+
+    .dialogActions {
+        border-top: 1px solid $lightGrey;
+        width: 98%;
+    }
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dialogFooter {
+    background-color: $color-white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    .dialogActions {
+        border-top: 1px solid $lightGrey;
+        width: 100%;
+        display: flex;
+        padding: 24px 0px 0px 0px;
+        gap: 8px;
+    }
+}
+
+.primaryButton {
+    font-size: 12px;
+    min-width: 150px;
+    height: 40px;
+}
+
+.secondaryButton {
+    background-color: $color-white;
+    color: $blue;
+    font-size: 16px;
+    background-image: none;
+    cursor: pointer;
+}
+
+.disabledButton {
+    color: $thick-gray;
+    background-color: $color-white;
+    cursor: not-allowed;
+}
+
+.primaryButtonText {
+    color: $white;
+    font-weight: 400;
+}
+
+.dialogHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+}
+
+.radioInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.viewSeekersHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.seekersNav {
+    font-size: 16px;
+    color: $blue;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.previewHorizontalLine {
+    width: 56%;
+    height: 1px;
+    background-color: $border-light-gray;
+}
+
+.emailTemplateWrapper {
+    background-color: transparent !important;
+    border: none !important;
+    background-color: transparent !important;
+
+    * {
+        background-color: transparent !important;
+        border-bottom: none !important;
+        border: none !important;
+    }
+
+    color: inherit;
+    font-family: inherit;
+}
+
+.previewDialogActions {
+    position: fixed;
+    background-color: $color-white;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    bottom: 1%;
+}
+
+.emailIconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+
+    .emailIcon {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+
+.footerButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.selectedRowsSpan {
+    margin-right: 16px;
+    font-size: 14px;
+    color: $blue;
+}
+
+.styledDialogTitle {
+    color: $color-primary !important;
+    font-weight: $font-weight-semibold !important;
+    font-family: $natoSansRegular !important;
+    font-size: $font-size-md !important;
+    line-height: 30px !important;
+}
+
+.widthSmall {
+    width: 120px;
+}
+
+.widthMedium {
+    width: 200px;
+}
+
+.widthLarge {
+    width: 250px;
+}
+
+.hiddenCheckbox {
+    display: none;
+}
+
+.templateOption {
+    margin-bottom: 12px;
+}
+
+.radioLabel {
+    margin-left: 0;
+    margin-right: 16px;
+    gap: $spacing-sm;
+    color: $color-primary;
+    font-weight: $font-weight-normal;
+    font-family: $natoSansRegular;
+}
+
+.communicationTypesWrapper {
+    margin-left: 32px;
+    margin-top: $spacing-sm;
+    display: flex;
+    gap: $spacing-md;
+}
+
+.includeRMWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+    padding: $border-radius-xs $spacing-md;
+    border-radius: $border-radius-md;
+    background-color: rgba(24, 89, 180, 0.05);
+}
+
+.includeRMLabel {
+    color: $color-primary;
+    font-size: $font-size-sm;
+    font-family: $natoSansRegular;
+    font-weight: $font-weight-medium;
+}
+
+.includeRMSwitch {
+    margin-left: auto;
+
+    :global {
+        .MuiSwitch-thumb {
+            background-color: $color-white;
+            width: $spacing-md;
+            height: $spacing-md;
+            margin-left: $spacing-xs;
+            margin-top: $spacing-xs;
+        }
+
+        .MuiSwitch-track {
+            height: 18px;
+            opacity: 1;
+            border-radius: 9px;
+            background-color: $thick-gray;
+        }
+
+        .Mui-checked + .MuiSwitch-track {
+            background-color: #2F73F1 !important;
+        }
+
+        .Mui-checked .MuiSwitch-thumb {
+            background-color: $color-white;
+        }
+    }
+}
+
+.communicationTypeOption {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    cursor: pointer;
+    color: $color-primary;
+    font-size: $font-size-sm;
+    font-family: $natoSansRegular;
+}
+
+.communicationTypeIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.dialogHeader {
+    padding: 0;
+}
+
+.nonSelectableRow {
+    opacity: 0.5;
+}
+
+.selectableRow {
+    opacity: 1;
+}
+
+.nonSelectableCursor {
+    cursor: not-allowed;
+}
+
+.selectableCursor {
+    cursor: pointer;
+}
+
+.communicationSent {
+    color: $color-primary;
+}
+
+.templateOptionsContainer {
+    padding: 0px 10px;
+}
+
+.communicationModeArea {
+    background-color: $disable-background-color !important;
+    border-radius: 20px !important;
+    .communicationOptionsWrapper {
+        padding : 16px 0px;
+        img {
+            margin-right: 8px;
+        }
+        cursor: pointer;
+    }
+    .viewSeekersLink {
+        color : $anchorTag;
+        padding: 0 20px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,96 @@
+.cardWrapper {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-top: 24px;
+}
+
+.cardHeader {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.listWrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #F7F9FB;
+  border-radius: 8px;
+  height: 56px;
+}
+
+.altBackground {
+  background-color: #f9fafb;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 400;
+  color: var(--Text-Blue, #051B46);
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.swapInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+.swapText {
+   overflow: hidden;
+  color: var(--Text-Blue, #051B46);
+  text-overflow: ellipsis;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 187.5% */
+}
+
+.swapBadge {
+  padding: 4px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.swapIcon {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+}

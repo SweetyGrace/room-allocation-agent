@@ -1,0 +1,60 @@
+@import "../../common/styles/variables.scss";
+  .detailsContainer {
+    display: flex;
+    width:100%;
+    justify-content:start;
+    gap:64px;
+    align-items: center;
+    padding: 20px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ECECEC
+  }
+  
+  .detailItem {
+   display: flex;
+    flex-direction: column;
+    gap:4px;
+    align-items: start;
+  }
+  
+  .value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d3e50;
+  }
+  
+  .label {
+    font-size: 14px;
+    color: $darkBlue;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .info {
+    display: flex;
+    align-items: center;
+    gap:4px;
+    font-size: 12px;
+    color: #6F6F6F;
+
+  }
+
+  .countName{
+    display:flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bothCount{
+    // width:397px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .seperator{
+    border-left: 1px solid var(--Line-Seprator-Stroke-Line, #D9D9D9);
+    height: 40px;
+  }
+  

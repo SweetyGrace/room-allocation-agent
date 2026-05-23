@@ -1,0 +1,22 @@
+@import "../../common/styles/variables.scss";
+
+.container {
+  display: flex;
+  // gap: 7px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 600;
+  color: $darkBlue;
+  font-family: $natoSansRegular;
+  line-height: 28px;
+}
+
+.iconImage {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}

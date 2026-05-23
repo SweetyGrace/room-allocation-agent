@@ -1,0 +1,22 @@
+.addNewCard {
+  width: 170px;
+  height: 180px;
+  box-shadow: 2px 4px 10px 0px #eef4f9;
+  border-radius: 8px !important;
+  border: 1.5px solid var(--Colors-Blue-Light, #1859b4);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 16px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.addText {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1859b4;
+  text-align: center;
+}

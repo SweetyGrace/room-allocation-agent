@@ -1,0 +1,61 @@
+@import "../../../common/styles/variables.scss";
+
+.snackbar {
+  background: linear-gradient(180deg, #ffffff 37.93%, #f0f9ff 100%);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 91.6%;
+  margin: 0 auto;
+  box-shadow: 4px 4px 60px 0px #114b744d;
+}
+
+.IconContent {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  span{
+    text-align: left;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.closeIcon {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.message {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  color: $darkBlue;
+}
+
+@media screen and (max-width: 1024px) {
+  .snackbar {
+    padding: 16px;
+  }
+  .IconContent{
+    width: 85%;
+  }
+  .message{
+    line-height: 24px;
+    font-size: 14px;
+  }
+}

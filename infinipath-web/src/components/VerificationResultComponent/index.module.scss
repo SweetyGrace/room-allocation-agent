@@ -1,0 +1,142 @@
+@import "../../common/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-top: 80px;
+  .imagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 74px;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 64px;
+}
+
+.text {
+  margin-top: 40px;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  color: #051b46;
+
+  span {
+    color: $errorText;
+  }
+}
+
+.buttonClassVideo {
+  color: #f2f2f2;
+  width: 195px;
+  height: 50px;
+  font-family: "Noto Sans", serif;
+  font-size: 16px;
+}
+
+.buttonJoinOthers {
+  color: #f2f2f2;
+  width: 195px;
+  height: 50px;
+  font-family: "Noto Sans", serif;
+  font-size: 16px;
+}
+
+.growthSessionsText {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  color: #0e3c81;
+
+  span {
+    color: $mahatriaName;
+  }
+}
+
+.profileIconDiv {
+  position: relative;
+}
+
+.editDiv {
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  cursor: pointer;
+}
+
+.sussessIcon {
+  width: 60px;
+  height: 45px;
+}
+
+.verifiedText {
+  color: $primaryGreen !important;
+}
+
+.closeBlock {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-right: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  color: $darkBlue;
+}
+
+@media screen and (max-width: 768px) {
+  .buttonsContainer {
+    gap: 20px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .buttonClassVideo {
+    font-size: 15px;
+    width: 190px;
+  }
+
+  .buttonJoinOthers {
+    font-size: 15px;
+    width: 190px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .closeBlock {
+    margin-right: 20px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .buttonsContainer {
+    gap: 14px;
+  }
+  .buttonClassVideo {
+    font-size: 14px;
+    width: 160px;
+    padding: 7px 15px 7px 15px !important;
+  }
+
+  .buttonJoinOthers {
+    font-size: 14px;
+    width: 160px;
+    padding: 7px 15px 7px 15px !important;
+  }
+}

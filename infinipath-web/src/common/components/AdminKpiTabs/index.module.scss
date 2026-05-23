@@ -1,0 +1,95 @@
+@import '../../styles/variables.scss';
+
+.KPIContainer{
+    margin-top: 16px;
+    margin-left: 30px;
+}
+.tabsContainer {
+    width: 100%;
+    height: 60px;
+    padding: 0 60px 0 60px;
+    // margin-top:5px ;
+    // border: 1px solid black;
+}
+
+.tabValue {
+    font-size: 24px;
+    font-weight: 400;
+    margin-right: 12px;
+    color: $blackBlue;
+    // text-transform: capitalize;
+
+}
+
+.tabLabel {
+    // font-size: 16px;
+    // color: $blackBlue;
+    // text-transform: lowercase;
+    line-height: 26px;
+}
+
+// .css-1ujnqem-MuiTabs-root .MuiTabs-scrollButtons {
+//     border: 1px solid;
+//     border-radius: 50%;
+//     margin: 5px;
+//     /* font-size: 12px; */
+// }
+.MuiTabs-scrollButtons {
+    border: 2px solid;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+// .css-1748ih7-MuiTabs-root{
+//     gap: 14;
+//     padding-left: 14px;
+//     padding-right: 14px;
+// }
+// .shadowcontainer{
+//     top: 0;
+//     right: 0;
+//     height: 100%;
+//     background: (linear-gradient(89.87deg, rgba(255, 255, 255, 0), #fff));
+// }
+
+
+.tab {
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s ease;
+    border: 10px solid;
+}
+
+.activeTab {
+    border-bottom: 3px solid #1859B4;
+    /* Blue border for active tab */
+    font-weight: 600;
+    /* Optional: Bold font for active tab */
+}
+
+
+@media screen and (min-width: 1440px) {
+    .tabsContainer {
+        margin: 0px auto;
+        padding: 0px 0px 0px 20px;
+        max-width: 1440px;
+    }
+
+}
+
+.kpiCount {
+    font-size: 24px;
+    font-weight: 400;
+    margin-right: 12px;
+    color: $blackBlue;
+    // text-transform: capitalize;a
+}
+.kpiName , .activeKpiName {
+    font-size: 16px;
+    color: $blackBlue;
+    // text-transform: lowercase;
+    line-height: 26px;
+
+}
+.activeKpiName {
+   font-weight: 600;
+  }

@@ -1,0 +1,879 @@
+
+@import "../../../common/styles/variables.scss";
+
+// Using variables from variables.scss
+$primary-color: $blue;
+$text-primary: $darkBlue;
+$text-secondary: $lightGrey2;
+$text-light: $mediumGrey;
+$border-color: $border-light-gray;
+$border-hover: $borderGrayColor;
+$background-light: $bg-white-shade;
+$header-bg: #e8f0fe;
+$white: $color-white;
+$error-color: $error;
+
+// Container
+.formContainer {
+  background: $white;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  border: 1px solid $border-card-gray;
+  border-radius: 8px;
+}
+
+.launchDateDiv {
+  display: flex;
+  flex-direction: column;
+  gap: $font-size-xs;
+}
+
+.labelText {
+  color: $darkBlue;
+  font-size: $font-size-sm;
+}
+
+.formLaunchDate {
+  width: 40%;
+}
+
+.formLaunchDateContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+// Utility classes for inline style removal
+.venueErrorText {
+  color: $error;
+  font-size: $font-size-sm;
+  display: block;
+  position: static;
+  background: $white;
+  padding: 0 8px;
+  border-radius: 4px;
+  text-align: right;
+}
+
+.fieldGroupBedCount {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 40%;
+}
+
+.bedCountInput {
+  width: 100%;
+}
+
+// Header Section
+.header {
+  background: $header-bg;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  text-align: start;
+
+  .headerIcon {
+    display: none; // Remove the icon to match the design
+  }
+
+  .headerContent {
+    .headerTitle {
+      font-size: $font-size-md;
+      font-weight: $font-weight-medium;
+      color: $darkBlue;
+      margin: 0;
+      line-height: 24px;
+    }
+
+    .badge {
+      display: none; // Remove the badge to match the design
+    }
+  }
+}
+
+// Form Content
+.formContent {
+  margin-bottom: 40px;
+  background: $white;
+  padding: 32px;
+  border-radius: 8px;
+
+  .programTitle {
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+    margin-bottom: 16px;
+  }
+
+  .Detailstitle {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    line-height: 24px;
+    color: $darkBlue;
+    margin-bottom: 16px;
+    text-align: start;
+  }
+
+  .subtitle {
+    text-align: start;
+    font-size: $font-size-md;
+    color: $darkBlue;
+    margin-bottom: 20px;
+    line-height: 24px;
+  }
+}
+
+// Form Sections
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: start;
+}
+
+.fieldGroupMode {
+  text-align: start;
+  display: flex;
+  gap: 120px;
+  align-items: flex-start;
+}
+
+.fieldGroupModeTwo {
+  text-align: start;
+  display: flex;
+  gap: 120px;
+  align-items: flex-start;
+}
+
+.venueField {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radioFields {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+// Field Labels
+.fieldLabel {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: 26px;
+  color: $secondaryDark;
+  margin-bottom: 0;
+  display: block;
+}
+
+// Input Fields
+.inputField,
+.inputFieldtitle {
+  width: 100%;
+  padding: $font-size-xs $spacing-md;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  color: $darkBlue;
+  background: $white;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &::placeholder {
+    color: $text-light;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $primary-color; // Blue border on focus
+  }
+
+  &.inputError {
+    border-color: $error-color;
+  }
+}
+
+.inputError:hover {
+  outline: none;
+  border: 1px solid $primary-color; //
+  border-radius: 8px;
+}
+
+.inputError {
+  border: 1px solid $error-color;
+  border-radius: 8px; // Blue border on focus
+}
+
+.textareaField {
+  width: 100%;
+  border: 1px solid $lightGrey;
+  border-radius: $border-radius-md;
+  padding: $spacing-sm $font-size-xs;
+  font-size: $font-size-md;
+  transition: border 0.2s;
+  font-family: inherit;
+
+  &:hover {
+    border-color: $primary-color; // Change border color on hover
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $primary-color; // Blue border on focus
+  }
+}
+
+textarea.textareaField.inputError,
+textarea.textareaField.inputError:focus {
+  border: 2px solid $error !important; // Brown/orange border for error
+  border-radius: $border-radius-md;
+}
+
+.selectField {
+  @extend .inputField;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%2C9%2012%2C15%2018%2C9%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right $font-size-xs center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.selectField option {
+  padding: 11px 6px;
+  white-space: nowrap;
+  overflow-x: auto;
+  text-overflow: clip;
+}
+
+.selectFieldFixed {
+  appearance: none;
+  background-size: 16px;
+  padding-right: 40px;
+  min-height: 40px;
+
+  &:hover {
+    border-color: $primary-color !important; // Change border color on hover
+  }
+}
+
+.selectFieldFixed option {
+  padding: 11px 6px;
+  white-space: nowrap;
+  overflow-x: auto;
+  text-overflow: clip;
+}
+
+.menuItemTextScroll {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  text-overflow: clip;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.menuItemTextScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.uploadArea {
+  border: 2px dashed $border-color;
+  border-radius: 8px;
+  background: $white;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadLabel {
+  display: block;
+  padding: 48px 24px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.uploadContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.uploadIcon {
+  display: none; // Hide icon to match design
+}
+
+.uploadText {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.uploadLink {
+  color: $primary-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.uploadSubtext {
+  font-size: $font-size-xs;
+  color: $text-light;
+  margin: 0;
+  margin-top: 4px;
+}
+
+// Radio Groups
+.radioGroup {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  color: $text-primary;
+}
+
+.radioInput {
+  width: 18px;
+  height: 18px;
+  border: 2px solid $border-color;
+  border-radius: 50%;
+  background: $white;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s ease;
+
+  &:checked {
+    border-color: $blue;
+    background: white;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: $blue;
+      border-radius: 50%;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+  }
+}
+
+.radioLabel {
+  font-weight: $font-weight-medium;
+  transition: color 0.2s ease;
+  color: $darkBlue;
+}
+
+// Date Fields
+.dateRow {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  width: 100%;
+  min-height: 41px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.dateField {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .dateLabel {
+    display: block;
+    font-size: $font-size-xs;
+    color: $text-light;
+  }
+}
+
+// Fee Section
+.feeSectionHDB {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .feeDisableField {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .subProgramFeeSection {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.feeSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .feeDisableField {
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .venuefeeField {
+      .INRField {
+        width: 40%;
+      }
+    }
+  }
+
+  .subProgramFeeSection {
+    .feeRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 16px;
+
+      .feeField {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .inlineLabel {
+          display: block;
+          font-weight: $font-weight-medium;
+          font-size: $font-size-sm;
+          color: $secondaryDark;
+        }
+      }
+    }
+  }
+}
+
+// Container for input with symbol inside
+.inputWithSymbol {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 10px 16px 10px 40px;
+    font-size: $font-size-sm;
+    border: 1px solid $borderGrayColor;
+    border-radius: 6px;
+  }
+}
+
+.currencySymbol {
+  position: absolute;
+  left: $font-size-xs;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: $font-size-sm;
+  color: $lightGrey2;
+  pointer-events: none;
+}
+
+// Seat Limit & Waitlist
+.seatLimitSection,
+.waitlistSection {
+  padding-top: 16px;
+  border-top: 1px solid $border-color;
+}
+
+.seatLimitSection {
+  border-top: 1px solid $border-color;
+}
+
+.seatField,
+.waitlistField {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .fieldLabel {
+    flex: none;
+    margin-right: 0;
+  }
+}
+
+.seatLimit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+// Sub-Program Section
+.subProgramSection {
+  margin-top: 48px;
+  padding: 24px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-xs;
+  background: $background-light;
+}
+
+.subProgramHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.subProgramTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-primary;
+  margin: 0;
+}
+
+.addSubProgramBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: $primary-color;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+    transform: translateY(-1px);
+  }
+
+  .addIcon {
+    font-size: $font-size-md;
+    font-weight: bold;
+  }
+}
+
+.subProgramContent {
+  .fieldLabel {
+    margin-bottom: 8px;
+    flex: none;
+    margin-right: 0;
+  }
+}
+
+.dateErrorRow {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+// Error Text
+.errorText {
+  color: $error-color;
+  font-size: $font-size-xs;
+  display: block;
+  text-align: end;
+  font-style: italic; // Align error text to the end
+}
+
+.contactErrorText {
+  color: $error-color;
+  font-size: $font-size-xs;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-style: italic;
+}
+
+.errorMsg {
+  color: $error-color;
+  font-size: $font-size-xs;
+  width: 82%;
+  display: block;
+  text-align: end;
+  font-style: italic;
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .formContainer {
+    padding: 16px;
+  }
+
+  .header {
+    .headerTitle {
+      font-size: $font-size-lg;
+    }
+  }
+
+  .fieldGroup {
+    gap: 12px;
+  }
+
+  .fieldLabel {
+    font-size: $font-size-sm;
+  }
+
+  .radioGroup {
+    gap: $spacing-md;
+  }
+
+  .subProgramHeader {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.datePicker {
+  border: 1px solid $border-color;
+  /* neutral gray */
+  width: 100%;
+  border-radius: 4px;
+  display: flex;
+
+  &:focus {
+    border: 1px solid $primary-color; // Blue border on focus
+    outline: none;
+  }
+
+  .borderLine {
+    height: 34px;
+    border: 1px solid $border-color !important;
+    /* neutral gray */
+    border-radius: 4px !important;
+    margin-right: 8px;
+  }
+}
+
+.datePickerError {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid $error-color;
+  border-radius: 4px;
+}
+
+.datePickerError:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: $primary-color;
+}
+
+.timeInputs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.datePicker :global(.rs-picker-toggle:focus-within) {
+  border: 1px solid $primary-color; // Blue border on focus
+  outline: none;
+}
+
+:global(.rs-picker-popup) {
+  z-index: 1500 !important;
+}
+
+:global(.rs-input-group-addon) {
+  display: none !important;
+}
+
+:global(.rs-picker-error > .rs-picker-input-group) {
+  border: none !important;
+  /* neutral gray */
+  // border-color: #d9d9d9
+}
+
+:global(.rs-input-group) {
+  border: none !important;
+  /* neutral gray */
+}
+
+.inputFields {
+  width: 40%;
+}
+
+.INRField {
+  width: 100%;
+  padding: $font-size-xs $spacing-md;
+  background-color: $bg-light-gray; // Light gray background
+  color: $textGrey; // Dimmed text color
+  border: 1px dashed $thick-gray; // Dashed border to indicate readonly
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.fieldLabelText {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: 32px;
+  color: $secondaryDark;
+  margin-bottom: $font-size-xs;
+}
+
+
+.timePickerGroup {
+  width: 147px; // Figma: width: 147
+  height: 40px; // Figma: height: 40
+  padding-top: var(--spacing-md);
+
+}
+
+.timePickerDivider {
+  width: 14px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+
+}
+
+.RegistrationDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.RegistrationInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.containerDateTime {
+  display: flex;
+}
+
+.containerDate,
+.containerTime {
+  width: 50%;
+}
+
+.labelText {
+  color: $secondaryDark;
+}
+
+.errorMsgDate {
+  display: flex;
+  width: 77%;
+  justify-content: end;
+  color: $error;
+  font-size: $font-size-xs;
+}
+
+.fieldGroupMode {
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .contactField {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .inputFieldtitle {
+      width: 100%;
+    }
+  }
+}
+
+.contactFormSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .ContactfieldGroup {
+    color: $black-shade;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+
+    .contactField {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .inputFieldtitle {
+        width: 100%;
+      }
+    }
+  }
+
+  .contactField {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .inputFieldtitle {
+      width: 100%;
+    }
+  }
+}

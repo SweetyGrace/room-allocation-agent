@@ -1,0 +1,154 @@
+@import "../../common/styles/variables.scss";
+
+
+
+.popupContainer {
+    background-color: white;
+    width: 500px;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0px 6px 32px rgba(0, 0, 0, 0.1);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    height: 65px;
+    padding: 10px;
+}
+
+.title {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-md;
+    color: $darkBlue;
+}
+
+.closeIcon {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    cursor: pointer;
+}
+
+.radio {
+    accent-color: $blue;
+    width: 16px;
+    height: 16px;
+}
+
+.optionText {
+    flex: 1;
+    font-size: $font-size-md;
+    color: $darkBlue;
+}
+
+.optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 20px 0 25px;
+    /* top right bottom left */
+
+    margin-top: 8px;
+}
+
+
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding-right: 20px;
+}
+
+.cancel {
+    color: $blue;
+    font-weight: $font-weight-medium;
+    width: 170px;
+    height: 40px;
+    border-radius: 90px !important;
+    border: 1px solid #1859B4;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.downloadBtn {
+    padding: 8px 20px;
+    font-weight: $font-weight-normal;
+    width: 170px;
+    height: 40px;
+    color: white;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.inputField {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: $font-size-md;
+    border: 1px solid $input-border;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+    
+    &.withError {
+        margin-bottom: 4px;
+    }
+    
+    &.withoutError {
+        margin-bottom: 24px;
+    }
+}
+
+.extensionLabel {
+    padding: 8px 12px;
+    font-size: $font-size-md;
+    border: 1px solid $input-border;
+    border-radius: 0 4px 4px 0;
+    background-color: $input-background;
+    border-left: none;
+    color: $input-text;
+    white-space: nowrap;
+    
+    &.withError {
+        margin-bottom: 4px;
+    }
+    
+    &.withoutError {
+        margin-bottom: 24px;
+    }
+}
+
+.errorText {
+    color: $warning-orange;
+    font-size: $font-size-sm;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.labelText {
+    margin-bottom: 8px;
+}

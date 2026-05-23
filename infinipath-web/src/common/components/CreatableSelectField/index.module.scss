@@ -1,0 +1,97 @@
+@import "../../styles/variables.scss";
+
+.fieldLabel {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $darkBlue;
+  margin-bottom: $spacing-sm;
+}
+
+.required {
+  color: $error;
+  margin-left: $spacing-xs;
+}
+
+.inputField {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  color: $darkBlue;
+  background: $white;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $blue-light-border;
+    box-shadow: $box-shadow-focus-blue;
+  }
+
+  &::placeholder {
+    color: $footer-gray;
+  }
+}
+
+.creatableInputRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+
+  input {
+    flex: 1;
+  }
+}
+
+.creatableAddBtn {
+  padding: 6px 14px;
+  background: $blue;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.creatableCancelBtn {
+  padding: 6px 14px;
+  background: transparent;
+  color: $footer-gray;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  cursor: pointer;
+
+  &:hover {
+    background: $bg-light-gray;
+  }
+}
+
+.errorText {
+  display: block;
+  color: $error;
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+}
+
+.selectValue {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.selectPlaceholder {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $footer-gray;
+}

@@ -1,0 +1,357 @@
+@import "../../common/styles/variables.scss";
+
+.cardContainer {
+  width:100%;
+  height: 83px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative; // ADD THIS - Makes it the positioning context
+}
+
+.dragIconContainer {
+  width: 2px;
+  height: 15px;
+  visibility: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.selectedImage {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.cardContainer:hover .dragIconContainer {
+  visibility: visible;
+}
+
+.checkboxContainer {
+  background-color: #ffffff;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border: 0.5px solid #bfbfbf;
+}
+
+.occupantCard {
+  display: flex;
+  background-color:$white;
+  width:100%;
+}
+
+.clickedborder {
+  display: flex;
+  border: 1px solid #62ACF6
+}
+
+.femaleclickedborder{
+  border: 1px solid #8762F6
+}
+
+.occupantDetails {
+  width: 100%;
+  height: 83px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 8px 16px 8px 10px;
+  gap: 16px;
+  position: relative;
+}
+
+.occupantDetailsColor {
+  background-color: #F4F8FB;
+}
+
+.seekerName,
+.age,
+.city ,
+.preferredRoommate,
+.rmContact
+{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #051B46;
+
+  @media (min-width: 1080px) and (max-width: 1365px) {
+    overflow: hidden;
+    width: 48px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.age {
+  width: 40px;
+  text-align: start;
+}
+
+.city {
+  text-align: start;
+  max-width: 28%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gender {
+  display: none; 
+}
+
+.seekerName {
+  font-size: 14px;
+  color: $darkBlue;
+  line-height: 19px;
+}
+.hdbBadge {
+  background: #ffffff;
+  color: #0c1e42;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 3px 7px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  white-space: nowrap;
+  position:absolute;
+  top: 59px;
+  left: 16px;
+}
+
+.seekerDetails {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height:16px;
+  width:100%;
+
+  @media (min-width: 1200px) and (max-width: 1365px) {
+    gap: 8px;
+  }
+
+  @media (min-width: 1080px) and (max-width: 1199px) {
+    gap: 4px;
+  }
+}
+
+.seekerName {
+  width: fit-content;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  font-weight: 600;
+}
+
+.seekerDetailsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.seekerContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+  width: 76.5%;
+}
+
+.separator {
+  width: 1px;
+  height: 16px;
+  border-radius: 10px;
+  border-right: 1px solid $secondaryGrey;
+  margin-top: 3px;
+}
+
+.profileContainer {
+  width: 64px;
+  height: 64px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  position:relative;
+}
+
+.profileDots {
+  display: flex;
+  align-items: center;
+}
+
+.menuIcon {
+  width: 15px !important;
+  height: 15px !important;
+  margin-right: 11px;
+  margin-left: 11px;
+  cursor: pointer;
+}
+
+.tooltip {
+  z-index: 1;
+}
+
+.imageContainer {
+  position: relative;
+  display: inline-block;
+  
+  .hoverEyePreview {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(51, 68, 102, 0.4); 
+    background-image: url("../../assets/images/eye-preview.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px 15px;
+    cursor: pointer;
+    z-index: 4;
+  }
+  
+  &:hover .hoverEyePreview {
+    display: block;
+  }
+}
+
+.hdbDotPopoverWrapper {
+  position: absolute;
+  bottom: -4px;
+  right: 25px;
+  display: inline-block;
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.hdbDot {
+  width: 10px;
+  height: 10px;
+  background: #f32b7f;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: absolute;
+  bottom: 15px;
+  right: 2px;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// ADD THIS - Wrapper for the popup to position it correctly
+.roommatePopupWrapper {
+  position: absolute;
+  // left: 5%; // Position to the right of the card
+  top: 110%; // Center vertically
+  transform: translateY(-50%); // Adjust to true center
+  margin-left: 12px; // Add some spacing from the card
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.seekerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.departureTime {
+  position: absolute;
+  right: 18.145px;
+  // top: 1px;
+  bottom: 60px;
+  color: #666;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 220% */
+  white-space: nowrap;
+}
+
+.preferredRoommate {
+  // font-family: 'Noto Sans', sans-serif;
+  font-size: $font-size-xs;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #F32B7F;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rmContact {
+  color: $blackBlue;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  max-width: 44%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pairButtonContainer {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  z-index: 10;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.pairButton {
+  padding: 6px 16px;
+  background-color: $blue;
+  color: $white;
+  border: none;
+  border-radius: 4px;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hdbBadge {
+  background-color: $male-hdb-bg; // default for male
+}
+
+.femaleHdbBadge {
+  background-color: $female-hdb-bg; // for female
+}
+
+.maleHdbDot {
+  border: 2px solid $male-hdb-bg;
+}
+
+.femaleHdbDot {
+  border: 2px solid $female-hdb-bg; // Female border color
+}

@@ -1,0 +1,1131 @@
+// Main container
+.formBuilder {
+  display: flex;
+  flex-direction: column;
+  width: 93vw;
+  max-height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 0px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  position: relative;
+  min-height: calc(100vh - 64px); // Adjust based on your header height
+  padding-bottom: 80px; // Make room for floating button
+}
+
+// Header section
+.header {
+  display: flex;
+  gap:33%;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.globalControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+// Main content area
+.mainContent {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 250px);
+}
+
+// Available questions panel
+.availableQuestions {
+  flex: 0 0 300px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+
+  h2 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.availableQuestionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .questionText {
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .questionType {
+    font-size: 12px;
+    color: #7f8c8d;
+    background-color: #ecf0f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+}
+
+// Form preview panel
+.formPreview {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+
+  h2 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+}
+
+.emptyForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  color: #95a5a6;
+  font-size: 16px;
+}
+
+// Question container
+.questionContainer {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  margin-bottom: 16px;
+  position: relative;
+
+  &.inSection {
+    margin: 8px 0;
+  }
+
+  &.selected {
+    border: 2px solid #1976d2;
+  }
+
+  &.editing {
+    border: 2px solid #1976d2;
+    background: white;
+    padding: 24px;
+  }
+
+  .editableHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+
+    .titleInput {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      
+      &:focus {
+        border-color: #1976d2;
+        outline: none;
+      }
+    }
+
+    .editControls {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      .typeSelect {
+        padding: 6px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: white;
+      }
+
+      .requiredToggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .questionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .questionTitleWrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+
+      label {
+        font-weight: 600;
+        color: #333;
+        font-size: 16px;
+
+        .requiredMark {
+          color: #f44336;
+          margin-left: 4px;
+        }
+      }
+
+      .fieldTypeBadge {
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+      }
+    }
+
+    .questionControls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      .styleBtn {
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        background: white;
+        cursor: pointer;
+        font-size: 14px;
+        color: #666;
+
+        &:hover {
+          background: #f5f5f5;
+        }
+
+        &.deleteBtn {
+          border-color: #f44336;
+          color: #f44336;
+          background: #ffebee;
+
+          &:hover {
+            background: #e28619;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .questionContent {
+    .inputField {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+
+      &:disabled {
+        background: #f5f5f5;
+        cursor: not-allowed;
+      }
+    }
+
+    .textArea {
+      @extend .inputField;
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .radioGroup,
+    .checkboxGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .optionItem {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        label {
+          color: #666;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .helperText {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #666;
+      font-style: italic;
+    }
+  }
+
+  // Edit mode specific styles
+  .editableContent {
+    .titleInput {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 16px;
+
+      &:focus {
+        border-color: #1976d2;
+        outline: none;
+      }
+    }
+
+    .optionsEditor {
+      margin-top: 16px;
+
+      .optionRow {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 8px;
+        align-items: center;
+
+        input {
+          flex: 1;
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+
+        .removeBtn {
+          padding: 6px 12px;
+          border: 1px solid #e28619;
+          background: #ffebee;
+          color: #f44336;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background: #f44336;
+            color: white;
+          }
+        }
+      }
+
+      .addOptionBtn {
+        margin-top: 8px;
+        padding: 8px 16px;
+        background: #e3f2fd;
+        color: #1976d2;
+        border: 1px solid #1976d2;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background: #1976d2;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .optionsEditor {
+    margin-top: 16px;
+
+    .optionRow {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      align-items: center;
+
+      input {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: 1px solid #f44336;
+        background: #ffebee;
+        color: #f44336;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background: #f44336;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .addOptionBtn {
+    padding: 8px 16px;
+    background: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #1976d2;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #1976d2;
+      color: white;
+    }
+  }
+
+  .addFieldSection {
+    margin-top: 24px;
+    padding: 16px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    background: #fafafa;
+    text-align: center;
+
+    .dropdownContainer {
+      position: relative;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .addFieldBtn {
+      width: 100%;
+      padding: 16px;
+      border: 2px dashed #1976d2;
+      background: none;
+      color: #1976d2;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #e3f2fd;
+      }
+    }
+
+    .fieldTypesDropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 10;
+      max-height: 300px;
+      overflow-y: auto;
+
+      .fieldTypeOption {
+        width: 100%;
+        padding: 12px 16px;
+        border: none;
+        background: none;
+        text-align: left;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background: #f5f5f5;
+        }
+      }
+    }
+  }
+
+  .addFieldSection {
+    margin-top: 24px;
+    padding: 16px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    background: #fafafa;
+    text-align: center;
+
+    .addFieldBtn {
+      width: 100%;
+      max-width: 400px;
+      padding: 16px;
+      border: 2px dashed #1976d2;
+      background: none;
+      color: #1976d2;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #e3f2fd;
+      }
+    }
+
+    .fieldTypesDropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 10;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  }
+}
+
+.formSection {
+  // ... existing styles ...
+
+  .addFieldSection {
+    margin-top: 24px;
+    padding: 16px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    background: #fafafa;
+    text-align: center;
+
+    .dropdownContainer {
+      position: relative;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .addFieldBtn {
+      width: 100%;
+      padding: 16px;
+      border: 2px dashed #1976d2;
+      background: none;
+      color: #1976d2;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #e3f2fd;
+      }
+    }
+
+    .fieldTypesDropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 10;
+      max-height: 300px;
+      overflow-y: auto;
+
+      .fieldTypeOption {
+        width: 100%;
+        padding: 12px 16px;
+        border: none;
+        background: none;
+        text-align: left;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background: #f5f5f5;
+        }
+      }
+    }
+  }
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.questionTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.requiredMark {
+  color: #e74c3c;
+  margin-left: 4px;
+}
+
+.questionContent {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="date"],
+  input[type="time"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    
+    &:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+  }
+
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+// Multiselect and radio options
+.multiselect, .radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.multiselectOption, .radioOption, .checkboxOption {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+// Rating stars
+.ratingGroup {
+  display: flex;
+  justify-content: left;
+  gap: 5px;
+  direction: rtl;;
+}
+
+.ratingStar {
+  font-size: 24px;
+  color: #ddd;
+  cursor: pointer;
+  direction: ltr;
+  
+  &:hover, &:hover ~ .ratingStar {
+    color: #f1c40f;
+  }
+}
+
+// Section styling
+.sectionContainer {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  h3 {
+    margin: 0;
+  }
+}
+.subSection{
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+.subSectionHeader {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.sectionControls {
+  display: flex;
+  gap: 5px;
+}
+
+.sectionQuestions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.layoutBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  
+  &.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #2980b9;
+  }
+}
+
+// Section creation
+.sectionCreation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  align-items: center;
+
+  input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+
+// Selection checkbox
+.selectionCheckbox {
+  width: 18px;
+  height: 18px;
+}
+
+// Style button
+.styleBtn {
+  padding: 5px 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #e9ecef;
+  }
+}
+
+// Buttons
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: white;
+  margin: 0 8px;
+  
+  &:hover {
+    background-color: #1565c0;
+  }
+
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.26);
+  }
+  
+  &.primary {
+    background-color: #3498db;
+    color: white;
+    
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+  
+  &.danger {
+    background-color: #d32f2f;
+    
+    &:hover {
+      background-color: #c62828;
+    }
+  }
+}
+
+// Styles popup
+.stylesPopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.stylesPopup {
+  width: 500px;
+  max-width: 90%;
+  max-height: 90vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  
+  h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .closeBtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #7f8c8d;
+    
+    &:hover {
+      color: #34495e;
+    }
+  }
+}
+
+.popupContent {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.styleSection {
+  margin-bottom: 20px;
+  
+  h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.styleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  
+  label {
+    flex: 0 0 120px;
+  }
+  
+  input, select {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
+    &:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+  }
+  
+  input[type="color"] {
+    width: 40px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+  }
+}
+
+.popupFooter {
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+}
+.dragLine {
+  height: 2px;
+  background-color: #3498db;
+  margin: 5px 0;
+}
+.deleteBtn {
+  border: none;
+  background-color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  border-radius: 8px;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.popupContent {
+  .formGroup {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  }
+
+  .questionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .questionItem {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.selected {
+        background-color: #e3f2fd;
+        border-color: #2196f3;
+      }
+    }
+  }
+}
+
+.popupFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &.primary {
+      background-color: #3498db;
+      color: white;
+    }
+  }
+}
+
+.questionControls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  .btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #dee2e6;
+    }
+  }
+}
+.mergePopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.mergePopup {
+  background: white;
+  border-radius: 8px;
+  max-width: 600px;
+  max-height: calc(80vh - 40px);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mergePopupHeader {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mergePopupInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.mergePopupActions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mergePopupBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.mergePopupPrimary {
+  background-color: #3498db;
+  color: white;
+
+  &:hover {
+    background-color: #2980b9;
+  }
+
+  &:disabled {
+    background-color: #b0d4f1;
+    cursor: not-allowed;
+  }
+}
+
+.mergePopupSecondary {
+  background-color: #e9ecef;
+  color: #495057;
+
+  &:hover {
+    background-color: #dee2e6;
+  }
+}
+
+.programSelect {
+  width: 200px;
+  margin-right: 16px;
+  
+  // Style overrides for DropdownTextfield if needed
+  :global {
+    .MuiFormControl-root {
+      margin: 0;
+    }
+    
+    .MuiInputBase-root {
+      background-color: white;
+    }
+  }
+}
+
+// Update FormStepper styles to fit inline
+:global(.MuiStepper-root) {
+  background: transparent;
+  padding: 0;
+  margin-left: 24px;
+}
+
+.floatingButtonWrapper {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+}

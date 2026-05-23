@@ -1,0 +1,26 @@
+
+@import '../../common/styles/variables.scss';
+
+.seekerExperienceContainer {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: $blackBlue;
+}
+
+.chip {
+  background: $slate-bg;
+  color: $linkColor;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border: 1px solid $border-card-gray;
+  display: inline-block;
+}

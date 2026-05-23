@@ -1,0 +1,638 @@
+@import "../../../../../common/styles/common.scss";
+
+.userInfo {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profileImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userDetails {
+  flex: 1;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.userMeta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.userMeta span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.appliedDate {
+  display: flex;
+  justify-content: flex-end;
+  color: #707070;
+
+  font-size: 14px;
+}
+.appliedOnDate,
+.appliedDateOn {
+  display: flex;
+  color: #051B46;
+  font-size: 14px;
+}
+.hdbLevels {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.levelBadge {
+  padding: 4px 8px;
+  background: #f3f4f6;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.levelBadge.completed {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.roommateInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.roommateImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.roommateName {
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: 500;
+  color: #051B46;
+}
+
+.roommatePreference {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.userCardContent {
+  display: flex;
+  padding: 12px 12px 14px 12px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.hdbDot {
+  width: 12px;
+  height: 12px;
+  background: #f32b7f;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 2;
+  margin-bottom: -6px;
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hdbpinkDot {
+  width: 12px;
+  height: 12px;
+  background: #f32b7f;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: 4px;
+  transform: translateX(-50%);
+}
+
+.hdbBadge {
+  background: #ffffff;
+  color: #0c1e42;
+  font-size:  $font-size-xs;
+  font-weight: 400;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.hdbBadgeWrapper {
+  position: absolute;
+  bottom: -13px; // adjust as needed
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.userCard , .defaulterUserCard{
+  background: $white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 4px 0px $black-border-shadow;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.defaulterUserCard{
+  border-left: 3px solid $border-orange;
+}
+
+.userCardHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 13px;
+  color: #777;
+}
+
+.userCardDate {
+  color: #707070;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.verticalDivider {
+  color: rgba(112, 112, 112, 0.5);
+  font-weight: 300;
+  height: 12px;
+  margin-bottom: 10px;
+}
+
+.starIcon {
+  color: #f5b301;
+  font-size: 14px;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.ratingText {
+  color: #1a2c5b;
+  font-weight: 600;
+}
+
+.userCardContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.userAvatar {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 24px; // gives room for badge overlap
+}
+
+.userAvatarTab {
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 24px; // gives room for badge overlap
+}
+
+.hdbBadgeWrapper {
+  position: absolute;
+  bottom: -20px; // adjust as needed
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hdbDot {
+  width: 12px;
+  height: 12px;
+  bottom: 29px;
+  right: 28px;
+  background: #f32b7f;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 2;
+}
+
+.hdbBadge {
+  background: #ffffff;
+  color: #0c1e42;
+  font-size: 13px;
+  font-weight: 400;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.userName {
+  color: #051b46;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.userDetails {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.usersubdetails {
+  color: $darkBlue;
+  font-family: "Noto Sans";
+  font-size:  $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  line-height: normal;
+}
+
+.divider {
+  color: #bbb;
+}
+
+.horizontalDivider {
+  border-bottom: 1px solid rgba(112, 112, 112, 0.5);
+  margin: 16px 0 16px 0;
+  width: 100%;
+}
+
+.appliedDateMobile {
+  display: none;
+}
+
+.userPreferences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  align-items: center;
+}
+
+.preferenceChip {
+  background: #f5f5f5;
+  color: #051b46;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.mahatriaChip {
+  background: #f4f4f7;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.mahatriaRed {
+  color: #d9251d; // red for "Mahatria's"
+}
+
+.mahatriaBlue {
+  color: #051b46; // dark blue for "choice"
+  margin-left: 6px;
+}
+
+.roommateContent {
+  display: flex;
+  align-items: center;
+}
+
+.roommateAvatar {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+}
+
+.avatarImage {
+  width: 130px;
+  height: 130px;
+}
+
+.approved {
+  background-color: #E1EFFF;
+  color: #1859B4;
+  font-size: 12px;
+  padding: 6px 12px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.on_hold {
+  color: #ff7d41;
+  background-color: #ffeae1;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 12px;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rejected {
+  background: #FEF3C7;
+  color: #92400E;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.messageSectionImage {
+  width: 100px;
+  height: 100px;
+}
+
+.appliedOn,
+.appliedDateMobile {
+  font-size: 12px;
+  color: #707070;
+}
+
+.allocatedProgram {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    align-items: flex-start;
+  }
+}
+
+
+@media screen and (max-width:1024px) {
+  .seekerDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 12px 24px 12px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 0px #00000033;
+  }
+
+  .swapBlessedButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+  }
+
+  .userDescription {
+    text-align: center;
+  }
+
+  .appliedDateMobile {
+    display: block;
+  }
+
+  .requestedPref {
+    color: #051B46;
+  }
+
+  .ratingContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+  }
+
+  .averageRating {
+    margin-top: 2px;
+    color: #051B46;
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width:600px) {
+  .userPreferences {
+    display: block;
+    overflow: hidden;
+    color: #051B46;
+  }
+
+
+  .userInfo {
+    display: flex;
+    gap: 8px;
+  }
+
+  .preferenceChip {
+    display: inline-block;
+    background: none;
+    padding: 0px;
+    font-size: 12px;
+  }
+
+  .preferencesWithAllocatedProgra {
+    width: calc(100% - 67px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    min-width: 0;
+  }
+
+  .preferenceChip:not(:last-child)::after {
+    content: ",";
+  }
+
+  .appliedOn {
+    display: none;
+  }
+
+  .appliedDateMobile {
+    display: block;
+  }
+
+  .userCardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .userAvatar {
+    width: 84px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .MuiAvatar-root {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1;
+    border-radius: 50% !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .MuiAvatar-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .seekerDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 12px 24px 12px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 0px #00000033;
+  }
+
+
+  .userCardOnHome {
+    padding: 0px;
+    border: none;
+  }
+
+  .userDetailsCardHome {
+    box-shadow: none;
+    border-radius: 8px;
+  }
+
+  .hdbBadgeWrapper {
+    position: absolute;
+    bottom: -6px;
+    width: 64px;
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+
+    .hdbDot {
+      width: 11px;
+      height: 11px;
+      right: 32%;
+      bottom: 22px;
+    }
+
+    .preferencesWithAllocatedProgram {
+      width: 80%;
+    }
+
+    .hdbBadge {
+      font-size: 9.6px;
+      font-weight: 400;
+    }
+  }
+
+  .userDescription {
+    text-align: center;
+  }
+
+  .swapBlessedButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: white;
+  }
+
+
+}
+
+.imageContainer {
+  position: relative; 
+
+  &:hover {
+    cursor: pointer;
+
+    .hoverEyePreview {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.hoverEyePreview {
+  display: none;
+  position: absolute;
+  inset: 0;
+  
+  border-radius: 50%;
+  background: rgba(5, 27, 70, 0.4) url("../../../../../assets/images/eye-preview.svg") no-repeat center/15px 14px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+

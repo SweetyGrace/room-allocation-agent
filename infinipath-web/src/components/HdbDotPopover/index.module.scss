@@ -1,0 +1,82 @@
+.popup, .diffWidthPopUp {
+  width: 270px;
+  height: 96px;
+  border-radius: 10px;
+  padding: 8px 12px;
+  opacity: 1;
+  box-shadow: 0px 1px 12px 0px #0000001A;
+  background: #fff; // Add background for visibility
+  position: fixed;
+  z-index: 9999;
+  display:flex;
+  flex-direction: column;
+  align-items: start;
+
+  &.popupDown {
+    top: calc(100% - 33px);
+  }
+
+  &.popupUp {
+    bottom: calc(100% + 8px);
+  }
+
+  &.popupRight {
+    left: 60px;
+  }
+
+  // &.popupLeft {
+  //   right: 0;
+  // }
+}
+
+.diffWidthPopUp{
+  width: 221px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #d32f7c; // pink dot
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888888;
+  margin: 0;
+  display: inline;
+}
+
+.name {
+  font-size: 16px;
+  color: #000;
+  margin-left:  13px;
+  font-weight: 500;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 100%; // FIX: Add this to make divider span full width
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 8px 0 8px 0; // FIX: Remove left margin
+  align-self: stretch; // FIX: Make it stretch to full width
+}
+
+.link {
+  color: #1a73e8;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 13px;
+}
+.link:hover,
+.link:focus {
+  text-decoration: none;
+}

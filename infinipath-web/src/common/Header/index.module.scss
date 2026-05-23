@@ -1,0 +1,398 @@
+@import "../../common/styles/variables.scss";
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 5px 20px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 10px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  height: 55px;
+  align-items: center;
+
+  .appIconSection {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    max-width: 400px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .appIcon {
+    cursor: pointer;
+    flex-shrink: 0;
+    height: 31.999px;
+    margin-right: 12px;
+    width: 183.922px;
+  }
+
+  
+  .HamburgerContainer {
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .appIconMobile {
+    display: none;
+
+   
+  }
+
+  .iconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-right: 1px solid #d9d9d9;
+    padding-right: 25px;
+    margin-right: 20px;
+    height: 30px;
+  }
+
+  .iconBlock {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    border-bottom: 3px solid transparent;
+  }
+
+  .activeIcon {
+    border-bottom: 3px solid #1859b4;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 70px;
+  }
+
+  .profileSection {
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    justify-content: flex-end;
+
+    .profileIcon {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      margin-right: 8px;
+    }
+
+    .profileDropdownButton {
+      background-color: #fff;
+      text-align: center;
+      border: unset;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  .mahatriaDots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mahatriaDotsLogo {
+    width: 62px;
+    height: 14px;
+  }
+
+  .mahatriaDotsLogoMobile {
+    display: none;
+
+   
+  }
+
+ 
+}
+
+.button1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: #1859b4;
+  background: none;
+  max-height: 40px;
+  background-color: white;
+  background-image: none !important;
+}
+
+.logOut {
+  max-width: 400px;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  // align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  border: unset;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+
+  .containerNames {
+    color: $darkBlue;
+    text-transform: capitalize;
+    text-align: left;
+
+    .userName {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0px;
+      line-height: 24px;
+    }
+
+    .roleName {
+      margin: 0px;
+      line-height: 24px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
+  .profile {
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .logout {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .verticalLine {
+    height: 24px;
+    border-left: 1px solid #d9d9d9;
+  }
+}
+
+
+
+.timerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #051B46;
+  font-size: 16px;
+  font-weight: 400;
+
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 70px;
+
+    
+
+    .mySpaceIcon {
+      width: 28px;
+      height: 28px;
+
+      
+
+      
+    }
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .separator {
+    width: 1px;
+    height: 24px;
+    background-color: #d9d9d9;
+
+   
+  }
+
+}
+
+.separator {
+  width: 1px;
+  height: 24px;
+  background-color: #bebebe;
+}
+
+.roleSwitcher {
+  display: flex !important;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 780px) {
+  .header {
+    height: 50px;
+    width: 100%;
+  }
+  .appIcon {
+    width: 130px !important;
+    height: 35px !important;
+  }
+  .appIconMobile {
+    display: block;
+    width: 82.59px;
+    height: 20px;
+  }
+  .mahatriaDotsLogo {
+    display: block;
+    width: 50px;
+    height: 10px;
+    gap: 10px;
+  }
+  .mahatriaDotsLogoMobile {
+    display: block;
+    margin-left: 10px;
+    width: 50px;
+    height: 10px;
+    gap: 10px;
+  }
+  .appIcon,
+  .tabs,
+  .tab {
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .mySpaceIcon {
+    width: 23px;
+    height: 23px;
+  }
+.appIcon,
+.tab {
+  padding: 0 8px; // Padding: top right bottom left
+}
+  
+.roleSwitcher {
+    display: flex !important; // Show role switcher on tablet
+    align-items: center; // Better vertical alignment
+  }
+
+  .tabs {
+    gap: 4px; // Minimal gap between role switcher and other elements
+  }
+
+  .logOut {
+    gap: 4px; // Minimal gap to bring role and hamburger closer
+  }
+
+  .HamburgerContainer {
+    margin-left: 4px; // Reduce space before hamburger icon
+  }
+}
+
+// Consolidated @media query for max-width: 600px
+@media (max-width: 600px) {
+  .roleSwitcher {
+    display: none !important; // Hide role switcher on mobile - it's now in the drawer
+  }
+
+  .tabs {
+    gap: 4px; // Minimal gap for mobile
+  }
+
+  .logOut {
+    gap: 4px; // Minimal gap for mobile
+  }
+
+  .HamburgerContainer {
+    margin-left: 4px; // Reduce space before hamburger icon
+  }
+
+  .appIcon {
+    display: block !important;
+    width: 130px !important;
+    height: 22px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+  }
+   
+  .mySpaceIcon {
+    display: none;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .activeTab {
+    border-bottom: unset;
+  }
+
+  .mahatriaDotsLogo {
+    display: block;
+    margin-left: 10px;
+    width: 50px;
+    height: 10px;
+    gap: 10px;
+  }
+
+  .mahatriaDotsLogoMobile {
+    display: block;
+    margin-left: 10px;
+    width: 50px;
+    height: 10px;
+    gap: 10px;
+  }
+  
+  .appIcon,
+  .tabs,
+  .tab {
+    width: 40px;
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .appIcon,
+  .tab {
+    padding: 0 8px; // Padding: top right bottom left
+  }
+
+  .mahatriaDotsLogo {
+    width: 50px !important;
+  }
+}

@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 350px;
+  height: 80px;
+  padding: 16px;
+  gap: 16px;
+  font-family: "Noto sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #051b46;
+  box-shadow: 0px 1px 6px 0px #0000000f;
+  border-radius: 8px;
+  .verticalLine {
+    border: 1px solid #A3A3A3;
+    height: 35px;
+    border-radius: 10px;
+  }
+  .month {
+    font-size: 12px;
+  }
+  .date {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}

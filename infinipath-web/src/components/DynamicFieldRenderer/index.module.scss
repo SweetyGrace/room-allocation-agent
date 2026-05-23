@@ -1,0 +1,425 @@
+
+@import "../../common/styles/variables.scss";
+// Field Groups - Full Width and Half Width
+.fieldGroupFull {
+  width: 100%;
+  margin-bottom: $spacing-md;
+}
+
+.fieldGroupHalf {
+  width: calc(50% - #{$spacing-md});
+  margin-bottom: $spacing-md;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+// Labels
+.fieldLabel {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $darkBlue;
+  margin-bottom: $spacing-sm;
+}
+
+.required {
+  color: $error;
+  margin-left: $spacing-xs;
+}
+
+// Input Fields
+.inputField {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  color: $darkBlue;
+  background: $white;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $blue;
+    box-shadow: $box-shadow-focus-blue;
+  }
+
+  &:disabled {
+    background: $bg-light-gray;
+    cursor: not-allowed;
+    color: $footer-gray;
+  }
+
+  &::placeholder {
+    color: $footer-gray;
+  }
+}
+
+.inputError {
+  border-color: $error !important;
+  
+  &:focus {
+    box-shadow: $box-shadow-focus-error !important;
+  }
+}
+
+.textareaField {
+  @extend .inputField;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+// Input with Currency Symbol
+.inputWithSymbol {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    padding-right: 40px;
+  }
+}
+
+.currencySymbol {
+  position: absolute;
+  right: $spacing-md;
+  color: $footer-gray;
+  font-weight: $font-weight-medium;
+  pointer-events: none;
+}
+
+// Radio Buttons
+.radioGroup {
+  display: flex;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  cursor: pointer;
+  
+  &:has(input:disabled) {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.radioInput {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: $blue;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.radioLabel {
+  font-size: $font-size-sm;
+  color: $darkBlue;
+  user-select: none;
+}
+
+// Select Dropdown
+.selectField {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  color: $darkBlue;
+  background: $white;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $blue;
+    box-shadow: $box-shadow-focus-blue;
+  }
+
+  &:disabled {
+    background: $bg-light-gray;
+    cursor: not-allowed;
+    color: $footer-gray;
+  }
+}
+
+.selectFieldFixed {
+  width: 340px !important;
+}
+
+.fileUploadZone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 96px;
+  border: 2px dashed $border-gray;
+  border-radius: $border-radius-sm;
+  background: $white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $blue;
+  }
+}
+
+.fileUploadZoneError {
+  border-color: $error;
+}
+
+.fileUploadEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: $spacing-md;
+}
+
+.fileUploadIcon {
+  width: 28px;
+  height: 28px;
+  color: $footer-gray;
+  margin-bottom: 2px;
+}
+
+.fileUploadText {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $blue;
+}
+
+.fileUploadHint {
+  font-size: 11px;
+  color: $footer-gray;
+}
+
+.fileUploadSelected {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  width: 100%;
+}
+
+.imagePreview {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: $border-radius-sm;
+  border: 1px solid $border-gray;
+  flex-shrink: 0;
+}
+
+.fileUploadInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fileUploadFileName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $darkBlue;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.fileUploadChange {
+  font-size: 11px;
+  color: $blue;
+}
+
+.imageUploadDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.imageUploadInput {
+  display: none;
+}
+
+.creatableInputRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+
+  input {
+    flex: 1;
+  }
+}
+
+.creatableAddBtn {
+  padding: 6px 14px;
+  background: $blue;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.creatableCancelBtn {
+  padding: 6px 14px;
+  background: transparent;
+  color: $footer-gray;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  cursor: pointer;
+
+  &:hover {
+    background: $bg-light-gray;
+  }
+}
+
+// Date and Time
+.dateTimeContainer {
+  display: flex;
+  width: 100%;
+}
+
+.dateContainer {
+  flex: 1;
+  min-width: 0;
+}
+
+.timeContainer {
+  flex: 0 0 140px;
+}
+
+.datePicker {
+  border: 1px solid $border-gray;
+  width: 100%;
+  border-radius: $border-radius-sm;
+  display: flex;
+
+  &:focus {
+    border: 1px solid $blue;
+    outline: none;
+  }
+}
+
+.datePicker :global(.rs-picker-toggle) {
+  border: none;
+  padding: $spacing-sm $spacing-md;
+  background: $white;
+  width: 100%;
+}
+
+.datePicker :global(.rs-picker-toggle:focus-within) {
+  border: none;
+  outline: none;
+}
+
+.datePicker:hover {
+  border-color: $blue;
+}
+
+.datePickerError {
+  border: 1px solid $error !important;
+  border-radius: $border-radius-sm;
+
+  &:focus {
+    border: 1px solid $error !important;
+    outline: none;
+  }
+}
+
+.datePickerError :global(.rs-picker-toggle:focus-within) {
+  border: none;
+  outline: none;
+}
+
+.dateErrorRow {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  margin-top: $spacing-xs;
+}
+
+// Error Messages
+.errorText {
+  display: block;
+  color: $error;
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+}
+
+// Program code availability feedback
+.codeChecking {
+  display: block;
+  font-size: $font-size-sm;
+  color: $footer-gray;
+  margin-top: $spacing-xs;
+}
+
+.codeAvailable {
+  display: block;
+  font-size: $font-size-sm;
+  color: $code-available-color;
+  margin-top: $spacing-xs;
+}
+
+.codeUnavailable {
+  display: block;
+  font-size: $font-size-sm;
+  color: $error;
+  margin-top: $spacing-xs;
+}
+
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .radioGroup {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .dateTimeContainer {
+    flex-direction: column;
+  }
+
+  .timeContainer {
+    flex: 1;
+  }
+
+  .selectFieldFixed {
+    width: 100% !important;
+  }
+}
+
+// RSuite DatePicker global styles
+:global(.rs-picker-popup) {
+  z-index: 1500 !important;
+}
+
+:global(.rs-input-group-addon) {
+  display: none !important;
+}
+
+:global(.rs-picker-error > .rs-picker-input-group) {
+  border: none !important;
+}
+
+:global(.rs-input-group) {
+  border: none !important;
+}

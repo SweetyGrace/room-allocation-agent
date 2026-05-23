@@ -1,0 +1,100 @@
+@import "../../common/styles/variables.scss";
+
+.levelContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 9px;
+  font-family: $natoSansRegular;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-family: $natoSansRegular;
+  background-image: url("../../assets/images/filterBackground.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+   background-position: 158% 66%;
+   padding:10px 10px 4px 10px;
+}
+.levelHeading {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $darkBlue;
+  font-family: $natoSansRegular;
+}
+.heading {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: $darkBlue;
+  font-family: $natoSansRegular;
+}
+.filtersHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+.closeIcon {
+  cursor: pointer;
+}
+  .termsAndConditionsPoints{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    color: $blackBlue;
+    margin-left: 6px;
+  }
+  .termsAndConditions {
+    width: 100%;
+    margin-top: 3px;
+    // height: 600px;
+    height:275px;
+    overflow-y: auto;
+  }
+  .listItem{
+    margin-left: 24px;
+  }
+  .rulenameStyles{
+    width:200px;
+  }
+  .centerAlign {
+    text-align: center;
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    color: $darkBlue;
+    
+    thead {
+      tr {
+        height:50px;
+        th {
+           
+          border: 1px solid $lightGrey;
+          padding: 8px;
+          text-align: left;
+        }
+      }
+    }
+  
+    tbody {
+      tr {
+        height:70px;
+        &:nth-child(odd) {
+          background-color: #F4F8FB; 
+        }
+  
+        td {
+          border: 1px solid $lightGrey;
+          padding: 8px;
+        }
+      }
+    }
+  }
+  
+ 
+

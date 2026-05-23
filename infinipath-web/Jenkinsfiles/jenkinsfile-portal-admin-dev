@@ -1,0 +1,135 @@
+pipeline {
+    agent any
+    environment {
+        SONARQUBE_PATH = '/var/lib/jenkins/tools/sonar-scanner-4.2.0.1873-linux/bin/sonar-scanner -Dsonar.projectKey=Portal-Admin-Frontend-Dev -Dsonar.sources=./src'
+        //fd_secret_ignore
+        GOOGLE_CHAT_URL = 'https://chat.googleapis.com/v1/spaces/AAAA6Wtz7Xg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UcaW1-lHiYQtM06nI_Ng6nxuBdpI44N6cYyrpuzeG4k'
+        S3_BUCKET = 's3://infinipath-dev-admin-frontendbucket'
+        CLOUDFRONT_DISTRIBUTION_ID = 'ERHMT8P34VGS6'
+        ENV_S3_BUCKET_PATH = 's3://allenvvariables/infinipath/frontend/admin-dev.env'
+        APP_URL = 'https://portaladmin.dev.divami.com'
+        NODE_INSTALLATION = 'Infini-Portal'
+        ENV = 'admin-dev'
+    }
+    stages {
+        stage('get_commit_msg') {
+            steps {
+                script {
+                    env.GIT_COMMIT_MSG = sh (script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
+                    GIT_COMMIT_EMAIL = sh (
+                        script: 'git --no-pager show -s --format=\'%ae\'',
+                        returnStdout: true
+                    ).trim()
+                    echo "Git committer email: ${GIT_COMMIT_EMAIL}"
+                    echo "${GIT_COMMIT_MSG}"
+                }
+            }
+        }
+        stage('SonarScan') {
+            steps {
+                script {
+                    nodejs("${env.NODE_INSTALLATION}") {
+                        withSonarQubeEnv('Sonar') {
+                            sh "${env.SONARQUBE_PATH}"
+                        }
+                    }
+                }
+            }
+        }
+        stage('Quality Gate') {
+           steps {
+               script {
+                    def qg = waitForQualityGate()
+                    if (qg.status != 'OK') {
+                        error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                   }
+               }
+            }
+        }
+        // stage('Tests') {
+        //     steps {
+        //         script {
+        //             try {
+        //                 nodejs("${env.NODE_INSTALLATION}") {
+        //                     echo 'Testing'
+        //                     sh 'npm run test'
+        //                 }
+        //             } catch (Exception e) {
+        //                 echo 'Test cases failed!!'
+        //                 echo "Error message: ${e.toString()}"
+        //             }
+        //         }
+        //     }
+        // }
+        // stage('Lint Check') {
+        //     steps {
+        //         script {
+        //             // try {
+        //             nodejs("${env.NODE_INSTALLATION}") {
+        //                 echo 'Linting'
+        //                 sh 'npm install eslint --force'
+        //                 sh 'npm run lint'
+        //                 // sh 'npm run format'
+        //             }
+        //             // } catch (Exception f) {
+        //             //     echo 'Lint checks failed!'
+        //             //     echo "Error message: ${f.toString()}"
+        //             // }
+        //         }
+        //     }
+        // }
+        stage('Setup Environment variables') {
+            steps {
+                script {
+                    sh "aws s3 cp ${ENV_S3_BUCKET_PATH} ./.env"
+                }
+            }
+        }
+        stage('build') {
+            steps {
+                nodejs("${env.NODE_INSTALLATION}") {
+                    echo 'building'
+                    sh 'npm cache clean --force'
+                    sh 'npm i @babel/runtime --force'
+                    sh 'npm i react-lottie --force'
+                    sh 'npm install --force'
+                    script {
+                        echo "${ENV} Build"
+                        sh 'npm run build'
+                    }
+                }
+            }
+        }
+        stage('deployment') {
+            steps {
+                script {
+                    sh "aws s3 cp ./build ${S3_BUCKET} --recursive"
+                    sh "aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths \"/*\""
+                    echo 'Deployment Success'
+                }
+            }
+        }
+    }
+    post {
+       always { 
+            script{
+                def message = "Project Name: ${JOB_NAME}\n" +
+                                "Build Number: ${BUILD_NUMBER}\n" +
+                                "Git Branch: ${GIT_BRANCH}\n" +
+                                "Environment: ${ENV}\n"
+        
+                def buildResult = currentBuild.currentResult
+                if (buildResult == "SUCCESS") {
+                    message +=  "Output: ${APP_URL}\n" +
+                                "Build Result: Success"
+                } 
+                else {
+                    message += "Output Log: ${RUN_DISPLAY_URL}\n" +
+                                "Build Result: Failed"
+                }
+                googlechatnotification message: message, url: "${GOOGLE_CHAT_URL}"
+                cleanWs()
+            }
+        }
+    }
+}

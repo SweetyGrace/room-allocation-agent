@@ -1,0 +1,66 @@
+/* ConfirmationWithReason styles - based on SwapFilterContent styles */
+@import "../../styles/variables.scss";
+
+.section {
+  margin-bottom: 24px;
+}
+
+.section:last-of-type {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xl;
+  color: $darkBlue;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $border-grey;
+  border-radius: 6px;
+  font-size: $font-size-sm;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+  height: 60px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: $blue-thick;
+  box-shadow: 0 0 0 3px $blue-light-shadow
+}
+
+.textarea::placeholder {
+  color:  $darkBlue;
+}
+
+ .defaulterSectionLine{
+  display: flex;
+  align-items: center;
+  gap:16px;
+}
+
+.swapRequestSectionName{
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $darkBlue;
+}
+
+.radioGroupColumn{
+  @extend .radioGroup;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}

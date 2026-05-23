@@ -1,0 +1,36 @@
+.button,
+.nonActiveButton,
+.lessPadding {
+  cursor: pointer;
+  border: 0;
+  padding: 7px 25px 7px 25px;
+  background-color: transparent;
+  border-radius: 99px;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  background-image: url("../../../assets/images/button-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.nonActiveButton {
+  background-image: url("../../../assets/images/nonactive-button-bg.webp") !important;
+}
+.disableButton {
+  border: 0;
+  padding: 7px 25px 7px 25px;
+  width: auto;
+  border-radius: 99px;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  background-position: top;
+  background-color: rgb(215, 215, 215);
+  cursor: not-allowed;
+}
+
+.lessPadding {
+  padding: 7px;
+}
+

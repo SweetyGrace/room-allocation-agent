@@ -1,0 +1,320 @@
+@import "../../../common/styles/variables.scss";
+.container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.programCard {
+
+  border: 1px solid #D5D7DA;
+  box-shadow: 2px 2px 4px 0px #0A0D120D;
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.programCard:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
+}
+
+.titleSection {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px 10px;
+  background: #f9fafb;
+}
+
+.backButton {
+  margin-top: 0.25rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mainTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xl;
+  color: $darkBlue;
+  text-align: left;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  img{
+    cursor: pointer;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-lg;
+  color: $footer-gray;
+  padding: 0px 32px;
+  margin-bottom: 24px;
+}
+
+.programGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 24px;
+  padding: 0px 32px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.programCard {
+  width: 32%;
+  background: white;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.programCardImage {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+  position: relative;
+  background: #f3f4f6;
+}
+
+.programCardContent {
+  padding: 8px;
+  text-align: center;
+}
+
+.programTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: 24px;
+  color: $darkBlue;
+  margin: 0;
+}
+
+// HDB specific styles
+.hdbContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.hdbCircle {
+  width: 3rem;
+  height: 3rem;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hdbInnerCircle {
+  width: 2rem;
+  height: 2rem;
+  background: #dc2626;
+  border-radius: 50%;
+}
+
+.hdbText {
+  text-align: center;
+}
+
+.hdbTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.hdbYear {
+  font-size: 0.875rem;
+}
+
+// Entrainment specific styles
+.entrainmentContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entrainmentCircle {
+  width: 5rem;
+  height: 5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+// TAT specific styles
+.tatContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.tatDots {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.tatDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #ef4444;
+  border-radius: 50%;
+}
+
+.tatTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.tatSubtitle {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.tatRed {
+  color: #ef4444;
+}
+
+.tatDescription {
+  font-size: 0.75rem;
+}
+
+.orDivider {
+  margin: 44px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0px 32px;
+}
+
+.orText {
+  text-align: center;
+  font-size: $font-size-xs-alt;
+  font-weight: $font-weight-medium;
+  color: $footer-gray;
+  white-space: nowrap;
+}
+
+.grayLine {
+  height: 1px;
+  width: 70%;
+  border: 1px solid #e5e7eb;
+  margin: 15px 0;
+}
+
+.optionsGrid {
+  display: grid;
+  gap: 24px;
+  padding: 0px 32px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.optionCard {
+  background: white;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.optionIcon {
+  width: 4rem;
+  height: 4rem;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.optionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  line-height: 24px;
+  color: $darkBlue;
+  margin-bottom: 4px;
+}
+
+.optionSubtitle {
+  font-size: $font-size-xs-alt;
+  font-weight: $font-weight-normal;
+  line-height: 20px;
+  color: $footer-gray;
+}
+
+.bannerContainer {
+  width: 100%;
+  height: 180px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

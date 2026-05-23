@@ -1,0 +1,226 @@
+@import "../../common/styles/variables.scss";
+
+.appIconDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.seekerDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  align-items: start;
+}
+
+.buttonClass {
+  color: $blue;
+  width: 150px;
+  height: 50px;
+  font-family: "Noto Sans", serif;
+  font-size: 16px;
+  border: 1px solid $blue !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+.profileIconDiv {
+  position: relative;
+}
+
+.editDiv {
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  cursor: pointer;
+}
+
+.phoneNumber {
+  color: $lightGrey2;
+}
+
+.name {
+  color: $darkBlue;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 43.58px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.cardBlock {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardNameLine {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.cardContainer {
+  width: 100%;
+  align-items: start;
+  display: flex;
+  padding: 30px 25px;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 1px 6px 0px #0000001a;
+  font-size: 15px;
+  color: $darkBlue;
+  line-height: 17.9px;
+  font-weight: 400;
+}
+
+.authenticationCard {
+  width: 100%;
+  padding: 16px 30px 16px 16px;
+  border: 1.5px solid transparent;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(95.12deg, #f0f0f0 -0.86%, #dcdcdc 104.51%) border-box;
+}
+
+.authenticationCardContent {
+  display: flex;
+  width: 500px;
+  gap: 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.innerText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cardHeading {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: $darkBlue;
+}
+
+.enrolledText,
+.notEnrolledText,
+.authenticationCardText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: $primaryGreen;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.notEnrolledText {
+  color: $secondaryRed;
+}
+
+.authenticationCardText {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: $darkBlue;
+}
+
+.rightArrowIcon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.redoText {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.generateText {
+  cursor: pointer;
+  color: $blue;
+}
+
+.deleteText {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: $blue;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container {
+  padding: 32px;
+  border-radius: 8px;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.friendsContainer {
+  height: calc(100vh - 220px);
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 40px;
+  background-image: url("../../assets/images/add-seeker-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+}
+
+.signOutDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 124px;
+}
+
+@media screen and (max-width: 768px) {
+  .authenticationCardContent {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .authenticationCardContent {
+    width: 350px;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "filters": {
+    "fieldName" : "Gender",
+    "gender": [
+      { "label": "Male", "value": "male", "checked": true },
+      { "label": "Female", "value": "female", "checked": false }
+    ],
+    "fieldName2" : "Age",
+    "age_groups": [
+      { "label": "Age (below 20)", "value": "below_20", "checked": false },
+      { "label": "Age (20 - 30)", "value": "20_30", "checked": false },
+      { "label": "Age (30 - 40)", "value": "30_40", "checked": false },
+      { "label": "Age (40 - 50)", "value": "40_50", "checked": false },
+      { "label": "Age (50+)", "value": "50_plus", "checked": false }
+    ],
+    "fieldName3": "Location",
+    "locations": [
+      { "label": "Chennai", "value": "chennai", "checked": false },
+      { "label": "Bangalore", "value": "bangalore", "checked": false },
+      { "label": "Ahmedabad", "value": "Ahmedabad", "checked": false },
+      { "label": "Hyderabad", "value": "hyderabad", "checked": false },
+      { "label": "Pune", "value": "Pune", "checked": false }
+    ]
+  }
+}
+

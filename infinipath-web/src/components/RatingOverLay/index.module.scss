@@ -1,0 +1,218 @@
+@import "../../common/styles/variables.scss";
+
+.filterlabelName,
+.filterlabels,
+.RecommendationHeader {
+  font-size: 14px;
+  font-weight: 400px;
+  margin-bottom: 16px;
+  color: hsl(220, 87%, 15%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.filterlabelName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filterlabels {
+  gap: 0px;
+  justify-content: unset;
+}
+
+.filterFieldName {
+  font-size:14px;
+  font-weight: $font-weight-normal;
+  color: #051B46;
+  min-width: 180px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.ratingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+
+}
+.prevRatingContainer
+{
+  display: flex;
+  flex-direction: column;
+  gap:24px;
+  margin:41px 0;
+  .prevRatingHeaderContainer
+  {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    .prevRatingHeader{
+      .caretIcon{
+        cursor: pointer;
+      }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 600;
+      color:#051B46
+    }
+  }
+  .prevRatingContent{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    color:#051B46;
+    .prevRatingText{
+      font-size: 14px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap:6px;
+    }
+    .prevRatingReview{
+      margin-top: 0px;
+    }
+  }
+}
+.prevRatingStars{
+  display:flex;
+  align-items: center;
+  gap:6px;
+}
+.prevRatingScore{
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-md;
+}
+.starIcon{
+  margin-bottom: 2px;
+}
+.textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 15px;
+  margin-top: 8px;
+  resize: vertical;
+  height: 250px;
+
+}
+
+
+.ratingRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.cancelButton {
+  border: 1px solid white !important;
+}
+
+.saveButtonText {
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.saveButton {
+  width: 23%;
+  height: 40px;
+  font-size: $font-size-md;
+
+}
+.ratingScore{
+  font-size: 14px;
+  color:$darkBlue;
+}
+
+.totalRating {
+  color: $darkBlue;
+  font-size: 14px;
+  margin: 10px 0px;
+
+  span {
+    font-weight: $font-weight-semibold;
+    font-family: $natoSansBold;
+    font-size:16px;
+
+  }
+}
+
+.RecommendationHeader {
+  display: flex;
+}
+
+.RecommendationHeaderLabel {
+  font-size: 14px;
+  font-weight: $font-weight-semibold;
+}
+
+.RecommendationLabel {
+  font-weight: $font-weight-normal;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  gap: 20px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: $font-size-sm;
+  cursor: pointer;
+}
+.ratingForm {
+  scroll-behavior: smooth;  
+}
+
+// Seeker experience styles
+.seekerExperienceSection {
+  margin-top: 16px;
+}
+
+.chip {
+  background: $slate-bg;
+  color: $linkColor;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border: 1px solid $border-card-gray;
+  display: inline-block;
+}

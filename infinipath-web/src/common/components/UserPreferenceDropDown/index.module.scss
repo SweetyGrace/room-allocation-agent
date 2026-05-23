@@ -1,0 +1,174 @@
+@import "../../../common/styles/variables.scss";
+// Variables
+
+$font-family-base: 'Noto Sans', sans-serif;
+$text-blue: var(--Text-Blue, #051B46);
+$background-highlight: #F4F8FB;
+$border-color: #eee;
+$divider-color: #c6c3c3;
+$text-muted: #666;
+
+// Dimensions
+$dropdown-width: 200px;
+$dropdown-min-width: 180px;
+$spacing-base: 4px;
+$border-radius: 8px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  gap: $spacing-base;
+}
+
+@mixin absolute-positioned {
+  position: absolute;
+  z-index: 10;
+}
+
+@mixin text-style-base {
+  font-family: $font-family-base;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+@mixin italic-text {
+  @include text-style-base;
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+// Component Styles
+.preferenceDropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.preferenceDropdownTrigger {
+  @include flex-center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.dropdownMenu {
+  @include absolute-positioned;
+  top: 100%;
+  right: 0;
+  min-width: $dropdown-min-width;
+  width: $dropdown-width;
+  height: fit-content;
+  background: #fff;
+  border: 1px solid $border-color;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: $border-radius;
+  padding: $spacing-base;
+  gap: 2px;
+  opacity: 1;
+}
+
+.dropdownMenuUp {
+  @include absolute-positioned;
+  z-index: 1000;
+  bottom: -33px;
+  top: auto;
+  left:-73px;
+}
+
+.dropdownMenuDown {
+  top: 100%;
+  bottom: auto;
+  left:-73px;
+}
+
+.dropdownItem {
+  @include text-style-base;
+  color: $text-blue;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 28px;
+  padding: $spacing-base;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background: $background-highlight;
+  }
+}
+
+.dropdownDivider {
+  border-top: 1px solid $divider-color;
+  margin: $spacing-base 0;
+}
+
+.staticLabel {
+  @include italic-text;
+}
+
+.staticLabelMahatria {
+  margin-left: 6px;
+  font-style: normal;
+  font-size: 12px;
+  color: #666666;
+}
+
+.preferenceNameLabel {
+  @include italic-text;
+  padding: $spacing-base;
+  pointer-events: none;
+  user-select: none;
+  color: $text-muted;
+}
+
+.highlight {
+  padding: $spacing-base;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  border-radius: 1px;
+  // background: $background-highlight;
+  color:rgb(215, 215, 215);
+}
+
+.dropUp {
+  top: auto !important;
+  bottom: 100% !important;
+}
+.dropdownItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  
+  &:hover:not(.disabled) {
+    background-color: $light-white;
+  }
+  
+  &.disabled {
+    cursor: not-allowed !important;
+    // pointer-events: none;
+    background-color: $pale-blue;
+    
+    &:hover {
+      cursor: not-allowed !important;
+    }
+  }
+}
+
+.highlight {
+  background-color: $pale-blue;
+  
+  &.disabled {
+    cursor: not-allowed !important;
+  }
+}
+.disabledSession {
+  cursor: not-allowed !important;
+  color: orange !important;
+  opacity: 0.8 !important;
+  
+  &:hover {
+    background-color: transparent !important;
+    cursor: not-allowed !important;
+  }
+}

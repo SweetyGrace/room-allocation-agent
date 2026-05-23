@@ -1,0 +1,138 @@
+@import "../../../common/styles/variables.scss";
+
+.tableWrapper {
+  width: 100%;
+  background: $color-white;
+  border-radius: $border-radius-xs;
+  overflow-y: auto;
+
+  .MuiDataGrid-root {
+    border: none;
+    font-size: $font-size-sm;
+  }
+
+  .MuiDataGrid-columnHeaders {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #1e3a8a;
+  }
+
+  .MuiDataGrid-cell {
+    color: #374151;
+  }
+
+  .MuiDataGrid-footerContainer {
+    background-color: #f9fafb;
+  }
+}
+.detailedTableCard{
+    padding: 16px 24px 0px 24px !important;
+    height: fit-content; // Adjust height as needed
+}
+
+.viewSelectorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: $spacing-md;
+}
+
+.viewSelectorLabel {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $lightBlack;
+}
+
+.viewSelector {
+  border: 1px solid $border-gray;
+  border-radius: $border-radius-sm;
+  background-color: $color-white;
+  font-size: $font-size-sm;
+  cursor: pointer;
+  min-width: 150px;
+  
+  &:focus {
+    outline: none;
+    border-color: $linkColor;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.25);
+  }
+  
+  &:hover {
+    border-color: $mediumGrey;
+  }
+}
+
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+}
+
+.headerRow {
+  background-color: $bg-white-shade;
+  border-bottom: 1px solid $tableBorder;
+}
+
+.subHeaderRow {
+  background-color: $secondaryBlue;
+  border-bottom: 1px solid $tableBorder;
+}
+
+.headerCell {
+  padding: $font-size-xs $spacing-sm;
+  text-align: center;
+  font-weight: $font-weight-semibold;
+  color: $lightGrey2;
+  border-right: 1px solid $tableBorder;
+  border-bottom: 1px solid $tableBorder;
+  border-top: 1px solid $tableBorder;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.subHeaderCell {
+  padding: $spacing-sm 6px;
+  text-align: center;
+  font-weight: $font-weight-medium;
+  color: $footer-gray;
+  border-right: 1px solid $tableBorder;
+  border-bottom: 1px solid $tableBorder;
+  background-color: $bg-white-shade;
+
+}
+
+.bodyRow {
+  &:hover {
+    background-color: $bg-white-shade;
+  }
+}
+
+.bodyCell {
+  padding: 10px $spacing-sm;
+  text-align: center;
+  color: $blackBlue;
+  border-right: 1px solid $tableBorder;
+  border-bottom: 1px solid $tableBorder;
+
+  transition: background-color 0.2s ease;
+  
+  &:first-child {
+    text-align: left;
+    font-weight: $font-weight-medium;
+  }
+  
+  &:last-child {
+    border-right: none;
+  }
+  
+ 
+}
+

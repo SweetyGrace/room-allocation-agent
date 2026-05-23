@@ -1,0 +1,210 @@
+.filterFieldName {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  color:#888888;
+}
+.filterOptionLabel {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color:#051B46;
+  white-space: nowrap;
+  word-break: break-word;
+  display: inline-block;
+  
+}
+
+
+.filter {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  z-index: 100000;
+  text-align: start;
+}
+.filterButtons {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px 24px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+.filterButton {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 16px;
+  cursor:pointer;
+  font-weight: 400;
+  // margin-top: 3%;
+  // margin-bottom: 3%;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.cancelButton {
+  border: 1px solid white !important;
+  color: var(--Text-Link, #1859b4);
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; 
+  text-transform: lowercase;
+}
+.starIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.saveButtonText {
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+.saveButton {
+  min-width: 150px;
+  height: 40px;
+  font-size: 16px;
+}
+.saveButtonTextCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+  text-transform: lowercase;
+}
+.customRadio {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.filterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hdbFilterRow {
+  display: flex;
+  gap: 12px;
+}
+.hdbSelectWithIcon {
+  width: 80px;
+  height: 40px;
+  padding: 10px 32px 10px 12px; // more right padding for icon
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../../assets/images/dropdownDown.svg") no-repeat right 8px
+    center;
+  background-size: 20px 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.hdbInputFlex {
+  display: flex;
+  width: 80px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
+  gap: var(--spacing-md, 8px);
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--Colors-Border-border-primary, #d2d7da);
+  background: var(--Colors-Background-bg-primary, #fff);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  text-align: center;
+}
+svg {
+  cursor: pointer;
+}
+
+:global(.rs-picker-daterange-calendar-group) {
+  margin:0 !important;
+  min-width: 200px !important;
+}
+
+:global(.rs-picker-popup .rs-calendar) {
+  min-width: 200px !important;
+ 
+}
+
+:global(.rs-calendar) {
+  overflow: none !important;
+}
+
+.datePickerGrayBorder {
+  .rs-picker-toggle, // rsuite v5+
+  input {
+    border: 1px solid #d1d5db !important; // gray-300
+    border-radius: 4px;
+    height:40px;
+    background: #fff;
+  }
+}
+.datePickerContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.clearDateIcon {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.dateError {
+  color: red;
+  padding: 5px;
+}
+.starContainer{
+  display: flex;
+  align-items: center;
+}

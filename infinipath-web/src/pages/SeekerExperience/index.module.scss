@@ -1,0 +1,105 @@
+@import "../../common/styles/variables.scss";
+.seekerExperienceContainer {
+  padding: 12px 12px;
+  background-color: $bg-white-shade;
+  border-radius: 8px;
+  @media (max-width:1024px) {
+    background-color: $white;
+  }
+}
+
+.seekerExperienceContainerLoader {
+  position: relative;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px;
+  background-color: $bg-white-shade;
+  border-radius: 8px;
+}
+@media (max-width: 768px)
+{
+  .seekerExperienceContainer {
+    margin: 50px 0px 0px ;
+  }
+}
+.sessionList {
+  align-items: center;
+  width: 100%;
+  margin-left: 20px;
+  display: none;
+
+  @media (max-width:1024px) {
+    display: block;
+    margin: 0px;
+  }
+}
+.errorContainer {
+  text-align: center;
+  padding: 40px;
+}
+
+.horizontalItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  padding: 8px 12px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  font-size: $font-size-md;
+  gap: 7px;
+}
+
+.selectedItem {
+  color: $darkBlue !important;
+   border-bottom : 3px solid $blue !important;
+    font-weight: $font-weight-semibold !important;
+}
+
+.orgCount {
+  display: inline-flex;
+  align-items: center;
+  font-size: $font-size-xs;
+  color: $blue;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.verticalLine {
+  display: inline-block;
+  width: 2px;
+  height: 16px;
+  background: $lightGrey;
+  margin-right: 6px;
+  border-radius: 1px;
+}
+
+/* Optional: If you use the building office icon */
+.buildingOfficeIcon {
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+/* Container styles for horizontal scrolling (if needed) */
+.sessionList {
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+ border-bottom: 1px solid $border-light-gray;
+ display: none;
+
+  @media (max-width:1024px) {
+    display: flex;
+  }
+}
+.programsContainer {
+  display: flex;
+  align-items: center;
+}

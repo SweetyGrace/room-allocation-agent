@@ -1,0 +1,235 @@
+@import "../../styles/variables.scss";
+
+.cardContainer {
+    padding: 24px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 16px;
+    border: 1px solid #d5d7da;
+    box-shadow: 0 2px 4px rgba(10, 13, 18, 0.05);
+    margin: 15px;
+    margin-top: 40px;
+}
+
+.stepperContainer {
+    // display: grid;
+    display: flex;
+    min-width: 60px;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: start;
+    justify-items: center;
+    margin: 40px 0px 0px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr ));
+}
+
+.heading {
+    font-family: $natoSansBold;
+    font-size: 16px;
+    line-height: 32px;
+    color: $darkBlue;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.viewActivity{
+    font-size:14px;
+    color:#0760CD;
+    display:flex;
+    gap:10px;
+    font-weight:400;
+    cursor: pointer;
+}
+.stepWrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.stepWrapper:last-child {
+    flex: 0;
+}
+
+.stepItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 60%;
+}
+
+.stepCircle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+/* Status-based styles */
+.done {
+    background-color: #65C466;
+    color: white;
+    border: 1px solid #65C466;
+}
+.cancelled {
+    background-color: #FFC107;
+    color: white;
+    border: 1px solid #FFC107;
+}
+.inprogress {
+    background-color: #3b82f6;
+    color: white;
+    border: 1px solid #3b82f6;
+}
+
+.not_started {
+    color: #9ca3af;
+    border: 1px solid #e5e7eb;
+}
+
+.stepIcon {
+    width: 30px;
+    height: 21px;
+}
+
+.stepNumber {
+    font-size: 12px;
+}
+
+.stepDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #9ca3af;
+}
+
+.stepContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stepTitle {
+    margin: 0;
+    font-size: 14px;
+    // font-weight: 500;
+    line-height: 1.2;
+    // font-family: $natoSansBold;
+}
+
+.stepTitleDone {
+    color: $darkBlue; // green
+    font-weight: 600;
+}
+
+.stepTitleInprogress {
+    color: $darkBlue; // blue
+}
+
+.stepTitleNotStarted {
+    color: #707070; // grey
+    font-weight: 600;
+}
+
+.stepSubtitle {
+    margin: 0;
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.2;
+    padding-left: 30px;
+}
+
+.stepConnector {
+    flex: 1;
+    height: 1px;
+    border: 1px dashed #e5e7eb;
+    margin: 0 10px;
+    position: relative;
+}
+
+.stepContainer {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-bottom: 3%;
+    justify-content: space-between;
+}
+
+.countText {
+    font-size: 12px;
+}
+.seekerJourney {
+  font-size: 16px; 
+  font-weight: 600; 
+  color: #000000;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .stepperContainer {
+        padding: 16px 0;
+    }
+
+    .stepItem {
+        gap: 8px;
+    }
+
+    .stepCircle {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .stepIcon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .stepTitle {
+        font-size: 12px;
+    }
+
+    .stepSubtitle {
+        font-size: 11px;
+    }
+
+    .stepConnector {
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stepperContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stepWrapper {
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+
+    .stepWrapper:last-child {
+        margin-bottom: 0;
+    }
+
+    .stepConnector {
+        width: 1px;
+        height: 20px;
+        margin: 8px 0;
+        align-self: flex-start;
+        margin-left: 14px;
+        top: 0;
+    }
+}

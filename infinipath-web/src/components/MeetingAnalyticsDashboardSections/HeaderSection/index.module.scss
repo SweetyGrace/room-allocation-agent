@@ -1,0 +1,196 @@
+.headerSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 4px;
+  margin-top: 32px;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 16px;
+  }
+}
+.headerSectionDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+}
+
+.formattedDate {
+  color: #1859b4;
+}
+
+.subText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  row-gap: 15px;
+  padding-left: 25px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 16px;
+  }
+}
+
+.subTextHide {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 4px;
+
+  @media (max-width: 768px) {
+    padding-left: 16px;
+    font-size: 14px;
+  }
+}
+
+.selectInputSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  gap: 4px;
+  padding-top: 10px;
+  padding-right: 29px;
+  font-size: 12px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding-right: 16px;
+  }
+}
+
+.selectInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
+
+    > div {
+      width: 48%;
+    }
+  }
+}
+.dateDropdown,
+.backButton {
+  border: none;
+  cursor: pointer;
+}
+
+.selectedFilters {
+  display: flex;
+  padding: 5px 22px 0px 0px;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  height: 492px;
+  padding: 30px;
+  background-color: white;
+  outline: none;
+}
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+}
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: scroll;
+}
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.optionsHeader {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  line-height: 24px;
+  align-items: center;
+  .optionText {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+}
+.barhorizontalline {
+  display: flex;
+  flex-grow: 1;
+  height: 1px;
+  background-color: #bab9b9;
+}
+.barhorizontallineFilter {
+  width: 90%;
+  height: 1px;
+  background-color: #bab9b9;
+}
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.applyButton {
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  font-size: 16px !important;
+  height: 40px;
+  border-radius: 50px !important;
+}
+.applyButtonText {
+  text-align: center;
+}
+.cancelText {
+  color: #1859b4;
+  font-size: 16px;
+  cursor: pointer;
+}
+.closeIcon,
+.filterIcon {
+  cursor: pointer;
+}
